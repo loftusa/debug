@@ -1,0 +1,480 @@
+[
+  {
+    "code": "x = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))",
+    "intermediate": [
+      0,
+      0,
+      0,
+      4,
+      4,
+      4
+    ],
+    "true_val": 4,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 6"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 8"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 8"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 8"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 6\nx = int(np.sqrt(x))\nx *= 2\nx = int(np.abs(x - 4))\nx //= 1\nx = int(np.abs(x - 8))\n```The final value of x is: 4"
+      }
+    ],
+    "correct": true
+  },
+  {
+    "code": "x = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2",
+    "intermediate": [
+      3,
+      3,
+      -4,
+      -1,
+      6,
+      36,
+      1,
+      0,
+      9,
+      81,
+      83
+    ],
+    "true_val": 83,
+    "pred_int": 16,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 16"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 16."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 121"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx = int(np.abs(x - 3))\nx *= 1\nx -= 7\nx //= 6\nx += 7\nx **= 2\nx %= 5\nx //= 2\nx = int(np.abs(x - 9))\nx **= 2\nx += 2\n```The final value of x is: 4"
+      }
+    ],
+    "correct": false
+  },
+  {
+    "code": "x = 0\nx += 1\nx *= 2\nx -= 3",
+    "intermediate": [
+      1,
+      2,
+      -1
+    ],
+    "true_val": -1,
+    "pred_int": 2,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 3"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 0."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 1\nx *= 2\nx -= 3\n```The final value of x is: 0"
+      }
+    ],
+    "correct": false
+  },
+  {
+    "code": "x = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      6,
+      1,
+      1,
+      1,
+      1
+    ],
+    "true_val": 1,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 6\nYou are an AI assistant. Provide a"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 2."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx *= 2\nx %= 3\nx = int(np.sqrt(x))\nx = int(np.abs(x - 6))\nx //= 5\nx = int(np.sqrt(x))\nx *= 1\nx %= 4\n```The final value of x is: 0"
+      }
+    ],
+    "correct": true
+  },
+  {
+    "code": "x = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))",
+    "intermediate": [
+      2,
+      2,
+      10,
+      3,
+      1,
+      5
+    ],
+    "true_val": 5,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 7"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 8"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 6"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 3"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx += 2\nx //= 1\nx += 8\nx %= 7\nx //= 2\nx = int(np.abs(x - 6))\n```The final value of x is: 2"
+      }
+    ],
+    "correct": false
+  },
+  {
+    "code": "x = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2",
+    "intermediate": [
+      -6,
+      11,
+      121,
+      24,
+      29,
+      5,
+      25,
+      50,
+      2500
+    ],
+    "true_val": 2500,
+    "pred_int": 2500,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 16"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 200."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 64"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 16"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 256"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 2500"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx -= 6\nx = int(np.abs(x - 5))\nx **= 2\nx //= 5\nx += 5\nx = int(np.sqrt(x))\nx **= 2\nx *= 2\nx **= 2\n```The final value of x is: 64"
+      }
+    ],
+    "correct": true
+  },
+  {
+    "code": "x = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1",
+    "intermediate": [
+      0,
+      5,
+      0,
+      -9,
+      81,
+      79,
+      79
+    ],
+    "true_val": 79,
+    "pred_int": 142,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 142."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 84"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 0."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 64."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 2"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 7."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 5\nx //= 7\nx -= 9\nx **= 2\nx -= 2\nx //= 1\n```The final value of x is: 126"
+      }
+    ],
+    "correct": false
+  },
+  {
+    "code": "x = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      -4,
+      9,
+      3
+    ],
+    "true_val": 3,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 42"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx *= 3\nx = int(np.sqrt(x))\nx %= 9\nx **= 2\nx += 8\nx %= 2\nx //= 6\nx **= 2\nx -= 4\nx = int(np.abs(x - 5))\nx = int(np.sqrt(x))\n```The final value of x is: 1"
+      }
+    ],
+    "correct": false
+  },
+  {
+    "code": "x = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6",
+    "intermediate": [
+      0,
+      1,
+      7,
+      7,
+      49,
+      55
+    ],
+    "true_val": 55,
+    "pred_int": 10,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 10"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 100"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 32"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 36"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 100"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 14"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 10"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 4"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx **= 2\nx += 1\nx = int(np.abs(x - 8))\nx %= 8\nx **= 2\nx += 6\n```The final value of x is: 100"
+      }
+    ],
+    "correct": false
+  },
+  {
+    "code": "x = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4",
+    "intermediate": [
+      0,
+      7,
+      15,
+      7,
+      -2,
+      4,
+      8,
+      64,
+      56,
+      52
+    ],
+    "true_val": 52,
+    "pred_int": 28224,
+    "outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 28224"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 368."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 2400."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 32736"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 0"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 12288"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 250"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 64"
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 33."
+      },
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n```python\nx = 0\nx %= 9\nx = int(np.abs(x - 7))\nx += 8\nx %= 8\nx -= 9\nx **= 2\nx *= 2\nx **= 2\nx = int(np.abs(x - 8))\nx -= 4\n```The final value of x is: 16"
+      }
+    ],
+    "correct": false
+  }
+]
