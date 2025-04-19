@@ -1,0 +1,40 @@
+[project]
+name = "debug"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.6.0",
+    "click>=8.1.8",
+    "datasets>=3.5.0",
+    "fastai>=2.7.19",
+    "gradio>=5.25.2",
+    "huggingface-hub[cli]>=0.30.2",
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.6",
+    "jupyter>=1.1.1",
+    "jupyterlab>=4.4.0",
+    "lovely-tensors>=0.1.18",
+    "matplotlib>=3.10.1",
+    "nnsight>=0.4.5",
+    "numpy>=2.2.4",
+    "ruff>=0.11.5",
+    "seaborn>=0.13.2",
+    "torch>=2.6.0",
+    "torchtyping>=0.1.5",
+    "transformers>=4.51.3",
+    "vllm>=0.8.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["debug", "debug.*"]
+
+[tool.uv.sources]
+debug = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "debug",
+]

@@ -1,0 +1,168 @@
+import random
+import re
+from pathlib import Path
+from typing import List, Tuple, Optional, Dict
+
+import click
+from transformers import pipeline
+from debug.sequence_generation import make_sequence
+import csv
+import json
+import gc
+import torch
+
+print('imports loaded')
+
+PROMPT_TEMPLATE = (
+    "You are given a short Python program. "
+    "Your task is to compute the final value of the variable x. "
+    "Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n"  # noqa: E501
+    "```python\n{code}\n```"
+    "The final value of x is: "
+)
+
+DEFAULT_MODELS: List[str] = [
+    "openai-community/gpt2",
+    "deepseek-ai/deepseek-coder-1.3b-instruct",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "tiiuae/Falcon3-7B-Instruct",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
+    "NTQAI/Nxcode-CQ-7B-orpo",
+    "Qwen/CodeQwen1.5-7B-Chat",
+    "google/gemma-2-9b-it",
+    "Qwen/Qwen2.5-14B-Instruct",
+    "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "Qwen/Qwen2.5-Coder-14B-Instruct",
+    "Qwen/Qwen2.5-14B",
+]
+
+
+def _parse_int(text: str) -> Optional[int]:
+    """Extract the integer following 'the final value of x is: ' (case-insensitive, commas ignored), or the first integer otherwise."""
+    cleaned = text.replace(",", "")
+    # Try to find integer after the explicit phrase
+    phrase_match = re.search(r"the final value of x is:\s*(-?\d+)", cleaned, flags=re.IGNORECASE)
+    if phrase_match:
+        return int(phrase_match.group(1))
+    # Fallback: first integer anywhere
+    match = re.search(r"-?\d+", cleaned)
+    return int(match.group()) if match else None
+
+
+def _best_of_k(outputs: List[Dict[str, str]], true_val: int) -> Optional[int]:
+    """Return the integer prediction closest to *true_val* among *outputs*."""
+    preds = [_parse_int(o["generated_text"]) for o in outputs]
+    # Filter Nones
+    preds = [p for p in preds if p is not None]
+    if not preds:
+        return None
+    # If any exactly equals, prefer that
+    for p in preds:
+        if p == true_val:
+            return p
+    # Otherwise, return first parsed value
+    return preds[0]
+
+
+@click.command()
+@click.option("--num-seqs", "num_seqs", default=10, help="Number of sequences per model.")
+@click.option("--max-len", default=12, help="Maximum length (steps) of each sequence.")
+@click.option("--best-of", "best_of", default=10, help="Number of parallel samples per prompt.")
+def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
+    """Evaluate multiple open‑source models on the variable‑tracking task."""
+    results: List[Tuple[str, float]] = []
+    results_dir = Path("results")
+    results_dir.mkdir(parents=True, exist_ok=True)
+    csv_path = results_dir / "results_summary.csv"
+    # Read existing results to skip already evaluated models
+    processed_models = set()
+    if csv_path.exists():
+        with csv_path.open("r", newline="") as f:
+            reader = csv.reader(f)
+            next(reader, None)  # skip header
+            for row in reader:
+                if row:
+                    processed_models.add(row[0])
+        csv_mode = "a"
+    else:
+        csv_mode = "w"
+    # Initialize summary CSV with header if creating new file
+    with csv_path.open(csv_mode, newline="") as f:
+        writer = csv.writer(f)
+        if csv_mode == "w":
+            writer.writerow(["model_id", "accuracy"])
+    for model_id in DEFAULT_MODELS:
+        if model_id in processed_models:
+            print(f"Skipping model {model_id} as it's already evaluated.")
+            continue
+        skip_model = False
+        all_data = []
+        print(f"\nLoading model: {model_id}")
+        try:
+            llm = pipeline("text-generation", model=model_id, temperature=0.8, trust_remote_code=True)
+        except (RuntimeError, MemoryError) as e:
+            print(f"Skipping model {model_id} due to load memory error: {e}")
+            continue
+        correct = 0
+        for _ in range(num_seqs):
+            seq_len = random.randint(3, max_len)
+            code, intermediate = make_sequence(seq_len)
+            true_val = intermediate[-1]
+            prompt = PROMPT_TEMPLATE.format(code=code)
+
+            # Call the pipeline, requesting multiple sequences for best-of-k
+            try:
+                req_outputs = llm(
+                    prompt,
+                    num_return_sequences=best_of, # Use the best_of parameter
+                    max_new_tokens=10,           # Limit output length for efficiency
+                    do_sample=True,             
+                                             # Set do_sample=True if using temperature > 0
+                )
+            except (RuntimeError, MemoryError) as e:
+                print(f"Memory error during inference for {model_id}: {e}. Skipping model.")
+                skip_model = True
+                break
+
+            print(req_outputs, '\n\n') # Keep for debugging if needed
+            
+            # Parse the best prediction from the multiple outputs
+            pred_int = _best_of_k(req_outputs, true_val)
+            all_data.append({
+                "code": code,
+                "intermediate": intermediate,
+                "true_val": true_val,
+                "pred_int": pred_int,
+                "outputs": req_outputs,
+                "correct": pred_int == true_val,
+            })
+            if pred_int == true_val:
+                correct += 1
+        # Skip finalizing this model if it ran out of memory
+        if skip_model:
+            continue
+        acc = correct / num_seqs
+        results.append((model_id, acc))
+        print(f"Model {model_id} accuracy: {acc:.2%} ({correct}/{num_seqs})")
+        # Save detailed data for this model
+        detailed_path = results_dir / f"{model_id.replace('/', '_')}_data.json"
+        with detailed_path.open("w") as f:
+            json.dump(all_data, f, indent=2)
+        # Append this model's accuracy to the summary CSV
+        with csv_path.open("a", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([model_id, f"{acc:.6f}"])
+        del llm
+        # Free up memory between models
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
+    print("\nAll model runs appended to summary CSV.")
+
+
+if __name__ == "__main__":
+    main()
