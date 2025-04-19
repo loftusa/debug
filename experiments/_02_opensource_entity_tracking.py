@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List, Tuple, Optional, Dict
 
 import click
-from transformers import pipeline
+from transformers import pipeline, AutoTokenizer
 from debug.sequence_generation import make_sequence
 import csv
 import json
@@ -102,7 +102,8 @@ def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
         all_data = []
         print(f"\nLoading model: {model_id}")
         try:
-            llm = pipeline("text-generation", model=model_id, temperature=0.8, trust_remote_code=True)
+            tok = AutoTokenizer.from_pretrained(model_id)
+            llm = pipeline("text-generation", model=model_id, tokenizer=tok, temperature=0.8, trust_remote_code=True)
         except (RuntimeError, MemoryError) as e:
             print(f"Skipping model {model_id} due to load memory error: {e}")
             continue

@@ -686,6 +686,7 @@ dependencies = [
     { name = "accelerate" },
     { name = "click" },
     { name = "datasets" },
+    { name = "deepseek-tokenizer" },
     { name = "fastai" },
     { name = "gradio" },
     { name = "huggingface-hub", extra = ["cli"] },
@@ -699,6 +700,7 @@ dependencies = [
     { name = "numpy" },
     { name = "ruff" },
     { name = "seaborn" },
+    { name = "sentencepiece" },
     { name = "torch" },
     { name = "torchtyping" },
     { name = "transformers" },
@@ -715,6 +717,7 @@ requires-dist = [
     { name = "accelerate", specifier = ">=1.6.0" },
     { name = "click", specifier = ">=8.1.8" },
     { name = "datasets", specifier = ">=3.5.0" },
+    { name = "deepseek-tokenizer", specifier = ">=0.1.3" },
     { name = "fastai", specifier = ">=2.7.19" },
     { name = "gradio", specifier = ">=5.25.2" },
     { name = "huggingface-hub", extras = ["cli"], specifier = ">=0.30.2" },
@@ -728,6 +731,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.2.4" },
     { name = "ruff", specifier = ">=0.11.5" },
     { name = "seaborn", specifier = ">=0.13.2" },
+    { name = "sentencepiece", specifier = ">=0.2.0" },
     { name = "torch", specifier = ">=2.6.0" },
     { name = "torchtyping", specifier = ">=0.1.5" },
     { name = "transformers", specifier = ">=4.51.3" },
@@ -761,6 +765,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz", hash = "sha256:65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360", size = 56711 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4e/8c/f3147f5c4b73e7550fe5f9352eaa956ae838d5c51eb58e7a25b9f3e2643b/decorator-5.2.1-py3-none-any.whl", hash = "sha256:d316bb415a2d9e2d2b3abcc4084c6502fc09240e292cd76a76afc106a1c8e04a", size = 9190 },
+]
+
+[[package]]
+name = "deepseek-tokenizer"
+version = "0.1.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "tokenizers" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0a/23/2603b475d4fcf57cee5e7d70341533706860abd44f7fa506f4b052c36ed4/deepseek_tokenizer-0.1.3.tar.gz", hash = "sha256:7fb2c1ea41412af14bbe38ec898cfde688996c6cc3a952867216c62048da78c6", size = 1926836 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a1/11/34a47500b5c927cf82db648644455ec0e9d309aa65470efb946d64e324be/deepseek_tokenizer-0.1.3-py3-none-any.whl", hash = "sha256:3117e27d129c06778cde9b9e02d90b6c565994735f899b75a8f9b49f88c980a3", size = 1978914 },
 ]
 
 [[package]]
