@@ -16,8 +16,8 @@ print('imports loaded')
 PROMPT_TEMPLATE = (
     "You are given a short Python program. "
     "Your task is to compute the final value of the variable x. "
-    "Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n\n"  # noqa: E501
-    "```python\n{code}\n```"
+    "Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n" 
+    "```python\n{code}\n```\n"
     "The final value of x is: "
 )
 
@@ -31,12 +31,13 @@ DEFAULT_MODELS: List[str] = [
     "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
     "NTQAI/Nxcode-CQ-7B-orpo",
     "Qwen/CodeQwen1.5-7B-Chat",
+    "Qwen/Qwen2.5-Coder-7B-Instruct",
     "google/gemma-2-9b-it",
     "Qwen/Qwen2.5-14B-Instruct",
-    "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
     "Qwen/Qwen2.5-Coder-14B-Instruct",
     "Qwen/Qwen2.5-14B",
+    # "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
 ]
 
 
@@ -103,7 +104,7 @@ def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
         print(f"\nLoading model: {model_id}")
         try:
             tok = AutoTokenizer.from_pretrained(model_id)
-            llm = pipeline("text-generation", model=model_id, tokenizer=tok, temperature=0.8, trust_remote_code=True)
+            llm = pipeline("text-generation", model=model_id, tokenizer=tok, temperature=0.8, trust_remote_code=True, device_map="auto", torch_dtype=torch.float16)
         except (RuntimeError, MemoryError) as e:
             print(f"Skipping model {model_id} due to load memory error: {e}")
             continue
@@ -156,13 +157,13 @@ def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
         with csv_path.open("a", newline="") as f:
             writer = csv.writer(f)
             writer.writerow([model_id, f"{acc:.6f}"])
+            print(f"Model {model_id} appended to results summary. Accuracy: {acc:.2%} ({correct}/{num_seqs})")
         del llm
         # Free up memory between models
         gc.collect()
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-    print("\nAll model runs appended to summary CSV.")
 
 
 if __name__ == "__main__":
