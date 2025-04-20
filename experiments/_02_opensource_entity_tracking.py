@@ -45,7 +45,7 @@ def _parse_int(text: str) -> Optional[int]:
     """Extract the integer following 'the final value of x is: ' (case-insensitive, commas ignored), or the first integer otherwise."""
     cleaned = text.replace(",", "")
     # Try to find integer after the explicit phrase
-    phrase_match = re.search(r"the final value of x is:\s*(-?\d+)", cleaned, flags=re.IGNORECASE)
+    phrase_match = re.search(r"is:\s*(-?\d+)", cleaned, flags=re.IGNORECASE)
     if phrase_match:
         return int(phrase_match.group(1))
     # Fallback: first integer anywhere
@@ -69,24 +69,31 @@ def _best_of_k(outputs: List[Dict[str, str]], true_val: int) -> Optional[int]:
 
 
 @click.command()
-@click.option("--num-seqs", "num_seqs", default=10, help="Number of sequences per model.")
-@click.option("--max-len", default=12, help="Maximum length (steps) of each sequence.")
+@click.option("--num-seqs", "num_seqs", default=124, help="Number of sequences per model.")
+@click.option("--seq_len", default=10, help="Maximum length (steps) of each sequence.")
 @click.option("--best-of", "best_of", default=10, help="Number of parallel samples per prompt.")
-def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
+def main(num_seqs: int, seq_len: int, best_of: int) -> None:  # noqa: D401
     """Evaluate multiple open‑source models on the variable‑tracking task."""
     results: List[Tuple[str, float]] = []
-    results_dir = Path("results")
+    results_dir = Path("results") / f"len_{seq_len}"
     results_dir.mkdir(parents=True, exist_ok=True)
     csv_path = results_dir / "results_summary.csv"
-    # Read existing results to skip already evaluated models
-    processed_models = set()
+    # Track models already evaluated *for this specific sequence length* so that
+    # repeated runs with the same length skip completed models while allowing
+    # the same model to be re‑evaluated for different lengths.
+    processed_models: set[tuple[str, int]] = set()
     if csv_path.exists():
         with csv_path.open("r", newline="") as f:
             reader = csv.reader(f)
             next(reader, None)  # skip header
             for row in reader:
                 if row:
-                    processed_models.add(row[0])
+                    # row format: model_id, seq_len, accuracy
+                    # Guard against legacy two‑column format.
+                    if len(row) >= 2:
+                        processed_models.add((row[0], int(row[1])))
+                    else:
+                        processed_models.add((row[0], seq_len))
         csv_mode = "a"
     else:
         csv_mode = "w"
@@ -94,9 +101,9 @@ def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
     with csv_path.open(csv_mode, newline="") as f:
         writer = csv.writer(f)
         if csv_mode == "w":
-            writer.writerow(["model_id", "accuracy"])
+            writer.writerow(["model_id", "seq_len", "accuracy"])
     for model_id in DEFAULT_MODELS:
-        if model_id in processed_models:
+        if (model_id, seq_len) in processed_models:
             print(f"Skipping model {model_id} as it's already evaluated.")
             continue
         skip_model = False
@@ -110,7 +117,6 @@ def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
             continue
         correct = 0
         for _ in range(num_seqs):
-            seq_len = random.randint(3, max_len)
             code, intermediate = make_sequence(seq_len)
             true_val = intermediate[-1]
             prompt = PROMPT_TEMPLATE.format(code=code)
@@ -156,7 +162,7 @@ def main(num_seqs: int, max_len: int, best_of: int) -> None:  # noqa: D401
         # Append this model's accuracy to the summary CSV
         with csv_path.open("a", newline="") as f:
             writer = csv.writer(f)
-            writer.writerow([model_id, f"{acc:.6f}"])
+            writer.writerow([model_id, seq_len, f"{acc:.6f}"])
             print(f"Model {model_id} appended to results summary. Accuracy: {acc:.2%} ({correct}/{num_seqs})")
         del llm
         # Free up memory between models
