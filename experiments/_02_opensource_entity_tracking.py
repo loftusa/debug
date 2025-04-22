@@ -1,4 +1,3 @@
-import random
 import re
 from pathlib import Path
 from typing import List, Tuple, Optional, Dict
@@ -13,6 +12,7 @@ import torch
 
 print('imports loaded')
 
+
 PROMPT_TEMPLATE = (
     "You are given a short Python program. "
     "Your task is to compute the final value of the variable x. "
@@ -20,25 +20,6 @@ PROMPT_TEMPLATE = (
     "```python\n{code}\n```\n"
     "The final value of x is: "
 )
-
-DEFAULT_MODELS: List[str] = [
-    "openai-community/gpt2",
-    "deepseek-ai/deepseek-coder-1.3b-instruct",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-    "tiiuae/Falcon3-7B-Instruct",
-    "Qwen/Qwen2.5-7B-Instruct",
-    "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
-    "NTQAI/Nxcode-CQ-7B-orpo",
-    "Qwen/CodeQwen1.5-7B-Chat",
-    "Qwen/Qwen2.5-Coder-7B-Instruct",
-    "google/gemma-2-9b-it",
-    "Qwen/Qwen2.5-14B-Instruct",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
-    "Qwen/Qwen2.5-Coder-14B-Instruct",
-    "Qwen/Qwen2.5-14B",
-    # "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
-]
 
 
 def _parse_int(text: str) -> Optional[int]:
@@ -69,107 +50,122 @@ def _best_of_k(outputs: List[Dict[str, str]], true_val: int) -> Optional[int]:
 
 
 @click.command()
+@click.option("--model-id", required=True, help="Hugging Face model ID to evaluate.")
+@click.option("--gpu-id", required=True, type=int, help="GPU device ID to run the model on.")
 @click.option("--num-seqs", "num_seqs", default=124, help="Number of sequences per model.")
 @click.option("--seq_len", default=10, help="Maximum length (steps) of each sequence.")
 @click.option("--best-of", "best_of", default=10, help="Number of parallel samples per prompt.")
-def main(num_seqs: int, seq_len: int, best_of: int) -> None:  # noqa: D401
-    """Evaluate multiple open‑source models on the variable‑tracking task."""
-    results: List[Tuple[str, float]] = []
-    results_dir = Path("results") / f"len_{seq_len}"
+def main(model_id: str, gpu_id: int, num_seqs: int, seq_len: int, best_of: int) -> None:  # noqa: D401
+    """Evaluate a single open‑source model on the variable‑tracking task on a specific GPU."""
+    results_dir = Path("results") / f"seq_len_{seq_len}"
     results_dir.mkdir(parents=True, exist_ok=True)
     csv_path = results_dir / "results_summary.csv"
-    # Track models already evaluated *for this specific sequence length* so that
-    # repeated runs with the same length skip completed models while allowing
-    # the same model to be re‑evaluated for different lengths.
-    processed_models: set[tuple[str, int]] = set()
-    if csv_path.exists():
-        with csv_path.open("r", newline="") as f:
-            reader = csv.reader(f)
-            next(reader, None)  # skip header
-            for row in reader:
-                if row:
-                    # row format: model_id, seq_len, accuracy
-                    # Guard against legacy two‑column format.
-                    if len(row) >= 2:
-                        processed_models.add((row[0], int(row[1])))
-                    else:
-                        processed_models.add((row[0], seq_len))
-        csv_mode = "a"
-    else:
-        csv_mode = "w"
-    # Initialize summary CSV with header if creating new file
-    with csv_path.open(csv_mode, newline="") as f:
-        writer = csv.writer(f)
-        if csv_mode == "w":
+    detailed_path = results_dir / f"{model_id.replace('/', '_')}_data.json"
+
+    # Check if this specific model/seq_len has already been run by checking detailed file
+    if detailed_path.exists():
+        print(f"Skipping model {model_id} for seq_len {seq_len} as detailed results file already exists: {detailed_path}")
+        return
+
+    # Initialize summary CSV with header if it doesn't exist
+    if not csv_path.exists():
+        with csv_path.open("w", newline="") as f:
+            writer = csv.writer(f)
             writer.writerow(["model_id", "seq_len", "accuracy"])
-    for model_id in DEFAULT_MODELS:
-        if (model_id, seq_len) in processed_models:
-            print(f"Skipping model {model_id} as it's already evaluated.")
-            continue
-        skip_model = False
-        all_data = []
-        print(f"\nLoading model: {model_id}")
+
+    # --- Run evaluation for the single specified model ---
+    all_data = []
+    print(f"\nLoading model: {model_id} onto GPU: {gpu_id}")
+    device = f"cuda:{gpu_id}" if torch.cuda.is_available() else "cpu"
+    if device == "cpu":
+        print("Warning: CUDA not available, running on CPU.")
+
+    try:
+        tok = AutoTokenizer.from_pretrained(model_id)
+        llm = pipeline(
+            "text-generation",
+            model=model_id,
+            tokenizer=tok,
+            temperature=0.8,
+            trust_remote_code=True,
+            device=device, # Assign to specific GPU
+            torch_dtype=torch.float16 if torch.cuda.is_available() and torch.cuda.get_device_capability(gpu_id)[0] >= 7 else torch.float32 # Use float16 if Ampere+
+        )
+    except Exception as e: # Catch broader exceptions during loading
+        print(f"ERROR: Failed to load model {model_id} on GPU {gpu_id}: {e}")
+        # Optionally write a failure entry? Or just let it skip.
+        return # Exit if model loading fails
+
+    correct = 0
+    skip_model = False
+    for i in range(num_seqs):
+        code, intermediate = make_sequence(seq_len)
+        true_val = intermediate[-1]
+        prompt = PROMPT_TEMPLATE.format(code=code)
+
         try:
-            tok = AutoTokenizer.from_pretrained(model_id)
-            llm = pipeline("text-generation", model=model_id, tokenizer=tok, temperature=0.8, trust_remote_code=True, device_map="auto", torch_dtype=torch.float16)
+            req_outputs = llm(
+                prompt,
+                num_return_sequences=best_of,
+                max_new_tokens=10,
+                do_sample=True,
+                pad_token_id=tok.eos_token_id # Set pad_token_id
+            )
         except (RuntimeError, MemoryError) as e:
-            print(f"Skipping model {model_id} due to load memory error: {e}")
-            continue
-        correct = 0
-        for _ in range(num_seqs):
-            code, intermediate = make_sequence(seq_len)
-            true_val = intermediate[-1]
-            prompt = PROMPT_TEMPLATE.format(code=code)
+            print(f"ERROR: OOM or Runtime error during inference for {model_id} on GPU {gpu_id}: {e}. Skipping remaining sequences for this model.")
+            skip_model = True
+            break # Stop processing sequences for this model
+        except Exception as e:
+            print(f"ERROR: Unexpected error during inference for {model_id} on GPU {gpu_id}: {e}. Skipping remaining sequences for this model.")
+            skip_model = True
+            break # Stop processing sequences for this model
 
-            # Call the pipeline, requesting multiple sequences for best-of-k
-            try:
-                req_outputs = llm(
-                    prompt,
-                    num_return_sequences=best_of, # Use the best_of parameter
-                    max_new_tokens=10,           # Limit output length for efficiency
-                    do_sample=True,             
-                                             # Set do_sample=True if using temperature > 0
-                )
-            except (RuntimeError, MemoryError) as e:
-                print(f"Memory error during inference for {model_id}: {e}. Skipping model.")
-                skip_model = True
-                break
 
-            print(req_outputs, '\n\n') # Keep for debugging if needed
-            
-            # Parse the best prediction from the multiple outputs
-            pred_int = _best_of_k(req_outputs, true_val)
-            all_data.append({
-                "code": code,
-                "intermediate": intermediate,
-                "true_val": true_val,
-                "pred_int": pred_int,
-                "outputs": req_outputs,
-                "correct": pred_int == true_val,
-            })
-            if pred_int == true_val:
-                correct += 1
-        # Skip finalizing this model if it ran out of memory
-        if skip_model:
-            continue
-        acc = correct / num_seqs
-        results.append((model_id, acc))
-        print(f"Model {model_id} accuracy: {acc:.2%} ({correct}/{num_seqs})")
-        # Save detailed data for this model
-        detailed_path = results_dir / f"{model_id.replace('/', '_')}_data.json"
+        # Parse the best prediction from the multiple outputs
+        pred_int = _best_of_k(req_outputs, true_val)
+        all_data.append({
+            "code": code,
+            "intermediate": intermediate,
+            "true_val": true_val,
+            "pred_int": pred_int,
+            "outputs": [o['generated_text'] for o in req_outputs], # Store only text
+            "correct": pred_int == true_val,
+        })
+        if pred_int == true_val:
+            correct += 1
+
+        # Minimal logging per sequence
+        print(f"Model: {model_id}, Seq: {i+1}/{num_seqs}, Correct: {pred_int == true_val} (Pred: {pred_int}, True: {true_val})")
+
+    # --- Finalize results for this model ---
+    if not all_data: # Handle case where inference failed on first sequence
+        print(f"WARNING: No sequences were successfully processed for model {model_id} on GPU {gpu_id}.")
+
+    else:
+        # Calculate accuracy based on processed sequences
+        processed_count = len(all_data)
+        acc = correct / processed_count if processed_count > 0 else 0.0
+
+        print(f"Finished model {model_id} on GPU {gpu_id}. Accuracy: {acc:.2%} ({correct}/{processed_count})")
+
+        # Save detailed data
         with detailed_path.open("w") as f:
             json.dump(all_data, f, indent=2)
-        # Append this model's accuracy to the summary CSV
+        print(f"Detailed results saved to {detailed_path}")
+
+        # Append accuracy to the summary CSV
         with csv_path.open("a", newline="") as f:
             writer = csv.writer(f)
             writer.writerow([model_id, seq_len, f"{acc:.6f}"])
-            print(f"Model {model_id} appended to results summary. Accuracy: {acc:.2%} ({correct}/{num_seqs})")
-        del llm
-        # Free up memory between models
-        gc.collect()
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()
+        print(f"Appended summary to {csv_path}")
 
+    # --- Cleanup ---
+    print(f"Cleaning up resources for model {model_id} on GPU {gpu_id}")
+    del llm
+    del tok
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
 
 if __name__ == "__main__":

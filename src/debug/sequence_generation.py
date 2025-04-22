@@ -9,21 +9,17 @@ GROUPS = {
     "div": ("//= v", lambda x, v: x // v),
     "mod": ("%= v", lambda x, v: x % v),
     "pow": ("**= v", lambda x, v: x**v),
-    "abs": ("= int(np.abs(x - v))", lambda x, v: int(np.abs(x - v))),
-    "sqrt": ("= int(np.sqrt(x))", lambda x, v: int(np.sqrt(x))),
+    "abs": ("= abs(x - v)", lambda x, v: abs(x - v)),
 }
 
 OP_TO_GROUP = {
     "add": "additive",
     "sub": "additive",
-    "idx+": "additive",
-    "idx-": "additive",
     "mul": "multiplicative",
     "div": "multiplicative",
     "mod": "modular",
     "pow": "exponential",
     "abs": "absdiff",
-    "sqrt": "sqrt"
 } 
 
 
@@ -33,6 +29,9 @@ def make_sequence(
     """
     - Ensures no two adjacent (or within window_distinct) ops are from the same group.
     - Uses only primitives that can't be collapsed across lines.
+
+    TODO: 
+      - could just be + and *, numbers from -5 to 5, randomly drawn, maybe include *0
     """
     min_v, max_v = max(1, num_range[0]), max(1, num_range[1])
 
