@@ -1,0 +1,5 @@
+model_id,seq_len,accuracy
+openai-community/gpt2,8,0.217742
+deepseek-ai/deepseek-coder-1.3b-instruct,8,0.338710
+deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B,8,0.217742
+deepseek-ai/DeepSeek-R1-Distill-Qwen-7B,8,0.338710

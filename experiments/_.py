@@ -2,7 +2,7 @@
 from debug.sequence_generation import make_sequence
 import sys
 
-code, intermediate = make_sequence(10)
+code, intermediate = make_sequence(5)
 PROMPT_TEMPLATE = (
     "You are given a short Python program. "
     "Your task is to compute the final value of the variable x. "
@@ -11,7 +11,21 @@ PROMPT_TEMPLATE = (
     "The final value of x is: "
 )
 
-print(code, "\n\n", intermediate, "\n\n", PROMPT_TEMPLATE.format(code=code))
+# print(code, "\n\n", intermediate, "\n\n", PROMPT_TEMPLATE.format(code=code))
+print(PROMPT_TEMPLATE.format(code=code))
+
+
 
 
 # %%
+import numpy as np
+print(np.array(intermediate))
+
+x = 0
+x = int(np.abs(x - 3))
+x //= 1
+x += 1
+x = int(np.abs(x - 3))
+x //= 2
+
+print(x)

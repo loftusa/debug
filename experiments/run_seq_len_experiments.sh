@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 # Loop seq_len from 2 to 16
 for seq_len in {2..16}; do
   echo "=== Running seq_len=${seq_len} ==="
-  uv run accelerate launch --num_processes 1 experiments/_02_opensource_entity_tracking.py --seq_len "${seq_len}"
+  uv run accelerate launch --num_processes 1 _02_opensource_entity_tracking.py --seq_len "${seq_len}"
 done
 
 # Finally, build the visualization
