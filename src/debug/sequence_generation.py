@@ -22,8 +22,45 @@ OP_TO_GROUP = {
     "abs": "absdiff",
 } 
 
+def make_sequence(n: int, num_range: Tuple[int, int] = (0, 10), window_distinct: int = 2, kind='groups') -> Tuple[str, List[int]]:
+    if kind == 'groups':
+        return make_sequence_groups(n, num_range, window_distinct)
+    elif kind == 'ops':
+        return make_sequence_ops(n, num_range, window_distinct)
+    
+    else: 
+        raise NotImplementedError(f"Kind {kind} not implemented")
 
-def make_sequence(
+
+def make_sequence_ops(
+    n: int, num_range: Tuple[int, int] = (0, 10), window_distinct: int = 2
+) -> Tuple[str, List[int]]:
+    """
+    Simple sequence of abs, add, and sub.
+    """
+    min_v, max_v = max(1, num_range[0]), max(1, num_range[1])
+    ops = ['abs', 'add', 'sub']
+    expressions = ["x = 0"]
+    intermediate: List[int] = []
+    x_val = 0
+    for i in range(n):
+        op = np.random.choice(ops)
+        v = np.random.randint(min_v, max_v)
+        if op == 'abs':
+            x_val = abs(x_val - v)
+        elif op == 'add':
+            x_val += v
+        elif op == 'sub':
+            x_val -= v
+        template, _ = GROUPS[op]
+        expr = template.replace("v", str(v))
+        expressions.append(f"x {expr}")
+        intermediate.append(x_val)
+    
+    return "\n".join(expressions), intermediate
+
+
+def make_sequence_groups(
     n: int, num_range: Tuple[int, int] = (0, 10), window_distinct: int = 2
 ) -> Tuple[str, List[int]]:
     """

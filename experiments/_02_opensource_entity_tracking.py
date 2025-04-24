@@ -23,6 +23,9 @@ PROMPT_TEMPLATE = (
 
 
 DEFAULT_MODELS: List[str] = [
+    "google/gemma-3-4b-it",
+    "google/gemma-3-1b-it",
+    "google/gemma-3-12b-it",
     # "openai-community/gpt2",
     # "deepseek-ai/deepseek-coder-1.3b-instruct",
     # "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
@@ -34,6 +37,7 @@ DEFAULT_MODELS: List[str] = [
     # "Qwen/CodeQwen1.5-7B-Chat",
     # "Qwen/Qwen2.5-Coder-7B-Instruct",
     "google/gemma-2-9b-it",
+    "google/gemma-3-27b-it",
     # "Qwen/Qwen2.5-14B-Instruct",
     # "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
     # "Qwen/Qwen2.5-Coder-14B-Instruct",
@@ -75,12 +79,15 @@ def _best_of_k(outputs: List[Dict[str, str]], true_val: int) -> Optional[int]:
 @click.option("--num-seqs", "num_seqs", default=124, help="Number of sequences per model.")
 @click.option("--seq_len", default=10, help="Maximum length (steps) of each sequence.")
 @click.option("--best-of", "best_of", default=10, help="Number of parallel samples per prompt.")
-def main(num_seqs: int, seq_len: int, best_of: int) -> None:  # noqa: D401
+@click.option("--kind", "kind", default='groups', help="Kind of sequence to generate.")
+def main(num_seqs: int, seq_len: int, best_of: int, kind: str) -> None:  # noqa: D401
     """Evaluate multiple open‑source models on the variable‑tracking task."""
     results: List[Tuple[str, float]] = []
     results_dir = Path("results") / f"seq_len_{seq_len}"
     results_dir.mkdir(parents=True, exist_ok=True)
     csv_path = results_dir / "results_summary.csv"
+    if kind == 'ops':
+        csv_path = results_dir / "results_summary_ops.csv"
     # Read existing results to skip already evaluated models
     processed_models = set()
     if csv_path.exists():
@@ -113,7 +120,7 @@ def main(num_seqs: int, seq_len: int, best_of: int) -> None:  # noqa: D401
             continue
         correct = 0
         for _ in range(num_seqs):
-            code, intermediate = make_sequence(seq_len)
+            code, intermediate = make_sequence(seq_len, kind=kind)
             true_val = intermediate[-1]
             prompt = PROMPT_TEMPLATE.format(code=code)
 
