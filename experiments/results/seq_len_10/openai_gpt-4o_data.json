@@ -1,0 +1,1252 @@
+[
+  {
+    "code": "x = 0\nx = abs(x - 6)\nx //= 5\nx %= 2\nx **= 2\nx += 7\nx = abs(x - 9)\nx -= 9\nx = abs(x - 7)\nx //= 6\nx -= 2",
+    "intermediate": [
+      6,
+      1,
+      1,
+      1,
+      8,
+      1,
+      -8,
+      15,
+      2,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 1\nx **= 2\nx *= 2\nx += 1\nx **= 2\nx //= 6\nx -= 8\nx **= 2\nx //= 5\nx %= 2",
+    "intermediate": [
+      -1,
+      1,
+      2,
+      3,
+      9,
+      1,
+      -7,
+      49,
+      9,
+      1
+    ],
+    "true_val": 1,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 4\nx = abs(x - 3)\nx *= 2\nx **= 2\nx = abs(x - 2)\nx *= 1\nx -= 5\nx //= 7\nx = abs(x - 1)\nx -= 9",
+    "intermediate": [
+      -4,
+      7,
+      14,
+      196,
+      194,
+      194,
+      189,
+      27,
+      26,
+      17
+    ],
+    "true_val": 17,
+    "pred_int": 9,
+    "outputs": [
+      {
+        "generated_text": "9",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx *= 2\nx = abs(x - 1)\nx += 1\nx *= 1\nx += 1\nx **= 2\nx *= 1\nx -= 6\nx %= 8\nx += 7",
+    "intermediate": [
+      0,
+      1,
+      2,
+      2,
+      3,
+      9,
+      9,
+      3,
+      3,
+      10
+    ],
+    "true_val": 10,
+    "pred_int": 3,
+    "outputs": [
+      {
+        "generated_text": "3",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx %= 2\nx **= 2\nx %= 3\nx += 5\nx = abs(x - 3)\nx **= 2\nx *= 2\nx %= 5\nx //= 6\nx %= 8",
+    "intermediate": [
+      0,
+      0,
+      0,
+      5,
+      2,
+      4,
+      8,
+      3,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx *= 2\nx += 7\nx *= 1\nx = abs(x - 5)\nx += 2\nx %= 4\nx **= 2\nx += 2\nx = abs(x - 6)\nx //= 8",
+    "intermediate": [
+      0,
+      7,
+      7,
+      2,
+      4,
+      0,
+      0,
+      2,
+      4,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx %= 3\nx += 1\nx //= 6\nx = abs(x - 1)\nx //= 7\nx += 4\nx = abs(x - 4)\nx %= 8\nx -= 8\nx = abs(x - 1)",
+    "intermediate": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      4,
+      0,
+      0,
+      -8,
+      9
+    ],
+    "true_val": 9,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 7\nx //= 4\nx += 4\nx = abs(x - 3)\nx //= 7\nx += 5\nx **= 2\nx = abs(x - 8)\nx *= 2\nx **= 2",
+    "intermediate": [
+      -7,
+      -2,
+      2,
+      1,
+      0,
+      5,
+      25,
+      17,
+      34,
+      1156
+    ],
+    "true_val": 1156,
+    "pred_int": 256,
+    "outputs": [
+      {
+        "generated_text": "256",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx *= 2\nx = abs(x - 2)\nx -= 5\nx //= 9\nx -= 9\nx %= 7\nx **= 2\nx %= 1\nx //= 8\nx = abs(x - 1)",
+    "intermediate": [
+      0,
+      2,
+      -3,
+      -1,
+      -10,
+      4,
+      16,
+      0,
+      0,
+      1
+    ],
+    "true_val": 1,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "1",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx %= 8\nx //= 3\nx **= 2\nx //= 2\nx %= 2\nx -= 6\nx = abs(x - 5)\nx **= 2\nx = abs(x - 1)\nx += 5",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      -6,
+      11,
+      121,
+      120,
+      125
+    ],
+    "true_val": 125,
+    "pred_int": 25,
+    "outputs": [
+      {
+        "generated_text": "25",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 9\nx %= 1\nx *= 2\nx = abs(x - 3)\nx //= 1\nx **= 2\nx -= 1\nx //= 9\nx = abs(x - 4)\nx *= 1",
+    "intermediate": [
+      -9,
+      0,
+      0,
+      3,
+      3,
+      9,
+      8,
+      0,
+      4,
+      4
+    ],
+    "true_val": 4,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 7\nx *= 1\nx -= 2\nx = abs(x - 4)\nx **= 2\nx //= 4\nx += 7\nx //= 8\nx += 2\nx **= 2",
+    "intermediate": [
+      -7,
+      -7,
+      -9,
+      13,
+      169,
+      42,
+      49,
+      6,
+      8,
+      64
+    ],
+    "true_val": 64,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 4\nx = abs(x - 1)\nx **= 2\nx *= 2\nx %= 8\nx //= 9\nx **= 2\nx //= 5\nx = abs(x - 4)\nx += 2",
+    "intermediate": [
+      4,
+      3,
+      9,
+      18,
+      2,
+      0,
+      0,
+      0,
+      4,
+      6
+    ],
+    "true_val": 6,
+    "pred_int": 2,
+    "outputs": [
+      {
+        "generated_text": "2",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx //= 5\nx **= 2\nx *= 1\nx %= 7\nx //= 3\nx %= 2\nx = abs(x - 8)\nx *= 1\nx %= 5\nx += 2",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      8,
+      3,
+      5
+    ],
+    "true_val": 5,
+    "pred_int": 2,
+    "outputs": [
+      {
+        "generated_text": "2",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx **= 2\nx *= 2\nx = abs(x - 9)\nx -= 3\nx %= 9\nx **= 2\nx += 8\nx = abs(x - 2)\nx %= 3\nx -= 9",
+    "intermediate": [
+      0,
+      0,
+      9,
+      6,
+      6,
+      36,
+      44,
+      42,
+      0,
+      -9
+    ],
+    "true_val": -9,
+    "pred_int": -8,
+    "outputs": [
+      {
+        "generated_text": "-8",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx **= 2\nx -= 8\nx **= 2\nx -= 4\nx %= 9\nx = abs(x - 3)\nx **= 2\nx %= 3\nx -= 8\nx **= 2",
+    "intermediate": [
+      0,
+      -8,
+      64,
+      60,
+      6,
+      3,
+      9,
+      0,
+      -8,
+      64
+    ],
+    "true_val": 64,
+    "pred_int": 64,
+    "outputs": [
+      {
+        "generated_text": "64",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx = abs(x - 7)\nx *= 2\nx %= 4\nx //= 8\nx += 6\nx *= 2\nx %= 5\nx += 9\nx //= 3\nx += 1",
+    "intermediate": [
+      7,
+      14,
+      2,
+      0,
+      6,
+      12,
+      2,
+      11,
+      3,
+      4
+    ],
+    "true_val": 4,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx **= 2\nx //= 3\nx **= 2\nx %= 7\nx += 6\nx %= 5\nx += 1\nx %= 3\nx **= 2\nx += 2",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      6,
+      1,
+      2,
+      2,
+      4,
+      6
+    ],
+    "true_val": 6,
+    "pred_int": 3,
+    "outputs": [
+      {
+        "generated_text": "3",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 1\nx %= 2\nx **= 2\nx = abs(x - 3)\nx %= 9\nx = abs(x - 6)\nx //= 8\nx = abs(x - 8)\nx **= 2\nx //= 1",
+    "intermediate": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      4,
+      0,
+      8,
+      64,
+      64
+    ],
+    "true_val": 64,
+    "pred_int": 49,
+    "outputs": [
+      {
+        "generated_text": "49",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 9\nx = abs(x - 4)\nx += 8\nx = abs(x - 7)\nx += 4\nx %= 6\nx **= 2\nx //= 6\nx += 5\nx %= 7",
+    "intermediate": [
+      -9,
+      13,
+      21,
+      14,
+      18,
+      0,
+      0,
+      0,
+      5,
+      5
+    ],
+    "true_val": 5,
+    "pred_int": 5,
+    "outputs": [
+      {
+        "generated_text": "5",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx %= 1\nx += 5\nx = abs(x - 8)\nx **= 2\nx %= 5\nx = abs(x - 1)\nx -= 3\nx *= 1\nx %= 7\nx //= 6",
+    "intermediate": [
+      0,
+      5,
+      3,
+      9,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx **= 2\nx *= 2\nx = abs(x - 5)\nx -= 3\nx %= 9\nx -= 3\nx %= 1\nx //= 2\nx %= 1\nx += 2",
+    "intermediate": [
+      0,
+      0,
+      5,
+      2,
+      2,
+      -1,
+      0,
+      0,
+      0,
+      2
+    ],
+    "true_val": 2,
+    "pred_int": 2,
+    "outputs": [
+      {
+        "generated_text": "2",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx *= 1\nx **= 2\nx %= 8\nx *= 1\nx **= 2\nx += 8\nx //= 8\nx %= 6\nx += 6\nx = abs(x - 4)",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      1,
+      1,
+      7,
+      3
+    ],
+    "true_val": 3,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 6\nx //= 2\nx %= 3\nx //= 9\nx %= 1\nx **= 2\nx //= 7\nx **= 2\nx *= 1\nx -= 3",
+    "intermediate": [
+      6,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -3
+    ],
+    "true_val": -3,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 7\nx **= 2\nx = abs(x - 2)\nx //= 5\nx = abs(x - 5)\nx += 1\nx **= 2\nx //= 1\nx = abs(x - 7)\nx *= 1",
+    "intermediate": [
+      -7,
+      49,
+      47,
+      9,
+      4,
+      5,
+      25,
+      25,
+      18,
+      18
+    ],
+    "true_val": 18,
+    "pred_int": 19,
+    "outputs": [
+      {
+        "generated_text": "19",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 4\nx *= 2\nx **= 2\nx *= 1\nx %= 5\nx -= 1\nx //= 3\nx %= 7\nx //= 4\nx **= 2",
+    "intermediate": [
+      -4,
+      -8,
+      64,
+      64,
+      4,
+      3,
+      1,
+      1,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx %= 3\nx -= 8\nx = abs(x - 9)\nx %= 5\nx += 4\nx **= 2\nx += 8\nx **= 2\nx += 2\nx //= 8",
+    "intermediate": [
+      0,
+      -8,
+      17,
+      2,
+      6,
+      36,
+      44,
+      1936,
+      1938,
+      242
+    ],
+    "true_val": 242,
+    "pred_int": 89,
+    "outputs": [
+      {
+        "generated_text": "89",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 3\nx //= 7\nx = abs(x - 9)\nx -= 2\nx %= 9\nx -= 5\nx %= 2\nx *= 1\nx %= 4\nx **= 2",
+    "intermediate": [
+      3,
+      0,
+      9,
+      7,
+      7,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx = abs(x - 4)\nx %= 2\nx *= 3\nx += 8\nx = abs(x - 8)\nx **= 2\nx *= 2\nx %= 1\nx **= 2\nx -= 7",
+    "intermediate": [
+      4,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -7
+    ],
+    "true_val": -7,
+    "pred_int": -7,
+    "outputs": [
+      {
+        "generated_text": "-7",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx %= 4\nx -= 1\nx *= 3\nx += 2\nx //= 8\nx %= 5\nx **= 2\nx -= 2\nx **= 2\nx = abs(x - 3)",
+    "intermediate": [
+      0,
+      -1,
+      -3,
+      -1,
+      -1,
+      4,
+      16,
+      14,
+      196,
+      193
+    ],
+    "true_val": 193,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx = abs(x - 8)\nx %= 1\nx **= 2\nx += 1\nx %= 9\nx **= 2\nx *= 2\nx **= 2\nx -= 4\nx //= 1",
+    "intermediate": [
+      8,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      4,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 5\nx *= 1\nx %= 2\nx **= 2\nx += 1\nx *= 2\nx %= 9\nx = abs(x - 2)\nx //= 4\nx = abs(x - 2)",
+    "intermediate": [
+      5,
+      5,
+      1,
+      1,
+      2,
+      4,
+      4,
+      2,
+      0,
+      2
+    ],
+    "true_val": 2,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "1",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 9\nx %= 8\nx **= 2\nx //= 9\nx **= 2\nx -= 9\nx **= 2\nx %= 2\nx += 3\nx *= 2",
+    "intermediate": [
+      -9,
+      7,
+      49,
+      5,
+      25,
+      16,
+      256,
+      0,
+      3,
+      6
+    ],
+    "true_val": 6,
+    "pred_int": 6,
+    "outputs": [
+      {
+        "generated_text": "6",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 3\nx //= 1\nx = abs(x - 6)\nx %= 3\nx = abs(x - 3)\nx //= 9\nx -= 6\nx *= 1\nx -= 6\nx //= 9",
+    "intermediate": [
+      3,
+      3,
+      3,
+      0,
+      3,
+      0,
+      -6,
+      -6,
+      -12,
+      -2
+    ],
+    "true_val": -2,
+    "pred_int": -2,
+    "outputs": [
+      {
+        "generated_text": "-2",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx //= 1\nx -= 8\nx //= 8\nx += 8\nx //= 5\nx -= 6\nx %= 6\nx *= 2\nx = abs(x - 7)\nx -= 8",
+    "intermediate": [
+      0,
+      -8,
+      -1,
+      7,
+      1,
+      -5,
+      1,
+      2,
+      5,
+      -3
+    ],
+    "true_val": -3,
+    "pred_int": 5,
+    "outputs": [
+      {
+        "generated_text": "5",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 2\nx %= 4\nx //= 9\nx = abs(x - 4)\nx **= 2\nx = abs(x - 9)\nx += 7\nx = abs(x - 6)\nx %= 5\nx **= 2",
+    "intermediate": [
+      2,
+      2,
+      0,
+      4,
+      16,
+      7,
+      14,
+      8,
+      3,
+      9
+    ],
+    "true_val": 9,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "1",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 5\nx *= 2\nx = abs(x - 3)\nx -= 1\nx **= 2\nx = abs(x - 7)\nx += 9\nx //= 5\nx = abs(x - 7)\nx %= 5",
+    "intermediate": [
+      5,
+      10,
+      7,
+      6,
+      36,
+      29,
+      38,
+      7,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "1",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 6\nx = abs(x - 2)\nx **= 2\nx *= 2\nx -= 3\nx **= 2\nx //= 4\nx -= 3\nx %= 5\nx **= 2",
+    "intermediate": [
+      -6,
+      8,
+      64,
+      128,
+      125,
+      15625,
+      3906,
+      3903,
+      3,
+      9
+    ],
+    "true_val": 9,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx = abs(x - 5)\nx **= 2\nx += 4\nx %= 6\nx //= 1\nx **= 2\nx //= 9\nx **= 2\nx += 9\nx %= 9",
+    "intermediate": [
+      5,
+      25,
+      29,
+      5,
+      5,
+      25,
+      2,
+      4,
+      13,
+      4
+    ],
+    "true_val": 4,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 4\nx **= 2\nx += 5\nx = abs(x - 1)\nx += 3\nx //= 6\nx -= 3\nx %= 8\nx += 4\nx %= 1",
+    "intermediate": [
+      -4,
+      16,
+      21,
+      20,
+      23,
+      3,
+      0,
+      0,
+      4,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx *= 2\nx = abs(x - 4)\nx %= 2\nx **= 2\nx %= 6\nx -= 9\nx %= 4\nx **= 2\nx = abs(x - 3)\nx **= 2",
+    "intermediate": [
+      0,
+      4,
+      0,
+      0,
+      0,
+      -9,
+      3,
+      9,
+      6,
+      36
+    ],
+    "true_val": 36,
+    "pred_int": 16,
+    "outputs": [
+      {
+        "generated_text": "16",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx //= 2\nx = abs(x - 5)\nx %= 4\nx += 8\nx %= 6\nx *= 3\nx += 1\nx //= 3\nx += 6\nx *= 2",
+    "intermediate": [
+      0,
+      5,
+      1,
+      9,
+      3,
+      9,
+      10,
+      3,
+      9,
+      18
+    ],
+    "true_val": 18,
+    "pred_int": 14,
+    "outputs": [
+      {
+        "generated_text": "14",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 5\nx **= 2\nx %= 5\nx = abs(x - 9)\nx **= 2\nx %= 9\nx -= 9\nx **= 2\nx += 1\nx //= 4",
+    "intermediate": [
+      5,
+      25,
+      0,
+      9,
+      81,
+      0,
+      -9,
+      81,
+      82,
+      20
+    ],
+    "true_val": 20,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "1",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 6\nx //= 4\nx -= 3\nx %= 1\nx **= 2\nx //= 9\nx **= 2\nx = abs(x - 3)\nx %= 3\nx += 6",
+    "intermediate": [
+      -6,
+      -2,
+      -5,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      6
+    ],
+    "true_val": 6,
+    "pred_int": 6,
+    "outputs": [
+      {
+        "generated_text": "6",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx //= 1\nx **= 2\nx -= 4\nx *= 1\nx %= 9\nx *= 1\nx -= 4\nx = abs(x - 2)\nx -= 5\nx %= 8",
+    "intermediate": [
+      0,
+      0,
+      -4,
+      -4,
+      5,
+      5,
+      1,
+      1,
+      -4,
+      4
+    ],
+    "true_val": 4,
+    "pred_int": 1,
+    "outputs": [
+      {
+        "generated_text": "1",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx = abs(x - 5)\nx //= 4\nx %= 7\nx -= 7\nx = abs(x - 4)\nx += 8\nx //= 8\nx **= 2\nx -= 9\nx **= 2",
+    "intermediate": [
+      5,
+      1,
+      1,
+      -6,
+      10,
+      18,
+      2,
+      4,
+      -5,
+      25
+    ],
+    "true_val": 25,
+    "pred_int": 16,
+    "outputs": [
+      {
+        "generated_text": "16",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx -= 8\nx %= 6\nx -= 3\nx = abs(x - 8)\nx //= 4\nx += 2\nx *= 2\nx -= 2\nx //= 3\nx **= 2",
+    "intermediate": [
+      -8,
+      4,
+      1,
+      7,
+      1,
+      3,
+      6,
+      4,
+      1,
+      1
+    ],
+    "true_val": 1,
+    "pred_int": 4,
+    "outputs": [
+      {
+        "generated_text": "4",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx += 2\nx %= 4\nx += 4\nx //= 8\nx %= 7\nx = abs(x - 6)\nx -= 3\nx **= 2\nx = abs(x - 2)\nx += 3",
+    "intermediate": [
+      2,
+      2,
+      6,
+      0,
+      0,
+      6,
+      3,
+      9,
+      7,
+      10
+    ],
+    "true_val": 10,
+    "pred_int": 2,
+    "outputs": [
+      {
+        "generated_text": "2",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx **= 2\nx *= 1\nx **= 2\nx %= 6\nx = abs(x - 3)\nx += 2\nx %= 7\nx //= 9\nx %= 8\nx *= 1",
+    "intermediate": [
+      0,
+      0,
+      0,
+      0,
+      3,
+      5,
+      5,
+      0,
+      0,
+      0
+    ],
+    "true_val": 0,
+    "pred_int": 0,
+    "outputs": [
+      {
+        "generated_text": "0",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": true,
+    "model_used": "openai/gpt-4o"
+  },
+  {
+    "code": "x = 0\nx = abs(x - 8)\nx += 7\nx *= 2\nx = abs(x - 7)\nx -= 2\nx //= 2\nx -= 9\nx = abs(x - 7)\nx *= 3\nx += 2",
+    "intermediate": [
+      8,
+      15,
+      30,
+      23,
+      21,
+      10,
+      1,
+      6,
+      18,
+      20
+    ],
+    "true_val": 20,
+    "pred_int": 23,
+    "outputs": [
+      {
+        "generated_text": "23",
+        "model_used": "openai/gpt-4o"
+      }
+    ],
+    "correct": false,
+    "model_used": "openai/gpt-4o"
+  }
+]

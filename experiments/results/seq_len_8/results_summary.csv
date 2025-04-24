@@ -3,3 +3,17 @@ openai-community/gpt2,8,0.217742
 deepseek-ai/deepseek-coder-1.3b-instruct,8,0.338710
 deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B,8,0.217742
 deepseek-ai/DeepSeek-R1-Distill-Qwen-7B,8,0.338710
+tiiuae/Falcon3-7B-Instruct,8,0.467742
+Qwen/Qwen2.5-7B-Instruct,8,0.338710
+deepseek-ai/deepseek-coder-7b-instruct-v1.5,8,0.193548
+NTQAI/Nxcode-CQ-7B-orpo,8,0.475806
+Qwen/CodeQwen1.5-7B-Chat,8,0.459677
+Qwen/Qwen2.5-Coder-7B-Instruct,8,0.330645
+google/gemma-2-9b-it,8,0.459677
+Qwen/Qwen2.5-14B-Instruct,8,0.306452
+deepseek-ai/DeepSeek-R1-Distill-Qwen-14B,8,0.370968
+Qwen/Qwen2.5-Coder-14B-Instruct,8,0.427419
+Qwen/Qwen2.5-14B,8,0.548387
+allenai/OLMo-2-1124-7B-Instruct,8,0.193548
+allenai/OLMo-2-1124-13B-Instruct,8,0.370968
+openai/gpt-4o,8,0.380000

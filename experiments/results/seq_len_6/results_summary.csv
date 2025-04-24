@@ -16,3 +16,4 @@ Qwen/Qwen2.5-Coder-14B-Instruct,6,0.419355
 Qwen/Qwen2.5-14B,6,0.491935
 allenai/OLMo-2-1124-7B-Instruct,6,0.250000
 allenai/OLMo-2-1124-13B-Instruct,6,0.338710
+openai/gpt-4o,6,0.560000
