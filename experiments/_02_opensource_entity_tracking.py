@@ -4,7 +4,7 @@ from typing import List, Tuple, Optional, Dict
 
 import click
 from transformers import pipeline, AutoTokenizer
-from debug.sequence_generation import make_sequence
+from debug.sequence_generation import make_counterfactual_pair
 import csv
 import json
 import gc
