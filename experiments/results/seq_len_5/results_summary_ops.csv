@@ -1,0 +1,2 @@
+model_id,seq_len,accuracy
+google/gemma-3-1b-it,5,0.241935

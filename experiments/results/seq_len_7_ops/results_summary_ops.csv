@@ -1,0 +1,5 @@
+model_id,seq_len,accuracy
+google/gemma-3-4b-it,7,0.330645
+google/gemma-3-1b-it,7,0.266129
+google/gemma-3-12b-it,7,0.225806
+google/gemma-2-9b-it,7,0.524194

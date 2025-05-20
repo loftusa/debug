@@ -1,0 +1,6 @@
+{
+  "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+  "correct_test_predictions": 64,
+  "num_test_iterations": 100,
+  "final_accuracy": 64.0
+}
