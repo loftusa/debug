@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 # Check for OpenRouter API key
-export OPENROUTER_API_KEY="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"
+export OPENROUTER_API_KEY="nan"
 
 if [ -z "$OPENROUTER_API_KEY" ]; then
     echo "Error: OPENROUTER_API_KEY environment variable not set"
