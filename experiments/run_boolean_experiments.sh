@@ -13,12 +13,12 @@ echo "Results will be saved in: ${RESULTS_BASE_DIR}"
 # Define the models to test (mirroring DEFAULT_MODELS_ALL from the Python script)
 # Note: If these change in the Python script, they need to be updated here too.
 MODELS_TO_TEST=(
-    "Qwen/Qwen3-32B"
-    "Qwen/Qwen3-14B"
-    "Qwen/Qwen3-8B"
-    "Qwen/Qwen3-4B"
-    "Qwen/Qwen3-1.7B"
     "Qwen/Qwen3-0.6B"
+    "Qwen/Qwen3-1.7B"
+    "Qwen/Qwen3-4B"
+    "Qwen/Qwen3-8B"
+    "Qwen/Qwen3-14B"
+    "Qwen/Qwen3-32B"
 )
 # Convert array to comma-separated string for the Python script's --models argument
 MODEL_IDS_STR=$(IFS=,; echo "${MODELS_TO_TEST[*]}")

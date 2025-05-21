@@ -412,14 +412,15 @@ def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_di
                 "torch_dtype": torch.bfloat16,
             }
             # ... (FlashAttention logic can remain, applied per process)
-            if torch.cuda.is_available():
-                major_capability, _ = torch.cuda.get_device_capability(accelerator.device)
-                if major_capability >= 8: 
-                    if "qwen" in model_id.lower():
-                        pipeline_init_kwargs.setdefault("model_kwargs", {})["attn_implementation"] = "flash_attention_2"
-                        # print(f"[Process {accelerator.process_index}] INFO: Attempting to set 'flash_attention_2' for model {model_id}.")
+            # if torch.cuda.is_available():
+            #     major_capability, _ = torch.cuda.get_device_capability(accelerator.device)
+            #     if major_capability >= 8: 
+            #         if "qwen" in model_id.lower():
+            #             pipeline_init_kwargs.setdefault("model_kwargs", {})["attn_implementation"] = "flash_attention_2"
+            #             # print(f"[Process {accelerator.process_index}] INFO: Attempting to set 'flash_attention_2' for model {model_id}.")
             
-            llm = pipeline("text-generation", model=model_id, **pipeline_init_kwargs)
+            tok = AutoTokenizer.from_pretrained(model_id, padding_side="left")   
+            llm = pipeline("text-generation", model=model_id, tokenizer=tok, **pipeline_init_kwargs)
             
             print(f"[Process {accelerator.process_index}] Model {model_id} loaded on {llm.device}. Effective model dtype: {llm.model.dtype if llm and hasattr(llm, 'model') else 'N/A'}.")
             if llm and hasattr(llm, 'model') and hasattr(llm.model.config, '_attn_implementation'):
@@ -494,16 +495,17 @@ def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_di
                 continue
 
             outputs_a_list = pipeline_outputs[0]
+            outputs_b_list = pipeline_outputs[1]
+
             pred_a = _best_of_k(outputs_a_list, true_val_a, [prompt_text_a] * len(outputs_a_list))
-            current_pair_data["outputs_a"] = [o['generated_text'] for o in outputs_a_list]
+            current_pair_data["outputs_a"] = outputs_a_list
             current_pair_data["pred_a"] = pred_a
             if pred_a is not None and pred_a == true_val_a:
                 correct_a += 1
                 current_pair_data["correct_a"] = True
 
-            outputs_b_list = pipeline_outputs[1]
             pred_b = _best_of_k(outputs_b_list, true_val_b, [prompt_text_b] * len(outputs_b_list))
-            current_pair_data["outputs_b"] = [o['generated_text'] for o in outputs_b_list]
+            current_pair_data["outputs_b"] = outputs_b_list
             current_pair_data["pred_b"] = pred_b
             if pred_b is not None and pred_b == true_val_b:
                 correct_b += 1
