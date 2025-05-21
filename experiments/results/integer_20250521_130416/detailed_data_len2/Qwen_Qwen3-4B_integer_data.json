@@ -1,0 +1,3102 @@
+[
+  {
+    "pair_id": 0,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx -= 1",
+    "intermediates_a": [
+      -4,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 4\nx += 1",
+    "intermediates_b": [
+      -4,
+      -3
+    ],
+    "true_val_b": -3,
+    "pred_a": -5,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 1\n```\nThe final value of x is:  -5\nSo, the answer should be -"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 1\n```\nThe final value of x is: 0-4+1 = -3. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 1,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx += 2",
+    "intermediates_a": [
+      1,
+      3
+    ],
+    "true_val_a": 3,
+    "program_b": "x = 0\nx += 1\nx += 4",
+    "intermediates_b": [
+      1,
+      5
+    ],
+    "true_val_b": 5,
+    "pred_a": 3,
+    "pred_b": 5,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 2\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\n```\nThe final value of x is: 5\nSo, the answer should be 5"
+      }
+    ]
+  },
+  {
+    "pair_id": 2,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx += 2",
+    "intermediates_a": [
+      2,
+      4
+    ],
+    "true_val_a": 4,
+    "program_b": "x = 0\nx += 2\nx += 4",
+    "intermediates_b": [
+      2,
+      6
+    ],
+    "true_val_b": 6,
+    "pred_a": 4,
+    "pred_b": 10,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 2\n```\nThe final value of x is: 4\nSo, the answer is 4."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 4\n```\nThe final value of x is: 10\nSo, the answer should be "
+      }
+    ]
+  },
+  {
+    "pair_id": 3,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 4",
+    "intermediates_a": [
+      4,
+      8
+    ],
+    "true_val_a": 8,
+    "program_b": "x = 0\nx += 4\nx -= 2",
+    "intermediates_b": [
+      4,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 12,
+    "pred_b": 2,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\n```\nThe final value of x is: 12\nSo, the answer should be "
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 2\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ]
+  },
+  {
+    "pair_id": 4,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 1",
+    "intermediates_a": [
+      -2,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_b": [
+      -2,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 1\n```\nThe final value of x is: 0-2-1 = -3. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 5,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 1",
+    "intermediates_a": [
+      -2,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_b": [
+      -2,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 1\n```\nThe final value of x is: 0-2+1 = -1. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 6,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 2",
+    "intermediates_a": [
+      -2,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_b": [
+      -2,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 7,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx -= 2",
+    "intermediates_a": [
+      2,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx += 2\nx += 3",
+    "intermediates_b": [
+      2,
+      5
+    ],
+    "true_val_b": 5,
+    "pred_a": 0,
+    "pred_b": 5,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 3\n```\nThe final value of x is: 5\nSo, the answer should be 5"
+      }
+    ]
+  },
+  {
+    "pair_id": 8,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 4",
+    "intermediates_a": [
+      3,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx += 3\nx += 1",
+    "intermediates_b": [
+      3,
+      4
+    ],
+    "true_val_b": 4,
+    "pred_a": 0,
+    "pred_b": 4,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 4\n```\nThe final value of x is: 0-3+4=1? Wait,"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 1\n```\nThe final value of x is: 4\nSo, the answer is 4."
+      }
+    ]
+  },
+  {
+    "pair_id": 9,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx += 2",
+    "intermediates_a": [
+      1,
+      3
+    ],
+    "true_val_a": 3,
+    "program_b": "x = 0\nx += 1\nx -= 2",
+    "intermediates_b": [
+      1,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 3,
+    "pred_b": -1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 2\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 2\n```\nThe final value of x is:  -1\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 10,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx -= 2",
+    "intermediates_a": [
+      2,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx += 2\nx += 1",
+    "intermediates_b": [
+      2,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 0,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 1\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ]
+  },
+  {
+    "pair_id": 11,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx += 1",
+    "intermediates_a": [
+      1,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx += 1\nx += 2",
+    "intermediates_b": [
+      1,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 2,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 1\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 2\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ]
+  },
+  {
+    "pair_id": 12,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx -= 4",
+    "intermediates_a": [
+      2,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx += 2\nx -= 2",
+    "intermediates_b": [
+      2,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 4\n```\nThe final value of x is: 0-2= -2. So the answer"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 13,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_a": [
+      -2,
+      -4
+    ],
+    "true_val_a": -4,
+    "program_b": "x = 0\nx -= 2\nx += 1",
+    "intermediates_b": [
+      -2,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 1\n```\nThe final value of x is: 0-2+1 = -1. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 14,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx -= 4",
+    "intermediates_a": [
+      1,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx += 1\nx += 4",
+    "intermediates_b": [
+      1,
+      5
+    ],
+    "true_val_b": 5,
+    "pred_a": 0,
+    "pred_b": 5,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 4\n```\nThe final value of x is: 0-1-4= -5. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\n```\nThe final value of x is: 5\nSo, the answer should be 5"
+      }
+    ]
+  },
+  {
+    "pair_id": 15,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 2",
+    "intermediates_a": [
+      4,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 4\nx += 1",
+    "intermediates_b": [
+      4,
+      5
+    ],
+    "true_val_b": 5,
+    "pred_a": 6,
+    "pred_b": 5,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 2\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 1\n```\nThe final value of x is: 5\nSo, the answer is 5."
+      }
+    ]
+  },
+  {
+    "pair_id": 16,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx -= 4",
+    "intermediates_a": [
+      1,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx += 1\nx -= 3",
+    "intermediates_b": [
+      1,
+      -2
+    ],
+    "true_val_b": -2,
+    "pred_a": 0,
+    "pred_b": -2,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 4\n```\nThe final value of x is: 0-1-4= -5. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 3\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 17,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx -= 3",
+    "intermediates_a": [
+      -3,
+      -6
+    ],
+    "true_val_a": -6,
+    "program_b": "x = 0\nx -= 3\nx += 2",
+    "intermediates_b": [
+      -3,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": -6,
+    "pred_b": -1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 3\n```\nThe final value of x is:  is: -6\nOkay, let's see"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 2\n```\nThe final value of x is:  -1\nSo, the answer is -1"
+      }
+    ]
+  },
+  {
+    "pair_id": 18,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx += 2",
+    "intermediates_a": [
+      -3,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 3\nx -= 2",
+    "intermediates_b": [
+      -3,
+      -5
+    ],
+    "true_val_b": -5,
+    "pred_a": -1,
+    "pred_b": 1000000000,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 2\n```\nThe final value of x is:  -1\nSo, the answer is -1"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 2\n```\nThe final value of x is: 1000000000"
+      }
+    ]
+  },
+  {
+    "pair_id": 19,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 4",
+    "intermediates_a": [
+      -2,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx -= 2\nx -= 3",
+    "intermediates_b": [
+      -2,
+      -5
+    ],
+    "true_val_b": -5,
+    "pred_a": 2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 4\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 3\n```\nThe final value of x is: 0-2-3 = -5. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 20,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx -= 3",
+    "intermediates_a": [
+      4,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx += 4\nx -= 2",
+    "intermediates_b": [
+      4,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 1,
+    "pred_b": 2,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 3\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 2\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ]
+  },
+  {
+    "pair_id": 21,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_a": [
+      -2,
+      -4
+    ],
+    "true_val_a": -4,
+    "program_b": "x = 0\nx -= 2\nx -= 3",
+    "intermediates_b": [
+      -2,
+      -5
+    ],
+    "true_val_b": -5,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 3\n```\nThe final value of x is: 0-2-3 = -5. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 22,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx -= 1",
+    "intermediates_a": [
+      -3,
+      -4
+    ],
+    "true_val_a": -4,
+    "program_b": "x = 0\nx -= 3\nx += 1",
+    "intermediates_b": [
+      -3,
+      -2
+    ],
+    "true_val_b": -2,
+    "pred_a": -4,
+    "pred_b": -2,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 1\n```\nThe final value of x is:  is: -4\nOkay, let's see"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 1\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 23,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx += 2",
+    "intermediates_a": [
+      1,
+      3
+    ],
+    "true_val_a": 3,
+    "program_b": "x = 0\nx += 1\nx -= 1",
+    "intermediates_b": [
+      1,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 3,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 2\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 1\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 24,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx -= 4",
+    "intermediates_a": [
+      -1,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 1\nx += 1",
+    "intermediates_b": [
+      -1,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 5,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 4\n```\nThe final value of x is: 5\nWait, that can't be right."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 1\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 25,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx -= 1",
+    "intermediates_a": [
+      1,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx += 1\nx -= 2",
+    "intermediates_b": [
+      1,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 0,
+    "pred_b": -1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 1\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 2\n```\nThe final value of x is:  -1\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 26,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 2",
+    "intermediates_a": [
+      -2,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx -= 2\nx -= 4",
+    "intermediates_b": [
+      -2,
+      -6
+    ],
+    "true_val_b": -6,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 4\n```\nThe final value of x is: 0-2-4 = -6. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 27,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx -= 1",
+    "intermediates_a": [
+      -4,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 4\nx += 2",
+    "intermediates_b": [
+      -4,
+      -2
+    ],
+    "true_val_b": -2,
+    "pred_a": -5,
+    "pred_b": -2,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 1\n```\nThe final value of x is:  -5\nSo, the answer should be -"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 2\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 28,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx += 2",
+    "intermediates_a": [
+      -1,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx -= 1\nx += 3",
+    "intermediates_b": [
+      -1,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 1,
+    "pred_b": 2,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 3\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ]
+  },
+  {
+    "pair_id": 29,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 3",
+    "intermediates_a": [
+      3,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx += 3\nx -= 4",
+    "intermediates_b": [
+      3,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 3\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 4\n```\nThe final value of x is: 0-3+4=1? Wait,"
+      }
+    ]
+  },
+  {
+    "pair_id": 30,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 3",
+    "intermediates_a": [
+      -4,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 4\nx += 1",
+    "intermediates_b": [
+      -4,
+      -3
+    ],
+    "true_val_b": -3,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 3\n```\nThe final value of x is: 1\nWait, let me check that again."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 1\n```\nThe final value of x is: 0-4+1 = -3. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 31,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 1",
+    "intermediates_a": [
+      3,
+      4
+    ],
+    "true_val_a": 4,
+    "program_b": "x = 0\nx += 3\nx -= 3",
+    "intermediates_b": [
+      3,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 4,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 1\n```\nThe final value of x is: 4\nSo, the answer is 4."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 3\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 32,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx -= 3",
+    "intermediates_a": [
+      1,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx += 1\nx -= 1",
+    "intermediates_b": [
+      1,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": -2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 3\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 1\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 33,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx += 3",
+    "intermediates_a": [
+      -1,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx -= 1\nx += 4",
+    "intermediates_b": [
+      -1,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 2,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 3\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 4\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ]
+  },
+  {
+    "pair_id": 34,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 4",
+    "intermediates_a": [
+      3,
+      7
+    ],
+    "true_val_a": 7,
+    "program_b": "x = 0\nx += 3\nx -= 1",
+    "intermediates_b": [
+      3,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 7,
+    "pred_b": 2,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 1\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ]
+  },
+  {
+    "pair_id": 35,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx -= 1",
+    "intermediates_a": [
+      4,
+      3
+    ],
+    "true_val_a": 3,
+    "program_b": "x = 0\nx += 4\nx += 3",
+    "intermediates_b": [
+      4,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 3,
+    "pred_b": 7,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 1\n```\nThe final value of x is: 3\nSo, the answer should be 3"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 3\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 36,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx += 3",
+    "intermediates_a": [
+      -1,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx -= 1\nx -= 3",
+    "intermediates_b": [
+      -1,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 2,
+    "pred_b": 2,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 3\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 3\n```\nThe final value of x is: 2\nWait, that can't be right."
+      }
+    ]
+  },
+  {
+    "pair_id": 37,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx -= 2",
+    "intermediates_a": [
+      -3,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 3\nx += 2",
+    "intermediates_b": [
+      -3,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 1000000000,
+    "pred_b": -1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 2\n```\nThe final value of x is: 1000000000"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 2\n```\nThe final value of x is:  -1\nSo, the answer is -1"
+      }
+    ]
+  },
+  {
+    "pair_id": 38,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx += 3",
+    "intermediates_a": [
+      2,
+      5
+    ],
+    "true_val_a": 5,
+    "program_b": "x = 0\nx += 2\nx += 1",
+    "intermediates_b": [
+      2,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 5,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 3\n```\nThe final value of x is: 5\nSo, the answer should be 5"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 1\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ]
+  },
+  {
+    "pair_id": 39,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx += 4",
+    "intermediates_a": [
+      1,
+      5
+    ],
+    "true_val_a": 5,
+    "program_b": "x = 0\nx += 1\nx -= 2",
+    "intermediates_b": [
+      1,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 5,
+    "pred_b": -1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\n```\nThe final value of x is: 5\nSo, the answer should be 5"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 2\n```\nThe final value of x is:  -1\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 40,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 3",
+    "intermediates_a": [
+      -2,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 2\nx -= 4",
+    "intermediates_b": [
+      -2,
+      -6
+    ],
+    "true_val_b": -6,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 3\n```\nThe final value of x is: 0-2-3 = -5. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 4\n```\nThe final value of x is: 0-2-4 = -6. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 41,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 1",
+    "intermediates_a": [
+      -4,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 4\nx += 3",
+    "intermediates_b": [
+      -4,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 1\n```\nThe final value of x is: 0-4+1 = -3. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 3\n```\nThe final value of x is: 1\nWait, let me check that again."
+      }
+    ]
+  },
+  {
+    "pair_id": 42,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 2",
+    "intermediates_a": [
+      3,
+      5
+    ],
+    "true_val_a": 5,
+    "program_b": "x = 0\nx += 3\nx += 4",
+    "intermediates_b": [
+      3,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 5,
+    "pred_b": 7,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 2\n```\nThe final value of x is: 5\nSo, the answer is 5.\n\n"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 43,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 4",
+    "intermediates_a": [
+      4,
+      8
+    ],
+    "true_val_a": 8,
+    "program_b": "x = 0\nx += 4\nx -= 3",
+    "intermediates_b": [
+      4,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 12,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\n```\nThe final value of x is: 12\nSo, the answer should be "
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 3\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 44,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx += 4",
+    "intermediates_a": [
+      -3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx -= 3\nx -= 2",
+    "intermediates_b": [
+      -3,
+      -5
+    ],
+    "true_val_b": -5,
+    "pred_a": 1,
+    "pred_b": 1000000000,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 4\n```\nThe final value of x is: 1\nSo, the answer is 1.\n\n"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 2\n```\nThe final value of x is: 1000000000"
+      }
+    ]
+  },
+  {
+    "pair_id": 45,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx -= 2",
+    "intermediates_a": [
+      4,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx += 4\nx += 4",
+    "intermediates_b": [
+      4,
+      8
+    ],
+    "true_val_b": 8,
+    "pred_a": 2,
+    "pred_b": 12,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 2\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\n```\nThe final value of x is: 12\nSo, the answer should be "
+      }
+    ]
+  },
+  {
+    "pair_id": 46,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 4",
+    "intermediates_a": [
+      4,
+      8
+    ],
+    "true_val_a": 8,
+    "program_b": "x = 0\nx += 4\nx += 3",
+    "intermediates_b": [
+      4,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 12,
+    "pred_b": 7,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\n```\nThe final value of x is: 12\nSo, the answer should be "
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 3\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 47,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 1",
+    "intermediates_a": [
+      3,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx += 3\nx += 4",
+    "intermediates_b": [
+      3,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 2,
+    "pred_b": 7,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 1\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 48,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 1",
+    "intermediates_a": [
+      4,
+      5
+    ],
+    "true_val_a": 5,
+    "program_b": "x = 0\nx += 4\nx -= 1",
+    "intermediates_b": [
+      4,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 5,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 1\n```\nThe final value of x is: 5\nSo, the answer is 5."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 1\n```\nThe final value of x is: 3\nSo, the answer should be 3"
+      }
+    ]
+  },
+  {
+    "pair_id": 49,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx -= 2",
+    "intermediates_a": [
+      -1,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 1\nx -= 1",
+    "intermediates_b": [
+      -1,
+      -2
+    ],
+    "true_val_b": -2,
+    "pred_a": 1,
+    "pred_b": 2,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 2\n```\nThe final value of x is: 1\nWait, that doesn't seem right."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 1\n```\nThe final value of x is: 2\nWait, that doesn't make sense."
+      }
+    ]
+  },
+  {
+    "pair_id": 50,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx -= 2",
+    "intermediates_a": [
+      -1,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 1\nx += 1",
+    "intermediates_b": [
+      -1,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 2\n```\nThe final value of x is: 1\nWait, that doesn't seem right."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 1\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 51,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 1",
+    "intermediates_a": [
+      -2,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_b": [
+      -2,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 1\n```\nThe final value of x is: 0-2+1 = -1. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 52,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 1",
+    "intermediates_a": [
+      -2,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 2\nx += 3",
+    "intermediates_b": [
+      -2,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 1\n```\nThe final value of x is: 0-2-1 = -3. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 3\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 53,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 2",
+    "intermediates_a": [
+      3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx += 3\nx += 1",
+    "intermediates_b": [
+      3,
+      4
+    ],
+    "true_val_b": 4,
+    "pred_a": 1,
+    "pred_b": 4,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 1\n```\nThe final value of x is: 4\nSo, the answer is 4."
+      }
+    ]
+  },
+  {
+    "pair_id": 54,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 1",
+    "intermediates_a": [
+      -2,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 2\nx += 3",
+    "intermediates_b": [
+      -2,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 1\n```\nThe final value of x is: 0-2+1 = -1. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 3\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 55,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 2",
+    "intermediates_a": [
+      3,
+      5
+    ],
+    "true_val_a": 5,
+    "program_b": "x = 0\nx += 3\nx += 3",
+    "intermediates_b": [
+      3,
+      6
+    ],
+    "true_val_b": 6,
+    "pred_a": 5,
+    "pred_b": 6,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 2\n```\nThe final value of x is: 5\nSo, the answer is 5.\n\n"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 3\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ]
+  },
+  {
+    "pair_id": 56,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 4",
+    "intermediates_a": [
+      3,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx += 3\nx -= 1",
+    "intermediates_b": [
+      3,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 0,
+    "pred_b": 2,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 4\n```\nThe final value of x is: 0-3+4=1? Wait,"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 1\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ]
+  },
+  {
+    "pair_id": 57,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx += 3",
+    "intermediates_a": [
+      -1,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx -= 1\nx += 2",
+    "intermediates_b": [
+      -1,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 2,
+    "pred_b": 1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 3\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 58,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx -= 4",
+    "intermediates_a": [
+      2,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx += 2\nx += 4",
+    "intermediates_b": [
+      2,
+      6
+    ],
+    "true_val_b": 6,
+    "pred_a": 0,
+    "pred_b": 10,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 4\n```\nThe final value of x is: 0-2= -2. So the answer"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 4\n```\nThe final value of x is: 10\nSo, the answer should be "
+      }
+    ]
+  },
+  {
+    "pair_id": 59,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 4",
+    "intermediates_a": [
+      -4,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx -= 4\nx += 1",
+    "intermediates_b": [
+      -4,
+      -3
+    ],
+    "true_val_b": -3,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 4\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 1\n```\nThe final value of x is: 0-4+1 = -3. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 60,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx -= 1",
+    "intermediates_a": [
+      1,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx += 1\nx += 2",
+    "intermediates_b": [
+      1,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 0,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 1\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 2\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ]
+  },
+  {
+    "pair_id": 61,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx += 2",
+    "intermediates_a": [
+      -1,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx -= 1\nx -= 4",
+    "intermediates_b": [
+      -1,
+      -5
+    ],
+    "true_val_b": -5,
+    "pred_a": 1,
+    "pred_b": 5,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 4\n```\nThe final value of x is: 5\nWait, that can't be right."
+      }
+    ]
+  },
+  {
+    "pair_id": 62,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 2",
+    "intermediates_a": [
+      -4,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx -= 4\nx -= 2",
+    "intermediates_b": [
+      -4,
+      -6
+    ],
+    "true_val_b": -6,
+    "pred_a": -2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 2\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 2\n```\nThe final value of x is: 0-4-2 = -6. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 63,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 4",
+    "intermediates_a": [
+      -2,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx -= 2\nx += 2",
+    "intermediates_b": [
+      -2,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 4\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 64,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx += 1",
+    "intermediates_a": [
+      2,
+      3
+    ],
+    "true_val_a": 3,
+    "program_b": "x = 0\nx += 2\nx += 2",
+    "intermediates_b": [
+      2,
+      4
+    ],
+    "true_val_b": 4,
+    "pred_a": 3,
+    "pred_b": 4,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 1\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 2\n```\nThe final value of x is: 4\nSo, the answer is 4."
+      }
+    ]
+  },
+  {
+    "pair_id": 65,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx -= 4",
+    "intermediates_a": [
+      2,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx += 2\nx += 4",
+    "intermediates_b": [
+      2,
+      6
+    ],
+    "true_val_b": 6,
+    "pred_a": 0,
+    "pred_b": 10,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 4\n```\nThe final value of x is: 0-2= -2. So the answer"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 4\n```\nThe final value of x is: 10\nSo, the answer should be "
+      }
+    ]
+  },
+  {
+    "pair_id": 66,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 4",
+    "intermediates_a": [
+      4,
+      8
+    ],
+    "true_val_a": 8,
+    "program_b": "x = 0\nx += 4\nx += 2",
+    "intermediates_b": [
+      4,
+      6
+    ],
+    "true_val_b": 6,
+    "pred_a": 12,
+    "pred_b": 6,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\n```\nThe final value of x is: 12\nSo, the answer should be "
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 2\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ]
+  },
+  {
+    "pair_id": 67,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 2",
+    "intermediates_a": [
+      4,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 4\nx += 3",
+    "intermediates_b": [
+      4,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 6,
+    "pred_b": 7,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 2\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 3\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 68,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 2",
+    "intermediates_a": [
+      3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx += 3\nx -= 4",
+    "intermediates_b": [
+      3,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 4\n```\nThe final value of x is: 0-3+4=1? Wait,"
+      }
+    ]
+  },
+  {
+    "pair_id": 69,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 3",
+    "intermediates_a": [
+      -4,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 4\nx += 4",
+    "intermediates_b": [
+      -4,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 3\n```\nThe final value of x is: 1\nWait, let me check that again."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 4\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 70,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 3",
+    "intermediates_a": [
+      3,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 3\nx += 4",
+    "intermediates_b": [
+      3,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 6,
+    "pred_b": 7,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 3\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 71,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 2",
+    "intermediates_a": [
+      4,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 4\nx -= 1",
+    "intermediates_b": [
+      4,
+      3
+    ],
+    "true_val_b": 3,
+    "pred_a": 6,
+    "pred_b": 3,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 2\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 1\n```\nThe final value of x is: 3\nSo, the answer should be 3"
+      }
+    ]
+  },
+  {
+    "pair_id": 72,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx -= 4",
+    "intermediates_a": [
+      -1,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 1\nx += 2",
+    "intermediates_b": [
+      -1,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 5,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 4\n```\nThe final value of x is: 5\nWait, that can't be right."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 73,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 2",
+    "intermediates_a": [
+      -4,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx -= 4\nx -= 4",
+    "intermediates_b": [
+      -4,
+      -8
+    ],
+    "true_val_b": -8,
+    "pred_a": -2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 2\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 4\n```\nThe final value of x is: 0-4-4 = -8. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 74,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 3",
+    "intermediates_a": [
+      -4,
+      -1
+    ],
+    "true_val_a": -1,
+    "program_b": "x = 0\nx -= 4\nx -= 2",
+    "intermediates_b": [
+      -4,
+      -6
+    ],
+    "true_val_b": -6,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 3\n```\nThe final value of x is: 1\nWait, let me check that again."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 2\n```\nThe final value of x is: 0-4-2 = -6. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 75,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 4",
+    "intermediates_a": [
+      -2,
+      -6
+    ],
+    "true_val_a": -6,
+    "program_b": "x = 0\nx -= 2\nx += 2",
+    "intermediates_b": [
+      -2,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 4\n```\nThe final value of x is: 0-2-4 = -6. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 76,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 2\nx += 2",
+    "intermediates_a": [
+      2,
+      4
+    ],
+    "true_val_a": 4,
+    "program_b": "x = 0\nx += 2\nx -= 2",
+    "intermediates_b": [
+      2,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 4,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 2\n```\nThe final value of x is: 4\nSo, the answer is 4."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx -= 2\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ]
+  },
+  {
+    "pair_id": 77,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx += 4",
+    "intermediates_a": [
+      -2,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_b": [
+      -2,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 4\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 78,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx -= 2",
+    "intermediates_a": [
+      4,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx += 4\nx -= 4",
+    "intermediates_b": [
+      4,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 2,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 2\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx -= 4\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 79,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 4",
+    "intermediates_a": [
+      -4,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx -= 4\nx += 3",
+    "intermediates_b": [
+      -4,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 4\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 3\n```\nThe final value of x is: 1\nWait, let me check that again."
+      }
+    ]
+  },
+  {
+    "pair_id": 80,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 3",
+    "intermediates_a": [
+      3,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 3\nx -= 1",
+    "intermediates_b": [
+      3,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 6,
+    "pred_b": 2,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 3\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 1\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ]
+  },
+  {
+    "pair_id": 81,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx -= 4",
+    "intermediates_a": [
+      -1,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 1\nx -= 3",
+    "intermediates_b": [
+      -1,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 5,
+    "pred_b": 2,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 4\n```\nThe final value of x is: 5\nWait, that can't be right."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx -= 3\n```\nThe final value of x is: 2\nWait, that can't be right."
+      }
+    ]
+  },
+  {
+    "pair_id": 82,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx += 4",
+    "intermediates_a": [
+      -3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx -= 3\nx += 3",
+    "intermediates_b": [
+      -3,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 4\n```\nThe final value of x is: 1\nSo, the answer is 1.\n\n"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx += 3\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 83,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 4",
+    "intermediates_a": [
+      3,
+      7
+    ],
+    "true_val_a": 7,
+    "program_b": "x = 0\nx += 3\nx += 3",
+    "intermediates_b": [
+      3,
+      6
+    ],
+    "true_val_b": 6,
+    "pred_a": 7,
+    "pred_b": 6,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 3\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ]
+  },
+  {
+    "pair_id": 84,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 1",
+    "intermediates_a": [
+      3,
+      2
+    ],
+    "true_val_a": 2,
+    "program_b": "x = 0\nx += 3\nx -= 2",
+    "intermediates_b": [
+      3,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 2,
+    "pred_b": 1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 1\n```\nThe final value of x is: 2\nSo, the answer should be 2"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 85,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 1",
+    "intermediates_a": [
+      -2,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 2\nx += 3",
+    "intermediates_b": [
+      -2,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 1\n```\nThe final value of x is: 0-2-1 = -3. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 3\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 86,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 2",
+    "intermediates_a": [
+      3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx += 3\nx -= 3",
+    "intermediates_b": [
+      3,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 3\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 87,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx -= 2",
+    "intermediates_a": [
+      -3,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 3\nx -= 4",
+    "intermediates_b": [
+      -3,
+      -7
+    ],
+    "true_val_b": -7,
+    "pred_a": 1000000000,
+    "pred_b": -7,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 2\n```\nThe final value of x is: 1000000000"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 4\n```\nThe final value of x is:  is: -7\nOkay, let's see"
+      }
+    ]
+  },
+  {
+    "pair_id": 88,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 4",
+    "intermediates_a": [
+      -4,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx -= 4\nx += 3",
+    "intermediates_b": [
+      -4,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 4\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 3\n```\nThe final value of x is: 1\nWait, let me check that again."
+      }
+    ]
+  },
+  {
+    "pair_id": 89,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 2",
+    "intermediates_a": [
+      3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx += 3\nx -= 4",
+    "intermediates_b": [
+      3,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 4\n```\nThe final value of x is: 0-3+4=1? Wait,"
+      }
+    ]
+  },
+  {
+    "pair_id": 90,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx -= 2",
+    "intermediates_a": [
+      -4,
+      -6
+    ],
+    "true_val_a": -6,
+    "program_b": "x = 0\nx -= 4\nx -= 4",
+    "intermediates_b": [
+      -4,
+      -8
+    ],
+    "true_val_b": -8,
+    "pred_a": 0,
+    "pred_b": 0,
+    "correct_a": false,
+    "correct_b": false,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 2\n```\nThe final value of x is: 0-4-2 = -6. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 4\n```\nThe final value of x is: 0-4-4 = -8. So"
+      }
+    ]
+  },
+  {
+    "pair_id": 91,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 4\nx += 2",
+    "intermediates_a": [
+      -4,
+      -2
+    ],
+    "true_val_a": -2,
+    "program_b": "x = 0\nx -= 4\nx -= 1",
+    "intermediates_b": [
+      -4,
+      -5
+    ],
+    "true_val_b": -5,
+    "pred_a": -2,
+    "pred_b": -5,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx += 2\n```\nThe final value of x is:  -2\nSo, the answer should be -"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 4\nx -= 1\n```\nThe final value of x is:  -5\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 92,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 1\nx += 1",
+    "intermediates_a": [
+      -1,
+      0
+    ],
+    "true_val_a": 0,
+    "program_b": "x = 0\nx -= 1\nx += 2",
+    "intermediates_b": [
+      -1,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 1\n```\nThe final value of x is: 0\nSo, the answer is 0."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 1\nx += 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 93,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 1\nx += 2",
+    "intermediates_a": [
+      1,
+      3
+    ],
+    "true_val_a": 3,
+    "program_b": "x = 0\nx += 1\nx -= 2",
+    "intermediates_b": [
+      1,
+      -1
+    ],
+    "true_val_b": -1,
+    "pred_a": 3,
+    "pred_b": -1,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 2\n```\nThe final value of x is: 3\nSo, the answer is 3."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx -= 2\n```\nThe final value of x is:  -1\nSo, the answer should be -"
+      }
+    ]
+  },
+  {
+    "pair_id": 94,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 2",
+    "intermediates_a": [
+      -2,
+      -4
+    ],
+    "true_val_a": -4,
+    "program_b": "x = 0\nx -= 2\nx += 4",
+    "intermediates_b": [
+      -2,
+      2
+    ],
+    "true_val_b": 2,
+    "pred_a": 0,
+    "pred_b": 2,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 2\n```\nThe final value of x is: 0-2-2 = -4. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 4\n```\nThe final value of x is: 2\nSo, the answer is 2."
+      }
+    ]
+  },
+  {
+    "pair_id": 95,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 4\nx += 2",
+    "intermediates_a": [
+      4,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 4\nx += 3",
+    "intermediates_b": [
+      4,
+      7
+    ],
+    "true_val_b": 7,
+    "pred_a": 6,
+    "pred_b": 7,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 2\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 3\n```\nThe final value of x is: 7\nSo, the answer should be 7"
+      }
+    ]
+  },
+  {
+    "pair_id": 96,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx += 3",
+    "intermediates_a": [
+      3,
+      6
+    ],
+    "true_val_a": 6,
+    "program_b": "x = 0\nx += 3\nx -= 3",
+    "intermediates_b": [
+      3,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 6,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 3\n```\nThe final value of x is: 6\nSo, the answer is 6."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 3\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  },
+  {
+    "pair_id": 97,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 3\nx -= 2",
+    "intermediates_a": [
+      -3,
+      -5
+    ],
+    "true_val_a": -5,
+    "program_b": "x = 0\nx -= 3\nx -= 1",
+    "intermediates_b": [
+      -3,
+      -4
+    ],
+    "true_val_b": -4,
+    "pred_a": 1000000000,
+    "pred_b": -4,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 2\n```\nThe final value of x is: 1000000000"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 3\nx -= 1\n```\nThe final value of x is:  is: -4\nOkay, let's see"
+      }
+    ]
+  },
+  {
+    "pair_id": 98,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx -= 2\nx -= 1",
+    "intermediates_a": [
+      -2,
+      -3
+    ],
+    "true_val_a": -3,
+    "program_b": "x = 0\nx -= 2\nx += 3",
+    "intermediates_b": [
+      -2,
+      1
+    ],
+    "true_val_b": 1,
+    "pred_a": 0,
+    "pred_b": 1,
+    "correct_a": false,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx -= 1\n```\nThe final value of x is: 0-2-1 = -3. So"
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx -= 2\nx += 3\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ]
+  },
+  {
+    "pair_id": 99,
+    "seq_len": 2,
+    "divergence_index": 1,
+    "program_a": "x = 0\nx += 3\nx -= 2",
+    "intermediates_a": [
+      3,
+      1
+    ],
+    "true_val_a": 1,
+    "program_b": "x = 0\nx += 3\nx -= 3",
+    "intermediates_b": [
+      3,
+      0
+    ],
+    "true_val_b": 0,
+    "pred_a": 1,
+    "pred_b": 0,
+    "correct_a": true,
+    "correct_b": true,
+    "outputs_a": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 2\n```\nThe final value of x is: 1\nSo, the answer is 1."
+      }
+    ],
+    "outputs_b": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx -= 3\n```\nThe final value of x is: 0\nOkay, let's see. I need"
+      }
+    ]
+  }
+]

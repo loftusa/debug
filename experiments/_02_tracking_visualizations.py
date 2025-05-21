@@ -8,98 +8,99 @@ from typing import Optional, List
 
 @click.command()
 @click.option(
-    "--kind",
-    default="groups",
-    type=click.Choice(["groups", "ops"]),
-    help="Kind of results to visualize (determines input filename).",
+    "--input-dir",
+    "input_dir_str",
+    required=True,
+    type=click.Path(exists=True, file_okay=False, dir_okay=True),
+    help="Directory containing the summary_integer_all.csv file.",
 )
-# either None or a list of model IDs
 @click.option(
     "--model_ids",
     default=None,
-    help="List of model IDs to include in the plot. If not provided, all models will be included.",
-    type=click.types.STRING,
-    multiple=True,
-)
-def main(kind: str, model_ids: Optional[List[str]]):
-    """Generates visualizations from sequence length experiment results."""
-    base = Path(__file__).parent / "results"
-    all_dfs = []
-    result_filename = (
-        "results_summary.csv" if kind == "groups" else "results_summary_ops.csv"
-    )
-    print(f"Looking for results file: {result_filename}")
+    help="Comma-separated list of model IDs to include in the plot. If not provided, all models will be included.",
+    type=click.types.STRING, # Keep as string, will split later
+) # Changed to accept comma-separated string for consistency with other scripts
+def main(input_dir_str: str, model_ids: Optional[str]): # model_ids is now Optional[str]
+    """Generates visualizations from integer arithmetic experiment results.""" # Updated docstring
+    input_dir = Path(input_dir_str)
+    summary_csv_path = input_dir / "summary_integer_all.csv" # New summary file name
 
-    # Determine the correct directory pattern based on kind
-    if kind == "ops":
-        glob_pattern = "seq_len_*_ops"
-    else:  # kind == "groups"
-        # For groups, initially glob all seq_len_* and filter later
-        glob_pattern = "seq_len_*"
+    print(f"Looking for results file: {summary_csv_path}")
 
-    for seq_dir in sorted(base.glob(glob_pattern)):
-        # If kind is "groups", explicitly skip directories ending with "_ops"
-        if kind == "groups" and seq_dir.name.endswith("_ops"):
-            print(f"  Skipping ops-specific directory {seq_dir.name} for groups visualization.")
-            continue
+    if not summary_csv_path.exists():
+        print(f"  {summary_csv_path.name} not found in {input_dir}. Exiting.")
+        return
 
-        print(f"Checking directory: {seq_dir}")
-        csv_path = seq_dir / result_filename
-        if not csv_path.exists():
-            print(f"  {result_filename} not found, skipping.")
-            continue
-        # parse seq_len from directory name
-        try:
-            seq_len = int(seq_dir.name.split("_")[2])
-        except (IndexError, ValueError):
-            print(f"  Could not parse seq_len from {seq_dir.name}, skipping.")
-            continue
+    print(f"  Loading {summary_csv_path}")
+    try:
+        full_df = pd.read_csv(summary_csv_path)
+    except Exception as e:
+        print(f"Error loading CSV {summary_csv_path}: {e}")
+        return
 
-        print(f"  Loading {csv_path}")
-        df = pd.read_csv(csv_path)
-        if "seq_len" not in df.columns:
-            df["seq_len"] = seq_len
+    if full_df.empty:
+        print(f"No data found in {summary_csv_path}. Exiting.")
+        return
+
+    # Ensure required columns exist
+    required_cols = ["seq_len", "model_id", "accuracy_avg_pair"]
+    if not all(col in full_df.columns for col in required_cols):
+        print(f"CSV {summary_csv_path} is missing one or more required columns: {required_cols}. Found: {full_df.columns.tolist()}")
+        return
+
+    # Use "accuracy_avg_pair" as the value for pivoting
+    try:
+        pivot = full_df.pivot(index="seq_len", columns="model_id", values="accuracy_avg_pair")
+        pivot.sort_index(inplace=True)
+    except Exception as e:
+        print(f"Error pivoting data: {e}. Check CSV format and content.")
+        return
+
+
+    # Handle model_ids if provided as a comma-separated string
+    selected_model_ids_list: Optional[List[str]] = None
+    if model_ids:
+        selected_model_ids_list = [m.strip() for m in model_ids.split(',')]
+        # Filter pivot table for selected models
+        # Ensure that the columns actually exist in the pivot table to avoid KeyErrors
+        existing_models_in_pivot = [m for m in selected_model_ids_list if m in pivot.columns]
+        missing_models = [m for m in selected_model_ids_list if m not in pivot.columns]
+        if missing_models:
+            print(f"Warning: The following specified model_ids were not found in the data: {missing_models}")
+        if not existing_models_in_pivot:
+            print(f"Warning: None of the specified model_ids ({selected_model_ids_list}) were found. Plotting all available models.")
         else:
-            df["seq_len"] = df["seq_len"].astype(int)
-        all_dfs.append(df)
+            pivot = pivot[existing_models_in_pivot]
 
-    if not all_dfs:
-        print(f"No result CSVs ('{result_filename}') found under 'results/seq_len_*'")
-        return  # Use return instead of exit in a function
-
-    # %%
-    full = pd.concat(all_dfs, ignore_index=True)
-    pivot = full.pivot(index="seq_len", columns="model_id", values="accuracy")
-    pivot.sort_index(inplace=True)
-    if model_ids is not None:
-        assert isinstance(model_ids, list), "model_ids must be a list"
-        pivot = pivot.loc[:, model_ids]
 
     # Optional: Filter models with low average accuracy (adjust threshold as needed)
-    # pivot = pivot.loc[:, pivot.mean(axis=0) > 0.45]
-    pivot = pivot.reindex(columns=pivot.mean().sort_values(ascending=False).index)
-    print("\nPivot table of accuracies:")
+    # pivot = pivot.loc[:, pivot.mean(axis=0) > 0.45] # Example filter
+    if not pivot.empty:
+        pivot = pivot.reindex(columns=pivot.mean().sort_values(ascending=False).index)
+    
+    print("\nPivot table of accuracies (using accuracy_avg_pair):")
     print(pivot)
-    # %%
-    # Calculate average accuracy across all models for each sequence length
+
+    if pivot.empty:
+        print("Pivot table is empty (possibly due to filtering or no data for selected models). Cannot generate plot.")
+        return
+        
+    # Calculate average accuracy across all (selected or all) models for each sequence length
     pivot["average"] = pivot.mean(axis=1)
-    # %%
-    # Set style and color palette
+    
     sns.set_style("whitegrid")
-    # Ensure enough colors if many models exist
-    num_models = len(pivot.columns) - 1 # Exclude average
-    colors = sns.color_palette("viridis", n_colors=max(num_models, 1)) # Handle case with 0 models
+    num_models = len([col for col in pivot.columns if col != 'average']) # Exclude average
+    colors = sns.color_palette("viridis", n_colors=max(num_models, 1))
     markers = ["o", "s", "D", "^", "v", "<", ">", "p", "*", "h", "H", "X", "d"]
     linestyles = ["-", "--", "-.", ":"]
 
     plt.figure(figsize=(14, 10))
 
-    # Plot each model with a unique color, marker, and line style
-    plotted_columns = [col for col in pivot.columns if col != 'average'] # Explicitly exclude 'average'
+    plotted_columns = [col for col in pivot.columns if col != 'average']
     for i, column in enumerate(plotted_columns):
         marker = markers[i % len(markers)]
         linestyle = linestyles[i % len(linestyles)]
-        color_index = i % len(colors) # Ensure color index is within bounds
+        color_index = i % len(colors)
         plt.plot(
             pivot.index,
             pivot[column],
@@ -112,8 +113,7 @@ def main(kind: str, model_ids: Optional[List[str]]):
             alpha=0.7,
         )
 
-    # Plot the average with emphasis if there are models to average
-    if 'average' in pivot.columns:
+    if 'average' in pivot.columns and not pivot['average'].dropna().empty:
         plt.plot(
             pivot.index,
             pivot["average"],
@@ -123,26 +123,25 @@ def main(kind: str, model_ids: Optional[List[str]]):
             markersize=10,
             label="Average",
             color="red",
-            zorder=10,  # Put average line on top
+            zorder=10,
         )
 
-    # Add labels and title
     plt.xlabel("Sequence Length", fontsize=14)
-    plt.ylabel("Accuracy", fontsize=14)
-    title = f"Model Accuracy vs. Sequence Length ({kind.capitalize()} Results)"
+    plt.ylabel("Average Accuracy (Pair)", fontsize=14) # Updated Y-axis label
+    title = "Model Accuracy (Integer Arithmetic) vs. Sequence Length" # Updated title
     plt.title(title, fontsize=16, fontweight="bold")
 
-
-    # Customize grid
     plt.grid(True, linestyle="--", alpha=0.7)
 
-    # Improve x-axis ticks
     if not pivot.index.empty:
-        plt.xticks(pivot.index, fontsize=12)
+        # Ensure x-ticks are integers if sequence lengths are integers
+        if pd.api.types.is_integer_dtype(pivot.index):
+            plt.xticks(ticks=pivot.index, labels=[str(int(x)) for x in pivot.index], fontsize=12)
+        else:
+            plt.xticks(pivot.index, fontsize=12)
+            
     plt.yticks(fontsize=12)
 
-
-    # Add legend with better placement and formatting
     plt.legend(
         bbox_to_anchor=(1.02, 1),
         loc="upper left",
@@ -153,59 +152,45 @@ def main(kind: str, model_ids: Optional[List[str]]):
         title_fontsize=13,
     )
 
-    # # Show max values on plot - Removed for clarity, can be added back if needed
-    # for column in plotted_columns:
-    #     if not pivot[column].empty:
-    #         max_idx = pivot[column].idxmax()
-    #         max_val = pivot[column].max()
-    #         plt.annotate(
-    #             f"{max_val:.3f}",
-    #             (max_idx, max_val),
-    #             xytext=(5, 5),
-    #             textcoords="offset points",
-    #             fontsize=9,
-    #             fontweight='bold'
-    #         )
-
-    # Annotate average points if average exists
-    if 'average' in pivot.columns and not pivot['average'].empty:
+    if 'average' in pivot.columns and not pivot['average'].dropna().empty:
         for idx in pivot.index:
-            avg_val = pivot.loc[idx, 'average']
-            plt.annotate(
-                f"{avg_val:.3f}",
-                (idx, avg_val),
-                xytext=(0, -15),
-                textcoords="offset points",
-                fontsize=10,
-                fontweight='bold',
-                color='red',
-                ha='center'
-            )
-
-        # Add a horizontal line at maximum average accuracy
-        max_avg_idx = pivot['average'].idxmax()
-        max_avg_val = pivot['average'].max()
-        plt.axhline(y=max_avg_val, color='red', linestyle='--', alpha=0.4)
-        # Ensure pivot.index is not empty before accessing its first element
-        if not pivot.index.empty:
-            plt.annotate(
-                f"Max Avg: {max_avg_val:.3f} at seq_len={max_avg_idx}",
-                (pivot.index[0], max_avg_val),
-                xytext=(10, 5),
-                textcoords="offset points",
-                fontsize=12,
-                fontweight='bold',
-                color='red',
-                bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="red", alpha=0.8)
-            )
+            if pd.notna(pivot.loc[idx, 'average']):
+                avg_val = pivot.loc[idx, 'average']
+                plt.annotate(
+                    f"{avg_val:.3f}",
+                    (idx, avg_val),
+                    xytext=(0, -15),
+                    textcoords="offset points",
+                    fontsize=10,
+                    fontweight='bold',
+                    color='red',
+                    ha='center'
+                )
+        
+        # Check if there's any non-NA average value before finding max
+        if pivot['average'].notna().any():
+            max_avg_idx = pivot['average'].idxmax()
+            max_avg_val = pivot['average'].max()
+            plt.axhline(y=max_avg_val, color='red', linestyle='--', alpha=0.4)
+            if not pivot.index.empty:
+                plt.annotate(
+                    f"Max Avg: {max_avg_val:.3f} at seq_len={max_avg_idx}",
+                    (pivot.index[0], max_avg_val), # Position annotation relative to plot
+                    xytext=(10, 5),
+                    textcoords="offset points",
+                    fontsize=12,
+                    fontweight='bold',
+                    color='red',
+                    bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="red", alpha=0.8)
+                )
 
 
     plt.tight_layout()
-    output_filename = f"accuracy_vs_sequence_length_{kind}.png" # Use kind in filename
+    # Output filename now reflects the new task and structure
+    output_filename = input_dir / "accuracy_vs_sequence_length_integer.png"
     print(f"Saving plot to {output_filename}")
     plt.savefig(output_filename, dpi=300, bbox_inches="tight")
-    plt.show()
-
+    # plt.show() # Optionally show plot, or rely on saved file.
 
 if __name__ == "__main__":
     main()
