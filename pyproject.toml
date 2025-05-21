@@ -27,7 +27,6 @@ dependencies = [
     "torchtyping>=0.1.5",
     "transformers>=4.51.3",
     "vllm>=0.8.4",
-    "flash-attn",
 ]
 
 [tool.setuptools.packages.find]
