@@ -36,18 +36,21 @@ PROMPT_TEMPLATE = (
 )
 
 DEFAULT_MODELS: List[str] = [
-    # "Qwen/Qwen3-1.7B", # Smaller model for quicker testing by default
-    "Qwen/Qwen3-14B",
-    # Add other models as needed
+    # "Qwen/Qwen3-0.6B",
+    # "Qwen/Qwen3-1.7B",
+    # "Qwen/Qwen3-4B",
+    # "Qwen/Qwen3-8B",
+    # "Qwen/Qwen3-14B",
+    "Qwen/Qwen3-32B",
 ]
 
 DEFAULT_MODELS_ALL: List[str] = [
-    "Qwen/Qwen3-32B",
-    "Qwen/Qwen3-14B",
-    "Qwen/Qwen3-8B",
-    "Qwen/Qwen3-4B",
-    "Qwen/Qwen3-1.7B",
     "Qwen/Qwen3-0.6B",
+    "Qwen/Qwen3-1.7B",
+    "Qwen/Qwen3-4B",
+    "Qwen/Qwen3-8B",
+    "Qwen/Qwen3-14B",
+    # "Qwen/Qwen3-32B",
 ]
 
 GROUPS = {
@@ -267,53 +270,110 @@ def make_counterfactual_pair_boolean(
 
     return "\n".join(program_a_lines), "\n".join(program_b_lines), intermediates_a, intermediates_b
 
-#%% --- Interactive Test Cell ---
+# %% --- Interactive Test Cell ---
 # This cell is for quick testing of the generation and model invocation.
 # Make sure to run the cells above this one first to define functions and load a model (if testing llm).
 
-# # To test make_counterfactual_pair_boolean:
-# if __name__ == '__main__':
-#     model_id_test = DEFAULT_MODELS[0] 
-#     llm_test = pipeline("text-generation", model=model_id_test, device_map="auto", torch_dtype=torch.bfloat16)
+# To test make_counterfactual_pair_boolean:
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+import os
+os.environ["TRITON_CACHE_DIR"] = "/share/u/lofty/.cache/triton"
 
-# #%%
-# if __name__ == '__main__': # Protect against running automatically if imported
-#     # print("--- Testing make_counterfactual_pair_boolean ---")
-#     # test_rng = np.random.RandomState(42) # For reproducible test
-#     test_seq_len = 5
-#     test_divergence_index = 1
-    
-#     prog_a, prog_b, intermediates_a, intermediates_b = make_counterfactual_pair_boolean(
-#         test_seq_len, test_divergence_index
-#     )
-#     # print("Program A:")
-#     # print(prog_a)
-#     # print(f"Intermediates A: {intermediates_a} (Final x: {intermediates_a[-1] if intermediates_a else 'N/A'})")
-#     # print("\nProgram B:")
-#     # print(prog_b)
-#     # print(f"Intermediates B: {intermediates_b} (Final x: {intermediates_b[-1] if intermediates_b else 'N/A'})")
-#     # print("--------------------------------------------")
 
-#     # To test with an LLM (ensure a model is loaded in a cell above)
+if __name__ == '__main__':
+
+    model_id_test = "Qwen/Qwen3-32B"
+    # llm_test = pipeline("text-generation", model=model_id_test, device_map="auto", torch_dtype="auto")
+
+    tokenizer = AutoTokenizer.from_pretrained(model_id_test, padding_side="left")
+    model = AutoModelForCausalLM.from_pretrained(
+        model_id_test,
+        torch_dtype=torch.bfloat16,
+        device_map="auto",
+        quantization_config=BitsAndBytesConfig(
+            load_in_8bit=True
+        ),
+    )
+
+#%%
+if __name__ == '__main__': # Protect against running automatically if imported
+    # print("--- Testing make_counterfactual_pair_boolean ---")
+    # test_rng = np.random.RandomState(42) # For reproducible test
+    test_seq_len = 5
+    test_divergence_index = 1
     
-#     if 'llm_test' in locals() and prog_a and intermediates_a:
-#         true_val_a = intermediates_a[-1]
-#         prompt_a = PROMPT_TEMPLATE.format(code=prog_a)
-#         print(f"\n--- Testing LLM with Program A (True value: {true_val_a}) ---")
-#         # print(f"Prompt A: {prompt_a}")
-        
-#         llm_outputs = llm_test([prompt_a], num_return_sequences=1, max_new_tokens=1, do_sample=False)
-#         generated_text_a = llm_outputs[0][0]['generated_text'] # Assuming batch_size=1, num_return_sequences=1
-#         pred_a = _parse_int(generated_text_a[len(prompt_a):])
-        
-#         print(f"LLM Raw Output A: {generated_text_a}" + "\n" + "--------------------------------")
-#         print(f"LLM Parsed Prediction A: {pred_a}" )
-#         print(f"Ground truth A: {true_val_a}" + "\n" + "--------------------------------")
-#         print(f"Correct A: {pred_a == true_val_a if pred_a is not None else 'Parse Error'}" + "\n" + "--------------------------------")
-#     # else:
-#     # print("\nLLM test part skipped (llm_test not defined or program generation failed).")
-#     # print("Ensure you have a 'llm_test' pipeline object initialized to run the LLM test part.")
-#     pass # End of if __name__ == '__main__' block for interactive testing
+    # print("Program A:")
+    # print(prog_a)
+    # print(f"Intermediates A: {intermediates_a} (Final x: {intermediates_a[-1] if intermediates_a else 'N/A'})")
+    # print("\nProgram B:")
+    # print(prog_b)
+    # print(f"Intermediates B: {intermediates_b} (Final x: {intermediates_b[-1] if intermediates_b else 'N/A'})")
+    # print("--------------------------------------------")
+
+    # To test with an LLM (ensure a model is loaded in a cell above)
+    
+    num_correct = 0
+    num_total = 0
+    text_batch = []
+    counterfact_pairs = []
+    for i in range(10):
+        prog_a, prog_b, intermediates_a, intermediates_b = make_counterfactual_pair_boolean(
+            test_seq_len, test_divergence_index
+        )
+        true_val_a = intermediates_a[-1]
+        prompt_a = PROMPT_TEMPLATE.format(code=prog_a)
+        messages = [
+            {"role": "user", "content": prompt_a}
+        ]
+        text = tokenizer.apply_chat_template(
+            messages, 
+            tokenize=False,
+            add_generation_prompt=True,
+            enable_thinking=False,
+        )
+        text_batch.append(text)
+        counterfact_pairs.append((prog_a, intermediates_a, prog_b, intermediates_b))
+
+
+    model_inputs = tokenizer(text_batch, return_tensors="pt", padding=True, truncation=True).to(model.device)
+    print('generating...')
+    with torch.no_grad():
+        generated_ids = model.generate(
+            **model_inputs,
+            max_new_tokens=3,
+        )
+    print('generated')
+#%%
+    for i, generated_val in enumerate(generated_ids):
+        output_ids = generated_val[len(model_inputs.input_ids[0]):].tolist()
+        content = tokenizer.decode(output_ids,
+                                    skip_special_tokens=True).strip("\n")
+        print(content)
+        pred_a = _parse_int(content)
+        true_val_a = counterfact_pairs[i][1][-1]
+        correct_a = pred_a == true_val_a if pred_a is not None else False
+        num_correct += correct_a
+        num_total += 1
+        print(f"Correct A: {correct_a}")
+            
+    #         llm_outputs = llm_test([prompt_a], num_return_sequences=1, max_new_tokens=1, do_sample=True, temperature=0.8)
+    #         generated_text_a = llm_outputs[0][0]['generated_text'] # Assuming batch_size=1, num_return_sequences=1
+    #         pred_a = _parse_int(generated_text_a[len(prompt_a):])
+
+    #         correct_a = pred_a == true_val_a if pred_a is not None else False
+    #         num_correct += correct_a
+    #         num_total += 1
+            
+    #         if i % 20 == 0:
+    #             print(f"\n--- Testing LLM with Program A (True value: {true_val_a}) ---")
+    #             print(f"LLM Raw Output A: {generated_text_a}" + "\n" + "--------------------------------")
+    #             print(f"LLM Parsed Prediction A: {pred_a} (Correct: {correct_a})" )
+    #             print(f"Ground truth A: {true_val_a}" + "\n" + "--------------------------------")
+    #             print(f"Correct A: {pred_a == true_val_a if pred_a is not None else 'Parse Error'}" + "\n" + "--------------------------------")
+    # print(f"Total correct: {num_correct}, Total tested: {num_total}, Accuracy: {num_correct/num_total:.2f}")
+    # else:
+    # print("\nLLM test part skipped (llm_test not defined or program generation failed).")
+    # print("Ensure you have a 'llm_test' pipeline object initialized to run the LLM test part.")
 
 #%%
 @click.command()

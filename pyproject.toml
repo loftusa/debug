@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "accelerate>=1.6.0",
+    "bitsandbytes>=0.45.5",
     "click>=8.1.8",
     "datasets>=3.5.0",
     "deepseek-tokenizer>=0.1.3",
