@@ -116,12 +116,6 @@ cd experiments
 python _04_boolean_simple.py --num-seqs 100
 ```
 
-**Complexity Reduction Achieved:**
-- Entity tracking: 465 → 67 lines (85% reduction)
-- Boolean logic: 636 → 95 lines (85% reduction)  
-- Range tracking: 304 → 75 lines (75% reduction)
-- **Total: 1,569 → 376 lines (76% reduction)**
-
 ## Results
 
 Results are automatically saved to `results/debug_experiments/` with:
