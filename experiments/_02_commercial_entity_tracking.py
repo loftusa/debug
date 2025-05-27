@@ -8,7 +8,7 @@ import requests
 import csv
 import json
 import time
-from debug.sequence_generation import make_sequence
+from debug.generators import make_sequence
 
 print('imports loaded')
 

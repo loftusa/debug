@@ -1,0 +1,1302 @@
+[
+  {
+    "seq_id": 0,
+    "seq_len": 6,
+    "program": "values = [3, 6, 2, 5, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 25,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 6, 2, 5, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 1,
+    "seq_len": 6,
+    "program": "values = [2, 7, 2, 8, 7, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 27,
+    "predicted_value": 28,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 7, 2, 8, 7, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 28\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 2,
+    "seq_len": 6,
+    "program": "values = [3, 2, 3, 7, 8, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 31,
+    "predicted_value": 38,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 2, 3, 7, 8, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 38\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 3,
+    "seq_len": 6,
+    "program": "values = [8, 9, 8, 2, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 40,
+    "predicted_value": 8,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 9, 8, 2, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8\n```\n```\n```\n```\n"
+      }
+    ]
+  },
+  {
+    "seq_id": 4,
+    "seq_len": 6,
+    "program": "values = [1, 4, 6, 8, 4, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 25,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 4, 6, 8, 4, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 5,
+    "seq_len": 6,
+    "program": "values = [6, 3, 6, 4, 9, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 12,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 3, 6, 4, 9, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 6 is: 12\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 6,
+    "seq_len": 6,
+    "program": "values = [3, 6, 4, 1, 7, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 6, 4, 1, 7, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 7,
+    "seq_len": 6,
+    "program": "values = [1, 6, 7, 9, 3, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 29,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 6, 7, 9, 3, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 8,
+    "seq_len": 6,
+    "program": "values = [3, 8, 6, 8, 2, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 28,
+    "predicted_value": 38,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 8, 6, 8, 2, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 38\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 9,
+    "seq_len": 6,
+    "program": "values = [4, 1, 4, 1, 7, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 20,
+    "predicted_value": 14,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 1, 4, 1, 7, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 14\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 10,
+    "seq_len": 6,
+    "program": "values = [2, 6, 9, 7, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 26,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 6, 9, 7, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 26\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 11,
+    "seq_len": 6,
+    "program": "values = [1, 6, 9, 3, 5, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 6, 9, 3, 5, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 12,
+    "seq_len": 6,
+    "program": "values = [6, 3, 5, 9, 3, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 3, 5, 9, 3, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 18\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 13,
+    "seq_len": 6,
+    "program": "values = [7, 6, 7, 2, 6, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 29,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 6, 7, 2, 6, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 10\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 14,
+    "seq_len": 6,
+    "program": "values = [9, 9, 3, 1, 3, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 9, 3, 1, 3, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 10\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 15,
+    "seq_len": 6,
+    "program": "values = [7, 6, 4, 3, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 33,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 6, 4, 3, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 16,
+    "seq_len": 6,
+    "program": "values = [8, 3, 4, 7, 1, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 29,
+    "predicted_value": 24,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 3, 4, 7, 1, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 24\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 17,
+    "seq_len": 6,
+    "program": "values = [5, 2, 6, 2, 3, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 22,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [5, 2, 6, 2, 3, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 18,
+    "seq_len": 6,
+    "program": "values = [9, 1, 4, 6, 4, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 33,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 1, 4, 6, 4, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 9 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 19,
+    "seq_len": 6,
+    "program": "values = [4, 9, 8, 5, 9, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 36,
+    "predicted_value": 49,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 9, 8, 5, 9, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 49\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 20,
+    "seq_len": 6,
+    "program": "values = [2, 7, 7, 3, 1, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 27,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 7, 7, 3, 1, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 27\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 21,
+    "seq_len": 6,
+    "program": "values = [8, 9, 3, 6, 7, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 35,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 9, 3, 6, 7, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8 is: 10\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 22,
+    "seq_len": 6,
+    "program": "values = [1, 9, 8, 7, 6, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 37,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 9, 8, 7, 6, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 23,
+    "seq_len": 6,
+    "program": "values = [1, 1, 3, 4, 2, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 15,
+    "predicted_value": 14,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 1, 3, 4, 2, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 14\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 24,
+    "seq_len": 6,
+    "program": "values = [6, 3, 2, 1, 8, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 24,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 3, 2, 1, 8, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 21\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 25,
+    "seq_len": 6,
+    "program": "values = [2, 3, 9, 1, 7, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 23,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 3, 9, 1, 7, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 21\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 26,
+    "seq_len": 6,
+    "program": "values = [1, 9, 4, 8, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 31,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 9, 4, 8, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 27,
+    "seq_len": 6,
+    "program": "values = [9, 6, 1, 5, 7, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 37,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 6, 1, 5, 7, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 28,
+    "seq_len": 6,
+    "program": "values = [7, 2, 2, 2, 1, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 23,
+    "predicted_value": 1000000000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 2, 2, 2, 1, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 1000000000"
+      }
+    ]
+  },
+  {
+    "seq_id": 29,
+    "seq_len": 6,
+    "program": "values = [2, 3, 1, 1, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 15,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 3, 1, 1, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 10\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 30,
+    "seq_len": 6,
+    "program": "values = [6, 3, 3, 9, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 28,
+    "predicted_value": 24,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 3, 3, 9, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 24\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 31,
+    "seq_len": 6,
+    "program": "values = [6, 9, 6, 3, 8, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 35,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 9, 6, 3, 8, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 32,
+    "seq_len": 6,
+    "program": "values = [4, 2, 9, 9, 1, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 1000000000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 2, 9, 9, 1, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 1000000000"
+      }
+    ]
+  },
+  {
+    "seq_id": 33,
+    "seq_len": 6,
+    "program": "values = [7, 3, 8, 3, 8, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 31,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 3, 8, 3, 8, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 34,
+    "seq_len": 6,
+    "program": "values = [8, 7, 5, 4, 4, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 31,
+    "predicted_value": 24,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 7, 5, 4, 4, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 24\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 35,
+    "seq_len": 6,
+    "program": "values = [2, 4, 6, 1, 1, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 18,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 4, 6, 1, 1, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 36,
+    "seq_len": 6,
+    "program": "values = [1, 1, 1, 7, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 17,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 1, 1, 7, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 1 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 37,
+    "seq_len": 6,
+    "program": "values = [2, 7, 1, 6, 2, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 25,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 7, 1, 6, 2, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 38,
+    "seq_len": 6,
+    "program": "values = [6, 5, 4, 8, 6, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 5, 4, 8, 6, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 6 is: 10\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 39,
+    "seq_len": 6,
+    "program": "values = [9, 3, 8, 4, 4, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 3, 8, 4, 4, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 40,
+    "seq_len": 6,
+    "program": "values = [6, 9, 4, 1, 8, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 37,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 9, 4, 1, 8, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 6 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 41,
+    "seq_len": 6,
+    "program": "values = [1, 1, 1, 3, 8, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 15,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 1, 1, 3, 8, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 1 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 42,
+    "seq_len": 6,
+    "program": "values = [3, 2, 3, 3, 1, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 19,
+    "predicted_value": 19,
+    "correct": true,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 2, 3, 3, 1, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 19\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 43,
+    "seq_len": 6,
+    "program": "values = [4, 5, 7, 8, 9, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 41,
+    "predicted_value": 48,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 5, 7, 8, 9, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 48\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 44,
+    "seq_len": 6,
+    "program": "values = [3, 7, 3, 1, 7, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 24,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 7, 3, 1, 7, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 10\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 45,
+    "seq_len": 6,
+    "program": "values = [9, 9, 8, 7, 9, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 49,
+    "predicted_value": 9,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 9, 8, 7, 9, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 9\n```\n```\n```\n```\n"
+      }
+    ]
+  },
+  {
+    "seq_id": 46,
+    "seq_len": 6,
+    "program": "values = [9, 6, 5, 4, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 37,
+    "predicted_value": 30,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 6, 5, 4, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 30. So, the correct output is "
+      }
+    ]
+  },
+  {
+    "seq_id": 47,
+    "seq_len": 6,
+    "program": "values = [7, 1, 2, 4, 4, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 21,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 1, 2, 4, 4, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 18\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 48,
+    "seq_len": 6,
+    "program": "values = [1, 6, 7, 5, 7, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 27,
+    "predicted_value": 16,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 6, 7, 5, 7, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 16\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 49,
+    "seq_len": 6,
+    "program": "values = [5, 3, 2, 6, 9, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [5, 3, 2, 6, 9, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 5 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 50,
+    "seq_len": 6,
+    "program": "values = [3, 3, 8, 4, 7, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 38,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 3, 8, 4, 7, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 38\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 51,
+    "seq_len": 6,
+    "program": "values = [3, 2, 9, 9, 6, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 36,
+    "predicted_value": 36,
+    "correct": true,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 2, 9, 9, 6, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 52,
+    "seq_len": 6,
+    "program": "values = [9, 7, 4, 6, 7, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 40,
+    "predicted_value": 30,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 7, 4, 6, 7, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 30\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 53,
+    "seq_len": 6,
+    "program": "values = [9, 7, 6, 3, 2, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 7, 6, 3, 2, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 54,
+    "seq_len": 6,
+    "program": "values = [6, 6, 9, 1, 1, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 6, 9, 1, 1, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 18\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 55,
+    "seq_len": 6,
+    "program": "values = [8, 1, 8, 2, 7, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 1, 8, 2, 7, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 56,
+    "seq_len": 6,
+    "program": "values = [3, 5, 6, 2, 4, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 25,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 5, 6, 2, 4, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 57,
+    "seq_len": 6,
+    "program": "values = [3, 5, 4, 2, 3, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 21,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 5, 4, 2, 3, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 10\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 58,
+    "seq_len": 6,
+    "program": "values = [4, 7, 4, 9, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 37,
+    "predicted_value": 100,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 7, 4, 9, 8, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 4 is: 100\n```\n"
+      }
+    ]
+  },
+  {
+    "seq_id": 59,
+    "seq_len": 6,
+    "program": "values = [3, 1, 6, 9, 5, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 1, 6, 9, 5, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 60,
+    "seq_len": 6,
+    "program": "values = [3, 4, 1, 8, 5, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 27,
+    "predicted_value": 3456,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 4, 1, 8, 5, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 3456\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 61,
+    "seq_len": 6,
+    "program": "values = [3, 4, 7, 9, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 31,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 4, 7, 9, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 62,
+    "seq_len": 6,
+    "program": "values = [8, 1, 8, 2, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 1, 8, 2, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8 is: 10\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 63,
+    "seq_len": 6,
+    "program": "values = [5, 3, 9, 1, 7, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 28,
+    "predicted_value": 1000000000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [5, 3, 9, 1, 7, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 1000000000"
+      }
+    ]
+  },
+  {
+    "seq_id": 64,
+    "seq_len": 6,
+    "program": "values = [1, 7, 1, 1, 3, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 22,
+    "predicted_value": 19,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 7, 1, 1, 3, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 19\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 65,
+    "seq_len": 6,
+    "program": "values = [5, 6, 9, 5, 3, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 35,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [5, 6, 9, 5, 3, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 5 is: 20\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 66,
+    "seq_len": 6,
+    "program": "values = [5, 6, 4, 2, 9, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [5, 6, 4, 2, 9, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 67,
+    "seq_len": 6,
+    "program": "values = [2, 5, 7, 9, 5, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 29,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 5, 7, 9, 5, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 68,
+    "seq_len": 6,
+    "program": "values = [8, 3, 9, 2, 1, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 3, 9, 2, 1, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8 is: 10\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 69,
+    "seq_len": 6,
+    "program": "values = [1, 4, 2, 6, 7, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 4, 2, 6, 7, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 21\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 70,
+    "seq_len": 6,
+    "program": "values = [4, 9, 8, 3, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 33,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 9, 8, 3, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 71,
+    "seq_len": 6,
+    "program": "values = [9, 1, 4, 6, 3, 4]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 27,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 1, 4, 6, 3, 4]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 21\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 72,
+    "seq_len": 6,
+    "program": "values = [3, 5, 4, 6, 6, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 5, 4, 6, 6, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 73,
+    "seq_len": 6,
+    "program": "values = [4, 1, 7, 4, 3, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 27,
+    "predicted_value": 100,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 1, 7, 4, 3, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 4 is: 100\n```\n"
+      }
+    ]
+  },
+  {
+    "seq_id": 74,
+    "seq_len": 6,
+    "program": "values = [4, 5, 5, 6, 5, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 5, 5, 6, 5, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 75,
+    "seq_len": 6,
+    "program": "values = [9, 4, 4, 2, 6, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 4, 4, 2, 6, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 76,
+    "seq_len": 6,
+    "program": "values = [9, 8, 7, 6, 7, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 39,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 8, 7, 6, 7, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 77,
+    "seq_len": 6,
+    "program": "values = [7, 1, 6, 2, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 24,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 1, 6, 2, 6, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 10\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 78,
+    "seq_len": 6,
+    "program": "values = [7, 5, 7, 4, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 5, 7, 4, 6, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 79,
+    "seq_len": 6,
+    "program": "values = [1, 8, 4, 9, 1, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 25,
+    "predicted_value": 1000000000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 8, 4, 9, 1, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 1000000000"
+      }
+    ]
+  },
+  {
+    "seq_id": 80,
+    "seq_len": 6,
+    "program": "values = [2, 1, 8, 1, 8, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 23,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 1, 8, 1, 8, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 21\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 81,
+    "seq_len": 6,
+    "program": "values = [4, 8, 2, 2, 1, 7]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 24,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 8, 2, 2, 1, 7]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 82,
+    "seq_len": 6,
+    "program": "values = [9, 7, 6, 5, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 34,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 7, 6, 5, 2, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 83,
+    "seq_len": 6,
+    "program": "values = [9, 1, 4, 2, 5, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 29,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 1, 4, 2, 5, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 84,
+    "seq_len": 6,
+    "program": "values = [1, 8, 9, 3, 2, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 31,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 8, 9, 3, 2, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 18\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 85,
+    "seq_len": 6,
+    "program": "values = [4, 3, 1, 5, 7, 2]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 22,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [4, 3, 1, 5, 7, 2]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 86,
+    "seq_len": 6,
+    "program": "values = [9, 9, 3, 6, 1, 1]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 29,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 9, 3, 6, 1, 1]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 18\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 87,
+    "seq_len": 6,
+    "program": "values = [3, 7, 2, 5, 2, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 22,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 7, 2, 5, 2, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 3 is: 10\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 88,
+    "seq_len": 6,
+    "program": "values = [7, 1, 5, 1, 4, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 26,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [7, 1, 5, 1, 4, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 89,
+    "seq_len": 6,
+    "program": "values = [3, 9, 9, 9, 6, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 41,
+    "predicted_value": 36,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 9, 9, 9, 6, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 90,
+    "seq_len": 6,
+    "program": "values = [1, 4, 7, 1, 4, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 23,
+    "predicted_value": 14,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [1, 4, 7, 1, 4, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 14\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 91,
+    "seq_len": 6,
+    "program": "values = [6, 7, 8, 8, 9, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 43,
+    "predicted_value": 45,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 7, 8, 8, 9, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 45.\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 92,
+    "seq_len": 6,
+    "program": "values = [3, 9, 9, 4, 5, 6]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 36,
+    "predicted_value": 36,
+    "correct": true,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 9, 9, 4, 5, 6]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 36\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 93,
+    "seq_len": 6,
+    "program": "values = [8, 2, 3, 2, 8, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 2, 3, 2, 8, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 94,
+    "seq_len": 6,
+    "program": "values = [3, 2, 2, 5, 1, 5]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 18,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [3, 2, 2, 5, 1, 5]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 15\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 95,
+    "seq_len": 6,
+    "program": "values = [5, 7, 8, 6, 1, 3]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 30,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [5, 7, 8, 6, 1, 3]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 20\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 96,
+    "seq_len": 6,
+    "program": "values = [2, 6, 4, 4, 3, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 28,
+    "predicted_value": 24,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [2, 6, 4, 4, 3, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 24\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 97,
+    "seq_len": 6,
+    "program": "values = [9, 1, 1, 6, 8, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 33,
+    "predicted_value": 100000,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [9, 1, 1, 6, 8, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 9 is: 100000"
+      }
+    ]
+  },
+  {
+    "seq_id": 98,
+    "seq_len": 6,
+    "program": "values = [6, 4, 6, 3, 4, 9]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 32,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [6, 4, 6, 3, 4, 9]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 21\n```\n```\n```\n``"
+      }
+    ]
+  },
+  {
+    "seq_id": 99,
+    "seq_len": 6,
+    "program": "values = [8, 8, 7, 8, 3, 8]\nx = 0\nfor i in range(6):\n    x += values[i]",
+    "true_value": 42,
+    "predicted_value": 8,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nvalues = [8, 8, 7, 8, 3, 8]\nx = 0\nfor i in range(6):\n    x += values[i]\n```\nThe final value of x is: 8\n```\n```\n```\n```\n"
+      }
+    ]
+  }
+]

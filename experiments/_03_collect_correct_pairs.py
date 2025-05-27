@@ -7,7 +7,7 @@
 #%%  # SETUP / HELPER FUNCTIONS
 from typing import Optional
 import re
-from debug.sequence_generation import make_counterfactual_pair
+from debug.generators import make_counterfactual_pair
 from transformers import pipeline
 import torch
 from typing import List, Tuple

@@ -73,7 +73,7 @@ def _extract_generated_part(full_text: str, prompt_text: str) -> str:
 GROUPS = {
     "add": ("+= v", lambda x, v: x + v),
     "sub": ("-= v", lambda x, v: x - v),
-    # "mul": ("*= v", lambda x, v: x * v),
+    # "mul": ("*= v", lambda x, v: x * v)image.png,
     # "div": ("//= v", lambda x, v: x // v),
     # "mod": ("%= v", lambda x, v: x % v),
     # "pow": ("**= v", lambda x, v: x**v),

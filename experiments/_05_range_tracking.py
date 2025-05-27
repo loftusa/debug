@@ -24,13 +24,22 @@ PROMPT_TEMPLATE = (
 )
 
 
+# DEFAULT_MODELS_ALL: List[str] = [
+#     "Qwen/Qwen2.5-0.5B",
+#     "Qwen/Qwen2.5-1.5B",
+#     "Qwen/Qwen2.5-3B",
+#     "Qwen/Qwen2.5-7B",
+#     "Qwen/Qwen2.5-14B",
+#     # "Qwen/Qwen2.5-32B",
+# ]
+
 DEFAULT_MODELS_ALL: List[str] = [
-    "Qwen/Qwen2.5-0.5B",
-    "Qwen/Qwen2.5-1.5B",
-    "Qwen/Qwen2.5-3B",
-    "Qwen/Qwen2.5-7B",
-    "Qwen/Qwen2.5-14B",
-    # "Qwen/Qwen2.5-32B",
+    "Qwen/Qwen3-0.6B",
+    "Qwen/Qwen3-1.7B",
+    "Qwen/Qwen3-4B",
+    "Qwen/Qwen3-8B",
+    "Qwen/Qwen3-14B",
+    # "Qwen/Qwen3-32B",
 ]
 
 
@@ -53,22 +62,36 @@ def _extract_generated_part(full_text: str, prompt_text: str) -> str:
     return full_text
 
 
-def make_range_program(seq_len: int, rng: np.random.RandomState) -> tuple[str, int]:
+def make_range_program(seq_len: int, rng: np.random.RandomState, random_sum=False) -> tuple[str, int]:
     """
     Generate a simple range tracking program:
     x = 0
     for i in range(n):
-        x += z
+        x += z  (or x += values[i] if random_sum=True)
     
-    Returns program text and true final value (n * z).
+    Returns program text and true final value.
     """
-    z = rng.randint(1, 10)  # Random increment value
-    
-    program = f"""x = 0
+    if random_sum:
+        # Generate different values for each iteration
+        values = [rng.randint(1, 10) for _ in range(seq_len)]
+        values_str = str(values)
+        
+        program = f"""values = {values_str}
+x = 0
+for i in range({seq_len}):
+    x += values[i]"""
+        
+        true_value = sum(values)
+    else:
+        # Use the same value for all iterations
+        z = rng.randint(1, 10)
+        
+        program = f"""x = 0
 for i in range({seq_len}):
     x += {z}"""
+        
+        true_value = seq_len * z
     
-    true_value = seq_len * z
     return program, true_value
 
 def make_range_program_newlines(seq_len: int, rng: np.random.RandomState, random_sum=False) -> tuple[str, int]:
@@ -83,7 +106,7 @@ def make_range_program_newlines(seq_len: int, rng: np.random.RandomState, random
     """
     lines = ["x = 0"]
     total_sum = 0
-    
+
     for _ in range(seq_len):
         z = rng.randint(1, 10)  # Random increment value for each line
         lines.append(f"x += {z}")
@@ -104,6 +127,7 @@ def make_range_program_newlines(seq_len: int, rng: np.random.RandomState, random
     true_value = total_sum
     return program, true_value
 
+#%%
 @click.command()
 @click.option("--num-seqs", default=100, help="Number of programs per model.")
 @click.option("--seq-len", "seq_len_opt", default=5, help="Number of iterations in the range loop.")
@@ -111,7 +135,7 @@ def make_range_program_newlines(seq_len: int, rng: np.random.RandomState, random
 @click.option("--output-dir", "output_base_dir_str", required=True, type=click.Path(file_okay=False, dir_okay=True), help="Base directory to save all results.")
 @click.option("--models", "model_ids_str", default=None, help="Comma-separated list of model IDs to run.")
 @click.option("--program-type", "program_type", default="lines", help="Type of program to generate: 'lines' or 'single'.")
-@click.option("--random-sum", "random_sum", default=False, help="Whether to use random sums in the program.")
+@click.option("--random-sum", "random_sum", is_flag=True, default=False, help="Whether to use random sums in the program.")
 def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_dir_str: str, model_ids_str: Optional[str], program_type: str, random_sum: bool):
     """Evaluate models on the simple range tracking task."""
     accelerator = Accelerator()
@@ -193,7 +217,7 @@ def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_di
             if program_type == "lines":
                 program, true_value = make_range_program_newlines(seq_len_opt, master_rng, random_sum)
             else:
-                program, true_value = make_range_program(seq_len_opt, master_rng)
+                program, true_value = make_range_program(seq_len_opt, master_rng, random_sum)
             prompt_text = PROMPT_TEMPLATE.format(code=program)
             
             result_data = {

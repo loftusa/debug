@@ -1,8 +1,9 @@
 # %%
-from debug.sequence_generation import make_sequence
+from debug.generators import make_sequence
 import sys
 
-code, intermediate = make_sequence(5)
+code, intermediates = make_sequence(5)
+intermediate = intermediates
 PROMPT_TEMPLATE = (
     "You are given a short Python program. "
     "Your task is to compute the final value of the variable x. "

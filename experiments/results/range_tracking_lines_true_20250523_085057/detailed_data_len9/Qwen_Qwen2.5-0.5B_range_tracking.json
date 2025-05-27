@@ -1,0 +1,1302 @@
+[
+  {
+    "seq_id": 0,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 6\nx += 2\nx += 5\nx += 6\nx += 3\nx += 2\nx += 7\nx += 2",
+    "true_value": 36,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 6\nx += 2\nx += 5\nx += 6\nx += 3\nx += 2\nx += 7\nx += 2\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 1,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 7\nx += 1\nx += 3\nx += 2\nx += 3\nx += 7\nx += 8\nx += 8",
+    "true_value": 47,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 7\nx += 1\nx += 3\nx += 2\nx += 3\nx += 7\nx += 8\nx += 8\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 2,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 9\nx += 8\nx += 2\nx += 8\nx += 5\nx += 1\nx += 4\nx += 6",
+    "true_value": 51,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 9\nx += 8\nx += 2\nx += 8\nx += 5\nx += 1\nx += 4\nx += 6\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 3,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 4\nx += 2\nx += 6\nx += 3\nx += 6\nx += 4\nx += 9\nx += 6",
+    "true_value": 48,
+    "predicted_value": 24,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 4\nx += 2\nx += 6\nx += 3\nx += 6\nx += 4\nx += 9\nx += 6\n```\nThe final value of x is: 24."
+      }
+    ]
+  },
+  {
+    "seq_id": 4,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 6\nx += 4\nx += 1\nx += 7\nx += 9\nx += 1\nx += 6\nx += 7",
+    "true_value": 44,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 6\nx += 4\nx += 1\nx += 7\nx += 9\nx += 1\nx += 6\nx += 7\n```\nThe final value of x is: 13."
+      }
+    ]
+  },
+  {
+    "seq_id": 5,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 3\nx += 3\nx += 3\nx += 8\nx += 6\nx += 8\nx += 2\nx += 1",
+    "true_value": 43,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 3\nx += 3\nx += 3\nx += 8\nx += 6\nx += 8\nx += 2\nx += 1\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 6,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 1\nx += 4\nx += 1\nx += 7\nx += 3\nx += 2\nx += 6\nx += 9",
+    "true_value": 37,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 1\nx += 4\nx += 1\nx += 7\nx += 3\nx += 2\nx += 6\nx += 9\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 7,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 6\nx += 2\nx += 1\nx += 6\nx += 9\nx += 3\nx += 5\nx += 8",
+    "true_value": 47,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 6\nx += 2\nx += 1\nx += 6\nx += 9\nx += 3\nx += 5\nx += 8\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 8,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 3\nx += 5\nx += 9\nx += 3\nx += 6\nx += 7\nx += 6\nx += 7",
+    "true_value": 52,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 3\nx += 5\nx += 9\nx += 3\nx += 6\nx += 7\nx += 6\nx += 7\n```\nThe final value of x is: 23."
+      }
+    ]
+  },
+  {
+    "seq_id": 9,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 6\nx += 1\nx += 9\nx += 9\nx += 3\nx += 1\nx += 3\nx += 1",
+    "true_value": 35,
+    "predicted_value": 12,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 6\nx += 1\nx += 9\nx += 9\nx += 3\nx += 1\nx += 3\nx += 1\n```\nThe final value of x is: 12"
+      }
+    ]
+  },
+  {
+    "seq_id": 10,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 6\nx += 4\nx += 3\nx += 8\nx += 5\nx += 8\nx += 3\nx += 4",
+    "true_value": 48,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 6\nx += 4\nx += 3\nx += 8\nx += 5\nx += 8\nx += 3\nx += 4\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 11,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 1\nx += 6\nx += 5\nx += 2\nx += 6\nx += 2\nx += 3\nx += 4",
+    "true_value": 36,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 1\nx += 6\nx += 5\nx += 2\nx += 6\nx += 2\nx += 3\nx += 4\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 12,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 1\nx += 4\nx += 6\nx += 4\nx += 9\nx += 4\nx += 9\nx += 8",
+    "true_value": 54,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 1\nx += 4\nx += 6\nx += 4\nx += 9\nx += 4\nx += 9\nx += 8\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 13,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 9\nx += 1\nx += 2\nx += 7\nx += 7\nx += 3\nx += 1\nx += 6",
+    "true_value": 41,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 9\nx += 1\nx += 2\nx += 7\nx += 7\nx += 3\nx += 1\nx += 6\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 14,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 9\nx += 3\nx += 6\nx += 7\nx += 2\nx += 1\nx += 9\nx += 8",
+    "true_value": 53,
+    "predicted_value": 19,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 9\nx += 3\nx += 6\nx += 7\nx += 2\nx += 1\nx += 9\nx += 8\n```\nThe final value of x is: 19."
+      }
+    ]
+  },
+  {
+    "seq_id": 15,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 6\nx += 6\nx += 1\nx += 1\nx += 3\nx += 4\nx += 2\nx += 4",
+    "true_value": 34,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 6\nx += 6\nx += 1\nx += 1\nx += 3\nx += 4\nx += 2\nx += 4\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 16,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 3\nx += 2\nx += 1\nx += 8\nx += 4\nx += 2\nx += 3\nx += 9",
+    "true_value": 38,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 3\nx += 2\nx += 1\nx += 8\nx += 4\nx += 2\nx += 3\nx += 9\n```\nThe final value of x is: 13."
+      }
+    ]
+  },
+  {
+    "seq_id": 17,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 7\nx += 1\nx += 1\nx += 9\nx += 4\nx += 8\nx += 6\nx += 3",
+    "true_value": 40,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 7\nx += 1\nx += 1\nx += 9\nx += 4\nx += 8\nx += 6\nx += 3\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 18,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 6\nx += 1\nx += 5\nx += 7\nx += 9\nx += 7\nx += 2\nx += 2",
+    "true_value": 48,
+    "predicted_value": 19,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 6\nx += 1\nx += 5\nx += 7\nx += 9\nx += 7\nx += 2\nx += 2\n```\nThe final value of x is: 19"
+      }
+    ]
+  },
+  {
+    "seq_id": 19,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 1\nx += 9\nx += 2\nx += 3\nx += 1\nx += 1\nx += 6\nx += 2",
+    "true_value": 27,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 1\nx += 9\nx += 2\nx += 3\nx += 1\nx += 1\nx += 6\nx += 2\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 20,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 3\nx += 3\nx += 9\nx += 2\nx += 5\nx += 6\nx += 9\nx += 6",
+    "true_value": 49,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 3\nx += 3\nx += 9\nx += 2\nx += 5\nx += 6\nx += 9\nx += 6\n```\nThe final value of x is: 18"
+      }
+    ]
+  },
+  {
+    "seq_id": 21,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 8\nx += 3\nx += 4\nx += 2\nx += 9\nx += 9\nx += 1\nx += 1",
+    "true_value": 40,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 8\nx += 3\nx += 4\nx += 2\nx += 9\nx += 9\nx += 1\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 22,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 3\nx += 8\nx += 3\nx += 8\nx += 2\nx += 8\nx += 7\nx += 5",
+    "true_value": 51,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 3\nx += 8\nx += 3\nx += 8\nx += 2\nx += 8\nx += 7\nx += 5\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 23,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 4\nx += 3\nx += 2\nx += 4\nx += 6\nx += 1\nx += 1\nx += 4",
+    "true_value": 29,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\nx += 3\nx += 2\nx += 4\nx += 6\nx += 1\nx += 1\nx += 4\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 24,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 1\nx += 1\nx += 7\nx += 2\nx += 5\nx += 2\nx += 7\nx += 1",
+    "true_value": 27,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 1\nx += 1\nx += 7\nx += 2\nx += 5\nx += 2\nx += 7\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 25,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 2\nx += 7\nx += 6\nx += 5\nx += 4\nx += 8\nx += 6\nx += 5",
+    "true_value": 49,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 2\nx += 7\nx += 6\nx += 5\nx += 4\nx += 8\nx += 6\nx += 5\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 26,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 3\nx += 8\nx += 4\nx += 4\nx += 6\nx += 6\nx += 9\nx += 4",
+    "true_value": 53,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 3\nx += 8\nx += 4\nx += 4\nx += 6\nx += 6\nx += 9\nx += 4\n```\nThe final value of x is: 23."
+      }
+    ]
+  },
+  {
+    "seq_id": 27,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 8\nx += 9\nx += 1\nx += 1\nx += 1\nx += 3\nx += 8\nx += 1",
+    "true_value": 33,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 8\nx += 9\nx += 1\nx += 1\nx += 1\nx += 3\nx += 8\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 28,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 2\nx += 3\nx += 3\nx += 1\nx += 7\nx += 4\nx += 5\nx += 7",
+    "true_value": 35,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 2\nx += 3\nx += 3\nx += 1\nx += 7\nx += 4\nx += 5\nx += 7\n```\nThe final value of x is: 15."
+      }
+    ]
+  },
+  {
+    "seq_id": 29,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 9\nx += 8\nx += 3\nx += 7\nx += 3\nx += 1\nx += 7\nx += 3",
+    "true_value": 49,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 9\nx += 8\nx += 3\nx += 7\nx += 3\nx += 1\nx += 7\nx += 3\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 30,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 9\nx += 8\nx += 7\nx += 9\nx += 7\nx += 9\nx += 6\nx += 5",
+    "true_value": 69,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 9\nx += 8\nx += 7\nx += 9\nx += 7\nx += 9\nx += 6\nx += 5\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 31,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 8\nx += 5\nx += 7\nx += 1\nx += 2\nx += 4\nx += 4\nx += 3",
+    "true_value": 38,
+    "predicted_value": 12,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 8\nx += 5\nx += 7\nx += 1\nx += 2\nx += 4\nx += 4\nx += 3\n```\nThe final value of x is: 12"
+      }
+    ]
+  },
+  {
+    "seq_id": 32,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 6\nx += 7\nx += 5\nx += 7\nx += 1\nx += 5\nx += 3\nx += 2",
+    "true_value": 37,
+    "predicted_value": 11,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 6\nx += 7\nx += 5\nx += 7\nx += 1\nx += 5\nx += 3\nx += 2\n```\nThe final value of x is: 11"
+      }
+    ]
+  },
+  {
+    "seq_id": 33,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 9\nx += 9\nx += 3\nx += 3\nx += 8\nx += 4\nx += 7\nx += 7",
+    "true_value": 56,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 9\nx += 9\nx += 3\nx += 3\nx += 8\nx += 4\nx += 7\nx += 7\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 34,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 2\nx += 9\nx += 9\nx += 6\nx += 7\nx += 9\nx += 7\nx += 4",
+    "true_value": 56,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 2\nx += 9\nx += 9\nx += 6\nx += 7\nx += 9\nx += 7\nx += 4\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 35,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 7\nx += 7\nx += 9\nx += 7\nx += 6\nx += 3\nx += 2\nx += 7",
+    "true_value": 54,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 7\nx += 7\nx += 9\nx += 7\nx += 6\nx += 3\nx += 2\nx += 7\n```\nThe final value of x is: 23."
+      }
+    ]
+  },
+  {
+    "seq_id": 36,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 6\nx += 9\nx += 1\nx += 1\nx += 3\nx += 8\nx += 1\nx += 8",
+    "true_value": 43,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 6\nx += 9\nx += 1\nx += 1\nx += 3\nx += 8\nx += 1\nx += 8\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 37,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 7\nx += 8\nx += 3\nx += 5\nx += 6\nx += 2\nx += 4\nx += 5",
+    "true_value": 42,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 7\nx += 8\nx += 3\nx += 5\nx += 6\nx += 2\nx += 4\nx += 5\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 38,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 5\nx += 4\nx += 2\nx += 3\nx += 4\nx += 4\nx += 7\nx += 4",
+    "true_value": 36,
+    "predicted_value": 14,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 5\nx += 4\nx += 2\nx += 3\nx += 4\nx += 4\nx += 7\nx += 4\n```\nThe final value of x is: 14."
+      }
+    ]
+  },
+  {
+    "seq_id": 39,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 8\nx += 5\nx += 3\nx += 1\nx += 6\nx += 9\nx += 5\nx += 6",
+    "true_value": 52,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 8\nx += 5\nx += 3\nx += 1\nx += 6\nx += 9\nx += 5\nx += 6\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 40,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 4\nx += 1\nx += 8\nx += 5\nx += 6\nx += 3\nx += 4\nx += 7",
+    "true_value": 41,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\nx += 1\nx += 8\nx += 5\nx += 6\nx += 3\nx += 4\nx += 7\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 41,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 6\nx += 2\nx += 8\nx += 1\nx += 8\nx += 2\nx += 2\nx += 5",
+    "true_value": 43,
+    "predicted_value": 17,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 6\nx += 2\nx += 8\nx += 1\nx += 8\nx += 2\nx += 2\nx += 5\n```\nThe final value of x is: 17"
+      }
+    ]
+  },
+  {
+    "seq_id": 42,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 3\nx += 9\nx += 1\nx += 7\nx += 3\nx += 1\nx += 7\nx += 1",
+    "true_value": 37,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 3\nx += 9\nx += 1\nx += 7\nx += 3\nx += 1\nx += 7\nx += 1\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 43,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 3\nx += 9\nx += 5\nx += 6\nx += 9\nx += 5\nx += 3\nx += 7",
+    "true_value": 48,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 3\nx += 9\nx += 5\nx += 6\nx += 9\nx += 5\nx += 3\nx += 7\n```\nThe final value of x is: 15."
+      }
+    ]
+  },
+  {
+    "seq_id": 44,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 6\nx += 4\nx += 2\nx += 9\nx += 4\nx += 2\nx += 5\nx += 7",
+    "true_value": 44,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 6\nx += 4\nx += 2\nx += 9\nx += 4\nx += 2\nx += 5\nx += 7\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 45,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 5\nx += 1\nx += 8\nx += 3\nx += 9\nx += 2\nx += 1\nx += 7",
+    "true_value": 45,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 5\nx += 1\nx += 8\nx += 3\nx += 9\nx += 2\nx += 1\nx += 7\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 46,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 4\nx += 2\nx += 6\nx += 7\nx += 6\nx += 4\nx += 9\nx += 8",
+    "true_value": 47,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\nx += 2\nx += 6\nx += 7\nx += 6\nx += 4\nx += 9\nx += 8\n```\nThe final value of x is: 15."
+      }
+    ]
+  },
+  {
+    "seq_id": 47,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 6\nx += 3\nx += 9\nx += 1\nx += 4\nx += 6\nx += 3\nx += 4",
+    "true_value": 39,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 6\nx += 3\nx += 9\nx += 1\nx += 4\nx += 6\nx += 3\nx += 4\n```\nThe final value of x is: 13."
+      }
+    ]
+  },
+  {
+    "seq_id": 48,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 5\nx += 4\nx += 6\nx += 6\nx += 6\nx += 4\nx += 1\nx += 7",
+    "true_value": 42,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 5\nx += 4\nx += 6\nx += 6\nx += 6\nx += 4\nx += 1\nx += 7\n```\nThe final value of x is: 13."
+      }
+    ]
+  },
+  {
+    "seq_id": 49,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 3\nx += 8\nx += 4\nx += 5\nx += 5\nx += 6\nx += 5\nx += 1",
+    "true_value": 41,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 3\nx += 8\nx += 4\nx += 5\nx += 5\nx += 6\nx += 5\nx += 1\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 50,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 4\nx += 4\nx += 2\nx += 6\nx += 5\nx += 9\nx += 8\nx += 7",
+    "true_value": 54,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 4\nx += 4\nx += 2\nx += 6\nx += 5\nx += 9\nx += 8\nx += 7\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 51,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 7\nx += 2\nx += 7\nx += 1\nx += 6\nx += 2\nx += 6\nx += 2",
+    "true_value": 39,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 7\nx += 2\nx += 7\nx += 1\nx += 6\nx += 2\nx += 6\nx += 2\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 52,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 5\nx += 7\nx += 4\nx += 6\nx += 3\nx += 1\nx += 8\nx += 4",
+    "true_value": 45,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 5\nx += 7\nx += 4\nx += 6\nx += 3\nx += 1\nx += 8\nx += 4\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 53,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 1\nx += 2\nx += 2\nx += 1\nx += 8\nx += 1\nx += 8\nx += 3",
+    "true_value": 35,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 1\nx += 2\nx += 2\nx += 1\nx += 8\nx += 1\nx += 8\nx += 3\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 54,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 8\nx += 2\nx += 2\nx += 1\nx += 7\nx += 9\nx += 7\nx += 6",
+    "true_value": 46,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 8\nx += 2\nx += 2\nx += 1\nx += 7\nx += 9\nx += 7\nx += 6\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 55,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 2\nx += 5\nx += 9\nx += 1\nx += 4\nx += 2\nx += 5\nx += 8",
+    "true_value": 41,
+    "predicted_value": 19,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 2\nx += 5\nx += 9\nx += 1\nx += 4\nx += 2\nx += 5\nx += 8\n```\nThe final value of x is: 19"
+      }
+    ]
+  },
+  {
+    "seq_id": 56,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 8\nx += 9\nx += 3\nx += 2\nx += 8\nx += 4\nx += 3\nx += 1",
+    "true_value": 39,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 8\nx += 9\nx += 3\nx += 2\nx += 8\nx += 4\nx += 3\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 57,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 7\nx += 2\nx += 9\nx += 9\nx += 3\nx += 6\nx += 1\nx += 1",
+    "true_value": 43,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 7\nx += 2\nx += 9\nx += 9\nx += 3\nx += 6\nx += 1\nx += 1\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 58,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 7\nx += 2\nx += 5\nx += 2\nx += 3\nx += 7\nx += 1\nx += 5",
+    "true_value": 35,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 7\nx += 2\nx += 5\nx += 2\nx += 3\nx += 7\nx += 1\nx += 5\n```\nThe final value of x is: 15."
+      }
+    ]
+  },
+  {
+    "seq_id": 59,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 4\nx += 8\nx += 3\nx += 9\nx += 9\nx += 9\nx += 6\nx += 5",
+    "true_value": 54,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\nx += 8\nx += 3\nx += 9\nx += 9\nx += 9\nx += 6\nx += 5\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 60,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 4\nx += 7\nx += 1\nx += 4\nx += 6\nx += 6\nx += 7\nx += 8",
+    "true_value": 44,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\nx += 7\nx += 1\nx += 4\nx += 6\nx += 6\nx += 7\nx += 8\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 61,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 9\nx += 5\nx += 3\nx += 9\nx += 9\nx += 4\nx += 5\nx += 6",
+    "true_value": 58,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 9\nx += 5\nx += 3\nx += 9\nx += 9\nx += 4\nx += 5\nx += 6\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 62,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 2\nx += 3\nx += 2\nx += 8\nx += 9\nx += 3\nx += 2\nx += 2",
+    "true_value": 39,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 2\nx += 3\nx += 2\nx += 8\nx += 9\nx += 3\nx += 2\nx += 2\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 63,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 1\nx += 5\nx += 5\nx += 7\nx += 8\nx += 6\nx += 1\nx += 3",
+    "true_value": 41,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 1\nx += 5\nx += 5\nx += 7\nx += 8\nx += 6\nx += 1\nx += 3\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 64,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 6\nx += 4\nx += 4\nx += 3\nx += 9\nx += 9\nx += 1\nx += 1",
+    "true_value": 39,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 6\nx += 4\nx += 4\nx += 3\nx += 9\nx += 9\nx += 1\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 65,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 8\nx += 8\nx += 6\nx += 4\nx += 6\nx += 3\nx += 4\nx += 9",
+    "true_value": 54,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 8\nx += 8\nx += 6\nx += 4\nx += 6\nx += 3\nx += 4\nx += 9\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 66,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 8\nx += 7\nx += 8\nx += 3\nx += 8\nx += 2\nx += 3\nx += 2",
+    "true_value": 49,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 8\nx += 7\nx += 8\nx += 3\nx += 8\nx += 2\nx += 3\nx += 2\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 67,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 1\nx += 3\nx += 9\nx += 4\nx += 4\nx += 1\nx += 4\nx += 9",
+    "true_value": 42,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 1\nx += 3\nx += 9\nx += 4\nx += 4\nx += 1\nx += 4\nx += 9\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 68,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 4\nx += 5\nx += 6\nx += 7\nx += 4\nx += 8\nx += 4\nx += 6",
+    "true_value": 46,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 4\nx += 5\nx += 6\nx += 7\nx += 4\nx += 8\nx += 4\nx += 6\n```\nThe final value of x is: 20"
+      }
+    ]
+  },
+  {
+    "seq_id": 69,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 1\nx += 7\nx += 7\nx += 8\nx += 6\nx += 8\nx += 7\nx += 5",
+    "true_value": 53,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 1\nx += 7\nx += 7\nx += 8\nx += 6\nx += 8\nx += 7\nx += 5\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 70,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 5\nx += 8\nx += 3\nx += 2\nx += 4\nx += 1\nx += 1\nx += 3",
+    "true_value": 31,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 5\nx += 8\nx += 3\nx += 2\nx += 4\nx += 1\nx += 1\nx += 3\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 71,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 6\nx += 3\nx += 2\nx += 4\nx += 4\nx += 3\nx += 4\nx += 5",
+    "true_value": 33,
+    "predicted_value": 14,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 6\nx += 3\nx += 2\nx += 4\nx += 4\nx += 3\nx += 4\nx += 5\n```\nThe final value of x is: 14."
+      }
+    ]
+  },
+  {
+    "seq_id": 72,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 6\nx += 6\nx += 6\nx += 4\nx += 9\nx += 9\nx += 3\nx += 5",
+    "true_value": 56,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 6\nx += 6\nx += 6\nx += 4\nx += 9\nx += 9\nx += 3\nx += 5\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 73,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 6\nx += 8\nx += 1\nx += 7\nx += 5\nx += 6\nx += 7\nx += 6",
+    "true_value": 51,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 6\nx += 8\nx += 1\nx += 7\nx += 5\nx += 6\nx += 7\nx += 6\n```\nThe final value of x is: 23."
+      }
+    ]
+  },
+  {
+    "seq_id": 74,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 1\nx += 1\nx += 7\nx += 2\nx += 6\nx += 2\nx += 7\nx += 3",
+    "true_value": 33,
+    "predicted_value": 11,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 1\nx += 1\nx += 7\nx += 2\nx += 6\nx += 2\nx += 7\nx += 3\n```\nThe final value of x is: 11"
+      }
+    ]
+  },
+  {
+    "seq_id": 75,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 1\nx += 4\nx += 7\nx += 6\nx += 4\nx += 1\nx += 6\nx += 1",
+    "true_value": 36,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 1\nx += 4\nx += 7\nx += 6\nx += 4\nx += 1\nx += 6\nx += 1\n```\nThe final value of x is: 13."
+      }
+    ]
+  },
+  {
+    "seq_id": 76,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 7\nx += 8\nx += 8\nx += 9\nx += 1\nx += 6\nx += 8\nx += 7",
+    "true_value": 63,
+    "predicted_value": 15,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 7\nx += 8\nx += 8\nx += 9\nx += 1\nx += 6\nx += 8\nx += 7\n```\nThe final value of x is: 15"
+      }
+    ]
+  },
+  {
+    "seq_id": 77,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 4\nx += 6\nx += 8\nx += 1\nx += 7\nx += 6\nx += 4\nx += 3",
+    "true_value": 40,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 4\nx += 6\nx += 8\nx += 1\nx += 7\nx += 6\nx += 4\nx += 3\n```\nThe final value of x is: 13."
+      }
+    ]
+  },
+  {
+    "seq_id": 78,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 2\nx += 9\nx += 6\nx += 4\nx += 7\nx += 6\nx += 2\nx += 5",
+    "true_value": 46,
+    "predicted_value": 17,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 2\nx += 9\nx += 6\nx += 4\nx += 7\nx += 6\nx += 2\nx += 5\n```\nThe final value of x is: 17"
+      }
+    ]
+  },
+  {
+    "seq_id": 79,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 1\nx += 4\nx += 1\nx += 1\nx += 1\nx += 6\nx += 8\nx += 9",
+    "true_value": 33,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 1\nx += 4\nx += 1\nx += 1\nx += 1\nx += 6\nx += 8\nx += 9\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 80,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 9\nx += 3\nx += 5\nx += 1\nx += 6\nx += 8\nx += 4\nx += 7",
+    "true_value": 49,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 9\nx += 3\nx += 5\nx += 1\nx += 6\nx += 8\nx += 4\nx += 7\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 81,
+    "seq_len": 9,
+    "program": "x = 0\nx += 9\nx += 8\nx += 8\nx += 3\nx += 1\nx += 3\nx += 4\nx += 5\nx += 9",
+    "true_value": 50,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 9\nx += 8\nx += 8\nx += 3\nx += 1\nx += 3\nx += 4\nx += 5\nx += 9\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 82,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 7\nx += 2\nx += 2\nx += 6\nx += 9\nx += 5\nx += 3\nx += 8",
+    "true_value": 48,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 7\nx += 2\nx += 2\nx += 6\nx += 9\nx += 5\nx += 3\nx += 8\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 83,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 5\nx += 8\nx += 9\nx += 9\nx += 9\nx += 7\nx += 8\nx += 5",
+    "true_value": 62,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 5\nx += 8\nx += 9\nx += 9\nx += 9\nx += 7\nx += 8\nx += 5\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 84,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 3\nx += 9\nx += 1\nx += 1\nx += 6\nx += 1\nx += 3\nx += 7",
+    "true_value": 32,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 3\nx += 9\nx += 1\nx += 1\nx += 6\nx += 1\nx += 3\nx += 7\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 85,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 2\nx += 1\nx += 6\nx += 5\nx += 8\nx += 5\nx += 4\nx += 1",
+    "true_value": 35,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 2\nx += 1\nx += 6\nx += 5\nx += 8\nx += 5\nx += 4\nx += 1\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 86,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 5\nx += 7\nx += 6\nx += 1\nx += 7\nx += 8\nx += 7\nx += 4",
+    "true_value": 48,
+    "predicted_value": 21,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 5\nx += 7\nx += 6\nx += 1\nx += 7\nx += 8\nx += 7\nx += 4\n```\nThe final value of x is: 21"
+      }
+    ]
+  },
+  {
+    "seq_id": 87,
+    "seq_len": 9,
+    "program": "x = 0\nx += 4\nx += 4\nx += 3\nx += 9\nx += 3\nx += 9\nx += 9\nx += 1\nx += 2",
+    "true_value": 44,
+    "predicted_value": 11,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 4\nx += 4\nx += 3\nx += 9\nx += 3\nx += 9\nx += 9\nx += 1\nx += 2\n```\nThe final value of x is: 11"
+      }
+    ]
+  },
+  {
+    "seq_id": 88,
+    "seq_len": 9,
+    "program": "x = 0\nx += 5\nx += 4\nx += 1\nx += 9\nx += 2\nx += 5\nx += 2\nx += 7\nx += 6",
+    "true_value": 41,
+    "predicted_value": 17,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 5\nx += 4\nx += 1\nx += 9\nx += 2\nx += 5\nx += 2\nx += 7\nx += 6\n```\nThe final value of x is: 17"
+      }
+    ]
+  },
+  {
+    "seq_id": 89,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 7\nx += 8\nx += 8\nx += 4\nx += 5\nx += 5\nx += 8\nx += 3",
+    "true_value": 51,
+    "predicted_value": 23,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 7\nx += 8\nx += 8\nx += 4\nx += 5\nx += 5\nx += 8\nx += 3\n```\nThe final value of x is: 23"
+      }
+    ]
+  },
+  {
+    "seq_id": 90,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 1\nx += 9\nx += 5\nx += 3\nx += 9\nx += 1\nx += 7\nx += 1",
+    "true_value": 37,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 1\nx += 9\nx += 5\nx += 3\nx += 9\nx += 1\nx += 7\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 91,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 4\nx += 8\nx += 5\nx += 8\nx += 3\nx += 8\nx += 3\nx += 8",
+    "true_value": 54,
+    "predicted_value": 19,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 4\nx += 8\nx += 5\nx += 8\nx += 3\nx += 8\nx += 3\nx += 8\n```\nThe final value of x is: 19"
+      }
+    ]
+  },
+  {
+    "seq_id": 92,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 9\nx += 7\nx += 3\nx += 4\nx += 7\nx += 5\nx += 6\nx += 3",
+    "true_value": 47,
+    "predicted_value": 20,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 9\nx += 7\nx += 3\nx += 4\nx += 7\nx += 5\nx += 6\nx += 3\n```\nThe final value of x is: 20"
+      }
+    ]
+  },
+  {
+    "seq_id": 93,
+    "seq_len": 9,
+    "program": "x = 0\nx += 1\nx += 8\nx += 9\nx += 6\nx += 6\nx += 6\nx += 4\nx += 9\nx += 8",
+    "true_value": 57,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 1\nx += 8\nx += 9\nx += 6\nx += 6\nx += 6\nx += 4\nx += 9\nx += 8\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 94,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 4\nx += 3\nx += 9\nx += 7\nx += 5\nx += 1\nx += 8\nx += 9",
+    "true_value": 49,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 4\nx += 3\nx += 9\nx += 7\nx += 5\nx += 1\nx += 8\nx += 9\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 95,
+    "seq_len": 9,
+    "program": "x = 0\nx += 6\nx += 1\nx += 7\nx += 2\nx += 3\nx += 9\nx += 9\nx += 9\nx += 9",
+    "true_value": 55,
+    "predicted_value": 18,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 6\nx += 1\nx += 7\nx += 2\nx += 3\nx += 9\nx += 9\nx += 9\nx += 9\n```\nThe final value of x is: 18"
+      }
+    ]
+  },
+  {
+    "seq_id": 96,
+    "seq_len": 9,
+    "program": "x = 0\nx += 3\nx += 6\nx += 4\nx += 7\nx += 1\nx += 3\nx += 4\nx += 3\nx += 9",
+    "true_value": 40,
+    "predicted_value": 12,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 3\nx += 6\nx += 4\nx += 7\nx += 1\nx += 3\nx += 4\nx += 3\nx += 9\n```\nThe final value of x is: 12"
+      }
+    ]
+  },
+  {
+    "seq_id": 97,
+    "seq_len": 9,
+    "program": "x = 0\nx += 8\nx += 1\nx += 1\nx += 8\nx += 1\nx += 8\nx += 4\nx += 7\nx += 1",
+    "true_value": 39,
+    "predicted_value": 10,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 8\nx += 1\nx += 1\nx += 8\nx += 1\nx += 8\nx += 4\nx += 7\nx += 1\n```\nThe final value of x is: 10"
+      }
+    ]
+  },
+  {
+    "seq_id": 98,
+    "seq_len": 9,
+    "program": "x = 0\nx += 2\nx += 6\nx += 2\nx += 7\nx += 5\nx += 4\nx += 5\nx += 1\nx += 3",
+    "true_value": 35,
+    "predicted_value": 13,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 2\nx += 6\nx += 2\nx += 7\nx += 5\nx += 4\nx += 5\nx += 1\nx += 3\n```\nThe final value of x is: 13"
+      }
+    ]
+  },
+  {
+    "seq_id": 99,
+    "seq_len": 9,
+    "program": "x = 0\nx += 7\nx += 9\nx += 7\nx += 3\nx += 4\nx += 2\nx += 6\nx += 2\nx += 4",
+    "true_value": 44,
+    "predicted_value": 19,
+    "correct": false,
+    "raw_outputs": [
+      {
+        "generated_text": "You are given a short Python program. Your task is to compute the final value of the variable x. Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n```python\nx = 0\nx += 7\nx += 9\nx += 7\nx += 3\nx += 4\nx += 2\nx += 6\nx += 2\nx += 4\n```\nThe final value of x is: 19."
+      }
+    ]
+  }
+]
