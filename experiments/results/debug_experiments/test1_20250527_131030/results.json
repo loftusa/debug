@@ -1,0 +1,46 @@
+[
+  {
+    "experiment": "test1",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 2,
+    "seq_id": 0,
+    "program": "x = 0\nfor i in range(2):\n    x += 3",
+    "true_answer": 6,
+    "predicted_answer": 6,
+    "correct": true,
+    "raw_output": "3 is: 6\n```\n\n```python"
+  },
+  {
+    "experiment": "test1",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 2,
+    "seq_id": 1,
+    "program": "x = 0\nfor i in range(2):\n    x += 6",
+    "true_answer": 12,
+    "predicted_answer": 12,
+    "correct": true,
+    "raw_output": "6 is: 12\n```\n\nSo"
+  },
+  {
+    "experiment": "test1",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 3,
+    "seq_id": 0,
+    "program": "x = 0\nfor i in range(3):\n    x += 2",
+    "true_answer": 6,
+    "predicted_answer": 6,
+    "correct": true,
+    "raw_output": "6. So, the correct output is 6"
+  },
+  {
+    "experiment": "test1",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 3,
+    "seq_id": 1,
+    "program": "x = 0\nfor i in range(3):\n    x += 5",
+    "true_answer": 15,
+    "predicted_answer": 15,
+    "correct": true,
+    "raw_output": "15. So, the correct output is"
+  }
+]

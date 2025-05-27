@@ -12,6 +12,7 @@ from debug import ExperimentRunner, generators, prompts
 from debug.core import ExperimentConfig
 import click
 from pathlib import Path
+from dataclasses import replace
 
 # Use existing generators and prompt
 ENTITY_TRACKING_CONFIG = ExperimentConfig(
@@ -30,11 +31,13 @@ ENTITY_TRACKING_CONFIG = ExperimentConfig(
 def main(output_dir: str, models: str, num_seqs: int):
     """Run entity tracking experiment with the debug framework."""
     
-    # Override config if needed
-    config = ENTITY_TRACKING_CONFIG
+    # Create a new config with overrides (don't mutate the original)
+    config_overrides = {}
     if models:
-        config.models = [m.strip() for m in models.split(',')]
-    config.num_seqs = num_seqs
+        config_overrides['models'] = [m.strip() for m in models.split(',')]
+    config_overrides['num_seqs'] = num_seqs
+    
+    config = replace(ENTITY_TRACKING_CONFIG, **config_overrides)
     
     # Run experiment
     runner = ExperimentRunner(output_dir)

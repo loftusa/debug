@@ -103,6 +103,7 @@ The simplified experiments offer:
 
 **Features:**
 - ✅ Automatic model loading and cleanup
+- ✅ **Model caching** for interactive use (load once, reuse many times)
 - ✅ Built-in plotting and analysis
 - ✅ Consistent result format
 - ✅ Error handling and retries
@@ -126,7 +127,11 @@ config = quick_experiment(
 )
 
 runner = ExperimentRunner()
-result = runner.run(config)
+
+# For interactive use, preload models to avoid reloading
+runner.preload_models(["Qwen/Qwen3-0.6B"])
+
+result = runner.run(config)  # Uses cached model!
 runner.plot("my_experiment")
 ```
 

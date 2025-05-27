@@ -1,0 +1,12 @@
+{
+  "experiment": "test2",
+  "total_samples": 4,
+  "overall_accuracy": 1.0,
+  "by_model": {
+    "Qwen/Qwen3-0.6B": 1.0
+  },
+  "by_seq_len": {
+    "2": 1.0,
+    "3": 1.0
+  }
+}

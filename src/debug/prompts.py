@@ -1,5 +1,17 @@
 """Prompt templates for debug experiments."""
 
+# Exception handling path tracking
+EXCEPTION_HANDLING = """You are given a short Python program with exception handling. Your task is to determine the final value of the variable 'result'.
+At each step, the program may or may not raise a ZeroDivisionError. Follow the execution path carefully.
+Return only the final value, without any additional text. The answer should appear immediately after the word 'is: '.
+
+```python
+{code}
+```
+
+The final value of `result` is: """ 
+
+
 # Basic arithmetic tracking
 RANGE_TRACKING = """You are given a short Python program. Your task is to compute the final value of the variable x.
 Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.
@@ -62,4 +74,4 @@ Return only the requested value, without any additional text. The answer should 
 {code}
 ```
 
-The final result is: """ 
+The final result is: """

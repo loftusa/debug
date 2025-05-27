@@ -1,0 +1,11 @@
+{
+  "experiment": "preload_test",
+  "total_samples": 2,
+  "overall_accuracy": 1.0,
+  "by_model": {
+    "Qwen/Qwen3-0.6B": 1.0
+  },
+  "by_seq_len": {
+    "2": 1.0
+  }
+}

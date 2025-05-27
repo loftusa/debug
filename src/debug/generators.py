@@ -4,6 +4,40 @@ from typing import Tuple, List
 import numpy as np
 
 
+def make_exception_program(
+    seq_len: int, rng: np.random.RandomState
+) -> Tuple[str, int]:
+    """Generate programs that test exception handling over `seq_len` divisions.
+
+    Each division may raise ZeroDivisionError; the except branch adds a fallback
+    instead. Returns the program string and the correct final value of `result`.
+    """
+    numerators = [rng.randint(1, 21) for _ in range(seq_len)]
+    denominators = []
+    fallbacks = []
+    for n in numerators:
+        if rng.rand() < 0.3:  # 30 % chance to trigger an exception
+            denominators.append(0)
+            fallbacks.append(rng.randint(-5, 0))
+        else:
+            factors = [d for d in range(1, 11) if n % d == 0]
+            denominators.append(rng.choice(factors) if factors else rng.randint(1, 11))
+            fallbacks.append(rng.randint(-5, 0))  # unused if no exception
+
+    lines = ["result = 0"]
+    total = 0
+    for n, d, fb in zip(numerators, denominators, fallbacks):
+        lines.append("try:")
+        lines.append(f"    result += {n} // {d}")
+        lines.append("except ZeroDivisionError:")
+        lines.append(f"    result += {fb}")
+        total += fb if d == 0 else n // d
+
+    program = "\n".join(lines)
+    return program, total
+
+
+
 def make_range_program(seq_len: int, rng: np.random.RandomState) -> Tuple[str, int]:
     """Generate simple range tracking programs.
     
@@ -200,3 +234,5 @@ def make_sequence(seq_len: int, num_range: Tuple[int, int] = (0, 10), rng: np.ra
     
     code = '\n'.join(expressions)
     return code, intermediates 
+
+

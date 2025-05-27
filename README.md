@@ -30,6 +30,26 @@ runner.plot("range_tracking")
 runner.analyze_errors("range_tracking")
 ```
 
+### Interactive Use (Jupyter/IPython)
+
+For interactive sessions, preload models to avoid reloading:
+
+```python
+runner = ExperimentRunner()
+
+# Preload models once (takes time but only done once)
+runner.preload_models(["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B"])
+
+# Now experiments run much faster!
+result1 = runner.run(config1)  # Uses cached model
+result2 = runner.run(config2)  # Uses cached model
+
+# Manage models
+runner.list_loaded_models()           # See what's loaded
+runner.unload_model("Qwen/Qwen3-0.6B")  # Free specific model
+runner.unload_all_models()            # Free all GPU memory
+```
+
 ## Structure
 
 ```

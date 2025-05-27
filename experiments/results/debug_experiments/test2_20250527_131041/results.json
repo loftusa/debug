@@ -1,0 +1,46 @@
+[
+  {
+    "experiment": "test2",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 2,
+    "seq_id": 0,
+    "program": "count = 0\nfor i in range(2):\n    count += 1",
+    "true_answer": 2,
+    "predicted_answer": 2,
+    "correct": true,
+    "raw_output": "2\n```\n\n```\n\n```\n```"
+  },
+  {
+    "experiment": "test2",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 2,
+    "seq_id": 1,
+    "program": "count = 0\nfor i in range(2):\n    count += 1",
+    "true_answer": 2,
+    "predicted_answer": 2,
+    "correct": true,
+    "raw_output": "2\n```\n\n```\n\n```\n```"
+  },
+  {
+    "experiment": "test2",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 3,
+    "seq_id": 0,
+    "program": "count = 0\nfor i in range(3):\n    count += 1",
+    "true_answer": 3,
+    "predicted_answer": 3,
+    "correct": true,
+    "raw_output": "3\n```\n\n```\n\n```\n```"
+  },
+  {
+    "experiment": "test2",
+    "model_id": "Qwen/Qwen3-0.6B",
+    "seq_len": 3,
+    "seq_id": 1,
+    "program": "count = 0\nfor i in range(3):\n    count += 1",
+    "true_answer": 3,
+    "predicted_answer": 3,
+    "correct": true,
+    "raw_output": "3\n```\n\n```\n\n```\n```"
+  }
+]

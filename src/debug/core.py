@@ -3,6 +3,7 @@
 import re
 from typing import List, Optional, Callable, Any, Tuple
 import numpy as np
+from dataclasses import dataclass, field
 
 
 def parse_integer(text: str) -> Optional[int]:
@@ -34,6 +35,8 @@ def parse_boolean(text: str) -> Optional[bool]:
     return None
 
 
+
+@dataclass
 class ExperimentConfig:
     """Simple experiment configuration.
     
@@ -47,22 +50,13 @@ class ExperimentConfig:
         seq_lens: List of sequence lengths to test
     """
     
-    def __init__(self, 
-                 name: str,
-                 prompt_template: str,
-                 program_generator: Callable[[int, np.random.RandomState], Tuple[str, Any]],
-                 answer_parser: Callable[[str], Optional[Any]] = parse_integer,
-                 models: List[str] = None,
-                 num_seqs: int = 10,
-                 seq_lens: List[int] = None):
-        
-        self.name = name
-        self.prompt_template = prompt_template
-        self.program_generator = program_generator
-        self.answer_parser = answer_parser
-        self.models = models or ["Qwen/Qwen3-1.7B"]
-        self.num_seqs = num_seqs
-        self.seq_lens = seq_lens or [2, 3, 4, 5, 6]
+    name: str
+    prompt_template: str
+    program_generator: Callable[[int, np.random.RandomState], Tuple[str, Any]]
+    answer_parser: Callable[[str], Optional[Any]] = parse_integer
+    models: List[str] = field(default_factory=lambda: ["Qwen/Qwen3-1.7B"])
+    num_seqs: int = 10
+    seq_lens: List[int] = field(default_factory=lambda: [2, 3, 4, 5, 6])
     
     def __repr__(self) -> str:
         return f"ExperimentConfig('{self.name}', {len(self.models)} models, seq_lens={self.seq_lens})" 

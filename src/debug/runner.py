@@ -21,6 +21,7 @@ class ExperimentRunner:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.results = []
+        self._loaded_models = {}  # Cache for loaded models
     
     def run(self, config: ExperimentConfig, **inference_kwargs) -> Dict:
         """Run a single experiment configuration.
@@ -53,19 +54,9 @@ class ExperimentRunner:
         for model_id in config.models:
             print(f"\n--- {model_id} ---")
             
-            # Load model
-            try:
-                tok = AutoTokenizer.from_pretrained(model_id, padding_side="left")
-                llm = pipeline(
-                    "text-generation",
-                    model=model_id,
-                    tokenizer=tok,
-                    trust_remote_code=True,
-                    device_map="auto",
-                    torch_dtype=torch.bfloat16
-                )
-            except Exception as e:
-                print(f"ERROR loading {model_id}: {e}")
+            # Load model (use cache if available)
+            llm = self._get_or_load_model(model_id)
+            if llm is None:
                 continue
             
             # Test each sequence length
@@ -111,11 +102,7 @@ class ExperimentRunner:
                 accuracy = correct / total if total > 0 else 0
                 print(f"  seq_len {seq_len}: {accuracy:.1%} ({correct}/{total})")
             
-            # Cleanup
-            del llm
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
-            gc.collect()
+            # Note: No cleanup here - models are cached for reuse
         
         # Save results
         with open(exp_dir / "results.json", "w") as f:
@@ -217,6 +204,77 @@ class ExperimentRunner:
             print(f"Expected: {row['true_answer']}")
             print(f"Got: {row['predicted_answer']}")
             print(f"Raw: '{row['raw_output']}'")
+    
+    def _get_or_load_model(self, model_id: str):
+        """Get model from cache or load it if not cached."""
+        if model_id in self._loaded_models:
+            print(f"  Using cached model: {model_id}")
+            return self._loaded_models[model_id]
+        
+        print(f"  Loading model: {model_id}")
+        try:
+            tok = AutoTokenizer.from_pretrained(model_id, padding_side="left")
+            llm = pipeline(
+                "text-generation",
+                model=model_id,
+                tokenizer=tok,
+                trust_remote_code=True,
+                device_map="auto",
+                torch_dtype=torch.bfloat16
+            )
+            self._loaded_models[model_id] = llm
+            print(f"  Model loaded and cached: {model_id}")
+            return llm
+        except Exception as e:
+            print(f"ERROR loading {model_id}: {e}")
+            return None
+    
+    def preload_models(self, model_ids: List[str]):
+        """Preload models for interactive use.
+        
+        Args:
+            model_ids: List of model IDs to preload
+        """
+        print(f"Preloading {len(model_ids)} models...")
+        for model_id in model_ids:
+            self._get_or_load_model(model_id)
+        print("All models preloaded!")
+    
+    def unload_model(self, model_id: str):
+        """Unload a specific model from cache.
+        
+        Args:
+            model_id: Model ID to unload
+        """
+        if model_id in self._loaded_models:
+            del self._loaded_models[model_id]
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+            gc.collect()
+            print(f"Unloaded model: {model_id}")
+        else:
+            print(f"Model not loaded: {model_id}")
+    
+    def unload_all_models(self):
+        """Unload all cached models and free GPU memory."""
+        if self._loaded_models:
+            print(f"Unloading {len(self._loaded_models)} cached models...")
+            self._loaded_models.clear()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+            gc.collect()
+            print("All models unloaded!")
+        else:
+            print("No models to unload.")
+    
+    def list_loaded_models(self):
+        """List currently loaded models."""
+        if self._loaded_models:
+            print("Loaded models:")
+            for model_id in self._loaded_models.keys():
+                print(f"  - {model_id}")
+        else:
+            print("No models currently loaded.")
     
     def clear(self):
         """Clear stored results."""

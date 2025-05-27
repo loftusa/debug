@@ -39,7 +39,7 @@ def main(program_type: str, random_sum: bool, output_dir: str, models: str, num_
         name=name,
         prompt_template=prompts.RANGE_TRACKING,
         program_generator=generator,
-        models=models.split(',') if models else ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B"],
+        models=models.split(',') if models else ["Qwen/Qwen3-1.7B"],
         num_seqs=num_seqs,
         seq_lens=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     )
@@ -57,6 +57,8 @@ def main(program_type: str, random_sum: bool, output_dir: str, models: str, num_
 
 if __name__ == "__main__":
     main()
+
+# %%
 
 #%% Interactive testing
 if __name__ == "__main__":

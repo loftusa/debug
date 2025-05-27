@@ -1,4 +1,7 @@
 #%%
+%load_ext autoreload
+%autoreload
+
 import sys
 sys.path.append('../src')
 
@@ -11,13 +14,14 @@ print('Debug framework loaded!')
 # # Interactive Code Tracking Experiments
 # 
 # This notebook provides an easy interface for testing different code understanding experiments.
-# The heavy lifting is now done by the `debug` package - just focus on experiment design!
-
+# The heavy lifting is now done by the `debug` package.
 #%% Initialize Runner
 
 runner = ExperimentRunner()
 
 #%% Quick Experiment Examples
+%autoreload
+from debug import generators, prompts, quick_experiment
 
 # Basic range tracking
 basic_config = quick_experiment(
@@ -49,13 +53,32 @@ variable_config = quick_experiment(
     seq_lens=[2, 3, 4]
 )
 
+exception_config = quick_experiment(
+    name="exception_handling",
+    prompt_template=prompts.EXCEPTION_HANDLING,
+    program_generator=generators.make_exception_program,
+    models=["Qwen/Qwen3-1.7B"],
+    num_seqs=5,
+    seq_lens=[2, 3, 4, 5, 6]
+)
+
 print("Configurations ready!")
 print("Available configs: basic_config, reasoning_config, variable_config")
+
+#%%
+%autoreload
+import generators
+from generators import make_exception_program
+
+a, b = generators.make_exception_program(seq_len=4, rng=np.random.RandomState(42))
+print('===================================')
+print(a, '\n===================================\n')
+print(b)
 
 #%% Run Experiments
 
 # Uncomment to run:
-# result = runner.run(basic_config)
+result = runner.run(basic_config)
 
 #%% Custom Experiment Template
 
@@ -131,11 +154,31 @@ print("1. Create config: quick_experiment(name, prompt_template, program_generat
 print("2. Run: runner.run(config)")
 print("3. Analyze: show_results(), plot_results(), analyze_errors()")
 
+#%% Model Management for Interactive Use
+
+print("\n=== Model Management ===")
+print("For interactive sessions, preload models to avoid reloading:")
+print("")
+print("# Preload models once (takes time but only done once)")
+print("runner.preload_models(['Qwen/Qwen3-0.6B', 'Qwen/Qwen3-1.7B'])")
+print("")
+print("# Check loaded models")
+print("runner.list_loaded_models()")
+print("")
+print("# Unload specific model")
+print("runner.unload_model('Qwen/Qwen3-0.6B')")
+print("")
+print("# Free all GPU memory")
+print("runner.unload_all_models()")
+
+# Uncomment to preload models for faster experimentation:
+# runner.preload_models(["Qwen/Qwen3-0.6B"])
+
 #%% Interactive Testing Area
 
 # Use this cell for quick testing
 print("\n=== Ready for Interactive Testing ===")
 print("Example:")
 print("config = quick_experiment('test', prompts.MINIMAL, generators.make_counter_program)")
-print("result = runner.run(config)")
+print("result = runner.run(config)  # Models cached after first run!")
 print("plot_results('test')") 
