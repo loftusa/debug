@@ -1,0 +1,12 @@
+{
+  "experiment": "exception_handling",
+  "total_samples": 10,
+  "overall_accuracy": 0.0,
+  "by_model": {
+    "Qwen/Qwen3-1.7B": 0.0
+  },
+  "by_seq_len": {
+    "1": 0.0,
+    "2": 0.0
+  }
+}

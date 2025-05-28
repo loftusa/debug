@@ -1,0 +1,8 @@
+[
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 2,
+    "seq_id": 0,
+    "program": "result = 0\ntry:\n    result += 3 // 1\nexcept ZeroDivisionError:\n    result += -4\ntry:\n    result += 6 // 0\nexcept ZeroDivisionError:\n    result += -3",
+    "true_answer": 

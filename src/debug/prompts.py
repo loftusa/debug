@@ -75,3 +75,13 @@ Return only the requested value, without any additional text. The answer should 
 ```
 
 The final result is: """
+
+# Variable binding resolution
+VARIABLE_BINDING = """You are given a Python program with variable assignments followed by a query. Your task is to trace through the variable assignments and determine what value the queried variable refers to.
+Return only the integer value, without any additional text. The answer should appear immediately after the word 'is: '.
+
+```python
+{code}
+```
+
+The value is: """

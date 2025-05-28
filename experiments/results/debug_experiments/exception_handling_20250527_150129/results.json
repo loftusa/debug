@@ -1,0 +1,112 @@
+[
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 1,
+    "seq_id": 0,
+    "program": "result = 0\ntry:\n    result += 3 // 3\nexcept ZeroDivisionError:\n    result += -1",
+    "true_answer": 1,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "2\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 1,
+    "seq_id": 1,
+    "program": "result = 0\ntry:\n    result += 10 // 0\nexcept ZeroDivisionError:\n    result += -3",
+    "true_answer": -3,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "0\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 1,
+    "seq_id": 2,
+    "program": "result = 0\ntry:\n    result += 2 // 2\nexcept ZeroDivisionError:\n    result += -4",
+    "true_answer": 1,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "2\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 1,
+    "seq_id": 3,
+    "program": "result = 0\ntry:\n    result += 17 // 1\nexcept ZeroDivisionError:\n    result += -2",
+    "true_answer": 17,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "17\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 1,
+    "seq_id": 4,
+    "program": "result = 0\ntry:\n    result += 14 // 0\nexcept ZeroDivisionError:\n    result += -3",
+    "true_answer": -3,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "0\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 2,
+    "seq_id": 0,
+    "program": "result = 0\ntry:\n    result += 7 // 7\nexcept ZeroDivisionError:\n    result += -5\ntry:\n    result += 8 // 2\nexcept ZeroDivisionError:\n    result += -4",
+    "true_answer": 5,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "12\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 2,
+    "seq_id": 1,
+    "program": "result = 0\ntry:\n    result += 5 // 1\nexcept ZeroDivisionError:\n    result += -1\ntry:\n    result += 1 // 1\nexcept ZeroDivisionError:\n    result += -2",
+    "true_answer": 6,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "6\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 2,
+    "seq_id": 2,
+    "program": "result = 0\ntry:\n    result += 15 // 3\nexcept ZeroDivisionError:\n    result += -3\ntry:\n    result += 20 // 1\nexcept ZeroDivisionError:\n    result += -3",
+    "true_answer": 25,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "22\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 2,
+    "seq_id": 3,
+    "program": "result = 0\ntry:\n    result += 13 // 1\nexcept ZeroDivisionError:\n    result += -1\ntry:\n    result += 6 // 1\nexcept ZeroDivisionError:\n    result += -2",
+    "true_answer": 19,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "19\n```python\nresult = 0"
+  },
+  {
+    "experiment": "exception_handling",
+    "model_id": "Qwen/Qwen3-1.7B",
+    "seq_len": 2,
+    "seq_id": 4,
+    "program": "result = 0\ntry:\n    result += 7 // 0\nexcept ZeroDivisionError:\n    result += -3\ntry:\n    result += 1 // 1\nexcept ZeroDivisionError:\n    result += -1",
+    "true_answer": -2,
+    "predicted_answer": 0,
+    "correct": false,
+    "raw_output": "10\n```python\nresult = 0"
+  }
+]

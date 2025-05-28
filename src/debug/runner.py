@@ -23,11 +23,13 @@ class ExperimentRunner:
         self.results = []
         self._loaded_models = {}  # Cache for loaded models
     
-    def run(self, config: ExperimentConfig, **inference_kwargs) -> Dict:
+    def run(self, config: ExperimentConfig, save=True, no_cache=False, **inference_kwargs) -> Dict:
         """Run a single experiment configuration.
         
         Args:
             config: Experiment configuration
+            save: Whether to save results to disk
+            no_cache: If True, unload each model after use to save GPU memory
             **inference_kwargs: Additional arguments for model inference (e.g., temperature)
         """
         # Create output directory
@@ -39,6 +41,8 @@ class ExperimentRunner:
         print(f"Models: {config.models}")
         print(f"Seq lengths: {config.seq_lens}")
         print(f"Output: {exp_dir}")
+        if no_cache:
+            print("Memory mode: Models will be unloaded after each use")
         
         master_rng = np.random.RandomState(12345)
         all_results = []
@@ -102,16 +106,20 @@ class ExperimentRunner:
                 accuracy = correct / total if total > 0 else 0
                 print(f"  seq_len {seq_len}: {accuracy:.1%} ({correct}/{total})")
             
-            # Note: No cleanup here - models are cached for reuse
+            # Unload model if no_cache is enabled
+            if no_cache:
+                self.unload_model(model_id)
         
         # Save results
-        with open(exp_dir / "results.json", "w") as f:
-            json.dump(all_results, f, indent=2)
+        if save:
+            with open(exp_dir / "results.json", "w") as f:
+                json.dump(all_results, f, indent=2)
         
         # Create summary
         summary = self._summarize(all_results, config)
-        with open(exp_dir / "summary.json", "w") as f:
-            json.dump(summary, f, indent=2)
+        if save:
+            with open(exp_dir / "summary.json", "w") as f:
+                json.dump(summary, f, indent=2)
         
         print(f"\nSaved to: {exp_dir}")
         

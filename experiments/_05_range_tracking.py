@@ -115,7 +115,7 @@ def make_range_program_newlines(seq_len: int, rng: np.random.RandomState, random
         # If not random_sum, keep using the same z for all lines
         if not random_sum:
             # For non-random case, generate all lines with the same z
-            break
+                    break
     
     if not random_sum:
         # Generate remaining lines with the same z value
@@ -155,7 +155,7 @@ def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_di
     models_to_run_this_process = all_models_to_consider[accelerator.process_index::accelerator.num_processes]
     
     if not models_to_run_this_process:
-        print(f"[Process {accelerator.process_index}] No models assigned to this process. Exiting.")
+             print(f"[Process {accelerator.process_index}] No models assigned to this process. Exiting.")
         return
 
     print(f"[Process {accelerator.process_index}/{accelerator.num_processes}] Assigned models: {models_to_run_this_process}")
@@ -179,8 +179,8 @@ def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_di
     # Write header if needed
     needs_header = not global_summary_csv_path.exists() or global_summary_csv_path.stat().st_size == 0
     if accelerator.is_main_process and needs_header:
-        with global_summary_csv_path.open("w", newline="") as f:
-            writer = csv.writer(f)
+            with global_summary_csv_path.open("w", newline="") as f:
+                writer = csv.writer(f)
             writer.writerow(["model_id", "seq_len", "accuracy", "num_evaluated", "num_requested", "best_of_k"])
     
     accelerator.wait_for_everyone()
@@ -285,8 +285,8 @@ def main(num_seqs: int, seq_len_opt: int, best_of_k_samples: int, output_base_di
                 json.dump(all_results, f, indent=2)
 
             # Update summary
-            with global_summary_csv_path.open("a", newline="") as f:
-                writer = csv.writer(f)
+                with global_summary_csv_path.open("a", newline="") as f:
+                    writer = csv.writer(f)
                 writer.writerow([model_id, seq_len_opt, f"{accuracy:.6f}", total_evaluated, num_seqs, best_of_k_samples])
         
         # Cleanup

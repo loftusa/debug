@@ -38,7 +38,7 @@ reasoning_config = quick_experiment(
     name="step_by_step",
     prompt_template=prompts.STEP_BY_STEP, 
     program_generator=generators.make_range_program,
-    models=["Qwen/Qwen3-0.6B"],
+    models=["Qwen/Qwen3-1.7B"],
     num_seqs=5,
     seq_lens=[2, 3, 4]
 )
@@ -48,7 +48,7 @@ variable_config = quick_experiment(
     name="variable_increments",
     prompt_template=prompts.RANGE_TRACKING,
     program_generator=generators.make_variable_increments,
-    models=["Qwen/Qwen3-0.6B"],
+    models=["Qwen/Qwen3-1.7B"],
     num_seqs=5,
     seq_lens=[2, 3, 4]
 )
@@ -59,7 +59,16 @@ exception_config = quick_experiment(
     program_generator=generators.make_exception_program,
     models=["Qwen/Qwen3-1.7B"],
     num_seqs=5,
-    seq_lens=[2, 3, 4, 5, 6]
+    seq_lens=[1, 2]
+)
+
+variable_binding_config = quick_experiment(
+    name="variable_binding",
+    prompt_template=prompts.VARIABLE_BINDING,
+    program_generator=generators.make_variable_binding_program,
+    models=["Qwen/Qwen3-1.7B"],
+    num_seqs=100,
+    seq_lens=list(range(1, 17))
 )
 
 print("Configurations ready!")
@@ -67,13 +76,11 @@ print("Available configs: basic_config, reasoning_config, variable_config")
 
 #%%
 %autoreload
-import generators
-from generators import make_exception_program
+import debug
+from debug.generators import make_exception_program
 
-a, b = generators.make_exception_program(seq_len=4, rng=np.random.RandomState(42))
-print('===================================')
-print(a, '\n===================================\n')
-print(b)
+
+runner.run(variable_binding_config)
 
 #%% Run Experiments
 
@@ -170,6 +177,9 @@ print("runner.unload_model('Qwen/Qwen3-0.6B')")
 print("")
 print("# Free all GPU memory")
 print("runner.unload_all_models()")
+print("")
+print("# For multiple models: avoid GPU memory issues")
+print("runner.run(config, no_cache=True)  # Unloads each model after use")
 
 # Uncomment to preload models for faster experimentation:
 # runner.preload_models(["Qwen/Qwen3-0.6B"])
@@ -181,4 +191,9 @@ print("\n=== Ready for Interactive Testing ===")
 print("Example:")
 print("config = quick_experiment('test', prompts.MINIMAL, generators.make_counter_program)")
 print("result = runner.run(config)  # Models cached after first run!")
-print("plot_results('test')") 
+print("plot_results('test')")
+print("")
+print("# Multiple models without GPU memory issues:")
+print("multi_model_config = quick_experiment('multi_test', prompts.MINIMAL, generators.make_range_program,")
+print("                                      models=['Qwen/Qwen3-0.6B', 'Qwen/Qwen3-1.7B'])")
+print("result = runner.run(multi_model_config, no_cache=True)  # Safe for GPU memory!") 

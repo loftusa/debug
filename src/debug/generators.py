@@ -3,6 +3,54 @@
 from typing import Tuple, List
 import numpy as np
 
+def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> Tuple[str, int]:
+    """
+    Generate variable binding programs following the paper specification.
+    
+    Creates seq_len assignment lines + 1 query line with referential depths 1-4.
+    Uses cubic weighting for chain extension and rejection sampling for balance.
+    """
+    variables = 'abcdefghijklmnopqrstuvwxyz'
+    constants = '0123456789'
+    
+    # Track variable definitions: var -> (reference, depth)
+    defined_vars = {}
+    assignments = []
+    
+    for _ in range(seq_len):
+        # Choose LHS variable (prefer undefined)
+        available = [v for v in variables if v not in defined_vars]
+        lhs = rng.choice(available if available else list(variables))
+        
+        # Choose RHS: 30% constant, 70% variable (if any exist)
+        if rng.random() < 0.3 or not defined_vars:
+            rhs = rng.choice(list(constants))
+            defined_vars[lhs] = (rhs, 1)
+        else:
+            # Cubic weighting for variable selection
+            vars_list = list(defined_vars.keys())
+            weights = np.array([defined_vars[v][1]**3 for v in vars_list], dtype=float)
+            rhs = rng.choice(vars_list, p=weights/weights.sum())
+            defined_vars[lhs] = (rhs, defined_vars[rhs][1] + 1)
+        
+        assignments.append(f"{lhs} = {rhs}")
+    
+    # Select query variable (depth 1-4, cubic weighted)
+    valid_vars = [(v, d) for v, (_, d) in defined_vars.items() if 1 <= d <= 4]
+    if not valid_vars:
+        valid_vars = [(v, d) for v, (_, d) in defined_vars.items()]
+    
+    query_vars, depths = zip(*valid_vars)
+    weights = np.array([d**3 for d in depths], dtype=float)
+    query_var = rng.choice(query_vars, p=weights/weights.sum())
+    
+    # Resolve final value
+    def resolve(var):
+        return int(var) if var in constants else resolve(defined_vars[var][0])
+    
+    program = "\n".join(assignments + [f"#{query_var}:"])
+    return program, resolve(query_var)
+
 
 def make_exception_program(
     seq_len: int, rng: np.random.RandomState
@@ -18,11 +66,11 @@ def make_exception_program(
     for n in numerators:
         if rng.rand() < 0.3:  # 30 % chance to trigger an exception
             denominators.append(0)
-            fallbacks.append(rng.randint(-5, 0))
+            fallbacks.append(int(rng.randint(-5, 0)))
         else:
             factors = [d for d in range(1, 11) if n % d == 0]
-            denominators.append(rng.choice(factors) if factors else rng.randint(1, 11))
-            fallbacks.append(rng.randint(-5, 0))  # unused if no exception
+            denominators.append(int(rng.choice(factors)) if factors else int(rng.randint(1, 11)))
+            fallbacks.append(int(rng.randint(-5, 0)))  # unused if no exception
 
     lines = ["result = 0"]
     total = 0
