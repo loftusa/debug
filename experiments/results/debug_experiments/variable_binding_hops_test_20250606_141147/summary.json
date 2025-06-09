@@ -1,0 +1,17 @@
+{
+  "experiment": "variable_binding_hops_test",
+  "total_samples": 240,
+  "overall_accuracy": 0.3875,
+  "by_model": {
+    "Qwen/Qwen3-0.6B": 0.08333333333333333,
+    "Qwen/Qwen3-1.7B": 0.6916666666666667
+  },
+  "by_seq_len": {
+    "5": 0.475,
+    "7": 0.425,
+    "9": 0.475,
+    "11": 0.325,
+    "13": 0.35,
+    "15": 0.275
+  }
+}

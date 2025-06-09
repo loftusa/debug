@@ -3,12 +3,17 @@
 from typing import Tuple, List
 import numpy as np
 
-def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> Tuple[str, int]:
+def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> Tuple[str, int, int]:
     """
     Generate variable binding programs following the paper specification.
     
     Creates seq_len assignment lines + 1 query line with referential depths 1-4.
     Uses cubic weighting for chain extension and rejection sampling for balance.
+    
+    Returns:
+        program: The program string
+        answer: The correct answer
+        query_hops: Number of hops in the query chain
     """
     variables = 'abcdefghijklmnopqrstuvwxyz'
     constants = '0123456789'
@@ -43,13 +48,31 @@ def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> T
     query_vars, depths = zip(*valid_vars)
     weights = np.array([d**3 for d in depths], dtype=float)
     query_var = rng.choice(query_vars, p=weights/weights.sum())
+    query_hops = defined_vars[query_var][1]
     
-    # Resolve final value
-    def resolve(var):
-        return int(var) if var in constants else resolve(defined_vars[var][0])
+    # Resolve final value with cycle detection
+    def resolve(var, visited=None):
+        if visited is None:
+            visited = set()
+        
+        if var in visited:
+            # Circular reference detected - return a default value
+            return 0
+        
+        if var in constants:
+            return int(var)
+        
+        if var not in defined_vars:
+            # Variable not defined - return default value
+            return 0
+        
+        visited.add(var)
+        result = resolve(defined_vars[var][0], visited)
+        visited.remove(var)
+        return result
     
     program = "\n".join(assignments + [f"#{query_var}:"])
-    return program, resolve(query_var)
+    return program, resolve(query_var), query_hops
 
 
 def make_exception_program(
@@ -284,3 +307,4 @@ def make_sequence(seq_len: int, num_range: Tuple[int, int] = (0, 10), rng: np.ra
     return code, intermediates 
 
 
+ 
