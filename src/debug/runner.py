@@ -75,16 +75,22 @@ class ExperimentRunner:
                 test_cases = []
                 for i in range(config.num_seqs):
                     generator_result = config.program_generator(seq_len, rng=np.random.RandomState(i))
+                    
+                    # Handle different generator return formats
                     if len(generator_result) == 2:
                         program, true_answer = generator_result
                         metadata = {}
                     elif len(generator_result) == 3:
-                        program, true_answer, query_hops = generator_result
-                        metadata = {
-                            "query_hops": query_hops
-                        }
+                        program, true_answer, third_value = generator_result
+                        # Third value could be query_hops or other metadata
+                        if isinstance(third_value, int):
+                            metadata = {"query_hops": third_value}
+                        elif isinstance(third_value, dict):
+                            metadata = third_value
+                        else:
+                            metadata = {"additional_data": third_value}
                     else: 
-                        raise ValueError(f"Invalid generator result: {generator_result}")
+                        raise ValueError(f"Generator must return 2 or 3 values, got {len(generator_result)}: {generator_result}")
 
                     prompt = config.prompt_template.format(code=program)
                     test_cases.append({
@@ -321,19 +327,36 @@ class ExperimentRunner:
         print(f"  Loading model: {model_id}")
         try:
             tok = AutoTokenizer.from_pretrained(model_id, padding_side="left")
+            
+            # Determine device mapping based on CUDA availability
+            if torch.cuda.is_available():
+                device_map = "cuda"
+                torch_dtype = torch.bfloat16
+            else:
+                device_map = "cpu"
+                torch_dtype = torch.float32
+                print(f"  CUDA not available, using CPU for {model_id}")
+            
             llm = pipeline(
                 "text-generation",
                 model=model_id,
                 tokenizer=tok,
                 trust_remote_code=True,
-                device_map="cuda",
-                torch_dtype=torch.bfloat16
+                device_map=device_map,
+                torch_dtype=torch_dtype
             )
             self._loaded_models[model_id] = llm
             print(f"  Model loaded and cached: {model_id}")
             return llm
         except Exception as e:
             print(f"ERROR loading {model_id}: {e}")
+            # Clean up any partial state
+            if model_id in self._loaded_models:
+                del self._loaded_models[model_id]
+            # Clear CUDA cache if applicable
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+            gc.collect()
             return None
     
     def preload_models(self, model_ids: List[str]):
@@ -427,7 +450,7 @@ class ExperimentRunner:
         plt.tight_layout()
         return fig
 
-    def plot_mall_multiples(self, experiment_name: str, figsize=(15, 10)):
+    def plot_small_multiples(self, experiment_name: str, figsize=(15, 10)):
         """Create small multiples showing accuracy curves for each model and query hop level."""
         df = pd.DataFrame(self.results)
         df = df[df["experiment"] == experiment_name]

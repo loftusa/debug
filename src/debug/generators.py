@@ -1,7 +1,9 @@
 """Program generators for debug experiments."""
 
-from typing import Tuple, List
+from typing import Tuple, List, Dict, Any, Optional
 import numpy as np
+from .token_analyzer import TokenAnalyzer, VariableChain
+from transformers import AutoTokenizer
 
 def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> Tuple[str, int, int]:
     """
@@ -75,6 +77,66 @@ def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> T
     return program, resolve(query_var), query_hops
 
 
+def make_variable_binding_program_with_metadata(
+    seq_len: int, 
+    rng: np.random.RandomState,
+    tokenizer: Optional[AutoTokenizer] = None
+) -> Tuple[str, int, int, Dict[str, Any]]:
+    """
+    Enhanced variable binding generator that returns full metadata for causal tracing.
+    
+    Args:
+        seq_len: Number of assignment lines to generate
+        rng: Random state for reproducibility
+        tokenizer: Optional tokenizer for token position analysis
+        
+    Returns:
+        Tuple of (program, answer, query_hops, metadata_dict)
+        
+    The metadata dict contains:
+        - variable_chain: VariableChain object with full chain analysis
+        - query_var: The query variable name
+        - assignments_dict: Dictionary of all variable assignments
+        - intervention_targets: Token positions for causal interventions (if tokenizer provided)
+        - referential_depth: Same as query_hops for convenience
+    """
+    # Generate the basic program using existing logic
+    program, answer, query_hops = make_variable_binding_program(seq_len, rng)
+    
+    # Extract query variable from program
+    lines = program.split('\n')
+    query_line = [line for line in lines if line.startswith('#')][0]
+    query_var = query_line[1:-1]  # Remove # and :
+    
+    # Create token analyzer and get variable chain
+    analyzer = TokenAnalyzer(tokenizer)
+    variable_chain = analyzer.identify_variable_chain(program, query_var)
+    
+    # Parse assignments for metadata
+    assignments_dict = analyzer._parse_assignments(program)
+    
+    # Build metadata dictionary
+    metadata = {
+        "variable_chain": variable_chain,
+        "query_var": query_var,
+        "assignments_dict": assignments_dict,
+        "referential_depth": query_hops,
+        "seq_len": seq_len
+    }
+    
+    # Add token positions if tokenizer is provided
+    if tokenizer is not None:
+        try:
+            intervention_targets = analyzer.find_intervention_targets(program, query_var)
+            metadata["intervention_targets"] = intervention_targets
+        except Exception as e:
+            # If tokenization fails, just skip token positions
+            metadata["intervention_targets"] = {}
+            metadata["tokenization_error"] = str(e)
+    
+    return program, answer, query_hops, metadata
+
+
 def make_exception_program(
     seq_len: int, rng: np.random.RandomState
 ) -> Tuple[str, int]:
@@ -92,7 +154,11 @@ def make_exception_program(
             fallbacks.append(int(rng.randint(-5, 0)))
         else:
             factors = [d for d in range(1, 11) if n % d == 0]
-            denominators.append(int(rng.choice(factors)) if factors else int(rng.randint(1, 11)))
+            if factors:
+                denominators.append(int(rng.choice(factors)))
+            else:
+                # Ensure we don't divide by zero accidentally
+                denominators.append(int(rng.randint(1, 10)))
             fallbacks.append(int(rng.randint(-5, 0)))  # unused if no exception
 
     lines = ["result = 0"]
