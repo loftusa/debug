@@ -710,6 +710,7 @@ dependencies = [
     { name = "click" },
     { name = "datasets" },
     { name = "deepseek-tokenizer" },
+    { name = "einops" },
     { name = "fastai" },
     { name = "gradio" },
     { name = "huggingface-hub", extra = ["cli"] },
@@ -729,6 +730,7 @@ dependencies = [
     { name = "torch" },
     { name = "torchtyping" },
     { name = "transformers" },
+    { name = "typeguard" },
     { name = "vllm" },
 ]
 
@@ -744,6 +746,7 @@ requires-dist = [
     { name = "click", specifier = ">=8.1.8" },
     { name = "datasets", specifier = ">=3.5.0" },
     { name = "deepseek-tokenizer", specifier = ">=0.1.3" },
+    { name = "einops", specifier = ">=0.8.1" },
     { name = "fastai", specifier = ">=2.7.19" },
     { name = "gradio", specifier = ">=5.25.2" },
     { name = "huggingface-hub", extras = ["cli"], specifier = ">=0.30.2" },
@@ -763,6 +766,7 @@ requires-dist = [
     { name = "torch", specifier = ">=2.6.0" },
     { name = "torchtyping", specifier = ">=0.1.5" },
     { name = "transformers", specifier = ">=4.51.3" },
+    { name = "typeguard", specifier = ">=2.13.3" },
     { name = "vllm", specifier = ">=0.8.4" },
 ]
 

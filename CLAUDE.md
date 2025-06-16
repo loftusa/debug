@@ -26,6 +26,7 @@ We will also include tools built with the `nnsight` python package that allow fo
 - Don't try to demo python interactive / jupyter notebook files, I'll do that myself
 - Ask me clarifying questions on design decisions when appropriate
 - When writing any code that uses arrays or tensors, use `jaxtyping` for tensor type/shape typing annotation.
+- Include a lot of assert statements to make sure the code is doing what you think it's doing.
 
 
 Dependencies:

@@ -36,13 +36,43 @@ from src.debug.causal_visualization import (
     plot_layer_intervention_effects,
     plot_success_rate_heatmap,
     plot_referential_depth_analysis,
-    plot_causal_flow_heatmap,
-    plot_token_level_causal_trace,
     CausalAnalyzer
 )
 
 print("✅ All imports successful!")
 print("🧠 Ready for interactive causal tracing exploration")
+
+#%%
+# Create a simple test case
+original_program = """a = 5
+b = a
+c = b
+#c:"""
+
+counterfactual_program = """a = 8
+b = a
+c = b
+#c:"""
+
+print("Original program:")
+print(original_program)
+print("\nCounterfactual program:")
+print(counterfactual_program)
+
+from nnsight import LanguageModel
+model = LanguageModel("Qwen/Qwen3-0.6B", device_map="auto")
+print(model)
+
+layer = 1
+target_token_pos = 0
+with model.trace(original_program) as tracer:
+    corrupt_activations = model.model.layers[layer].output[0][:, [target_token_pos], :].save()
+    logits = model.lm_head.output.save()
+    attn = model.model.layers[layer].self_attn.output.save()
+    o_proj = model.model.layers[layer].self_attn.o_proj.input.save()
+
+print(logits.shape)
+print(attn[0].shape)
 
 #%% Test 1: Token Analysis and Variable Chain Identification
 print("\n=== Test 1: Token Analysis ===")
@@ -94,11 +124,11 @@ print("\nCounterfactual program:")
 print(counterfactual)
 
 # Test with metadata
-result = generator.create_counterfactual_with_metadata(original, "c", "5")
+result = generator.create_counterfactual_with_metadata(original, "c", "3")
 print(f"\n📋 Counterfactual with Metadata:")
-print(f"Original program: {result.original_program}")
-print(f"\nCounterfactual program: {result.counterfactual_program}")
-print(f"Original root: {result.original_root_value}")
+print(f"Original program: \n{result.original_program}")
+print(f"\nCounterfactual program: \n{result.counterfactual_program}")
+print(f"\nOriginal root: {result.original_root_value}")
 print(f"Counterfactual root: {result.counterfactual_root_value}")
 print(f"Chain length: {result.chain_length}")
 
@@ -236,25 +266,6 @@ for depth in [1, 2, 3, 4]:
 
 fig3, ax3 = plot_referential_depth_analysis(depth_programs)
 plt.title("Interactive Demo: Referential Depth Analysis")
-plt.show()
-
-# Test new causal flow heatmap
-print("\nCreating causal flow heatmap...")
-token_labels = ["g", "=", "1", "\\n", "p", "=", "4", "\\n", "l", "=", "p", "\\n", "i", "=", "7", "\\n", "p", "=", "0", "\\n", "b", "=", "8", "\\n", "x", "=", "g", "\\n", "q", "=", "b", "\\n", "u", "=", "x", "\\n", "j", "=", "2", "\\n", "c", "=", "u", "\\n", "x", "=", "4", "\\n", "z", "=", "q", "\\n", "i", "=", "c", "\\n", "k", "=", "4", "\\n", "o", "=", "9", "\\n", "#", "z", ":"]
-information_movements = [
-    {"layer": 7, "description": "First information\nmovement\nMoving root value at layer 7"},
-    {"layer": 9, "description": "Second information\nmovement\nMoving root value at layer 9"}, 
-    {"layer": 10, "description": "Third information\nmovement\nMoving root value at layer 10"}
-]
-fig4, ax4 = plot_causal_flow_heatmap(mock_results, token_labels, information_movements)
-plt.title("Interactive Demo: Causal Flow Heatmap")
-plt.show()
-
-# Test token-level causal trace
-print("\nCreating token-level causal trace...")
-program_text = "g = 1 \\n p = 4 \\n l = p \\n i = 7 \\n p = 0 \\n b = 8 \\n x = g \\n q = b \\n u = x \\n j = 2 \\n c = u \\n x = 4 \\n z = q \\n i = c \\n k = 4 \\n o = 9 \\n # z :"
-fig5, ax5 = plot_token_level_causal_trace(mock_results, program_text)
-plt.title("Interactive Demo: Token-Level Causal Trace")
 plt.show()
 
 print("✅ All visualizations created successfully!")

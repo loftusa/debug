@@ -1,3 +1,4 @@
+#%%
 """Visualization and analysis methods for causal tracing experiments.
 
 Following Edward Tufte's principles: minimal chart junk, high data-ink ratio,
@@ -12,15 +13,18 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
 
-from .causal_tracing import InterventionResult
-from .causal_experiment_runner import CausalExperimentResult
+import sys, pathlib
+sys.path.append(str(pathlib.Path(".").resolve() / "src"))
+
+from debug.causal_tracing import InterventionResult
+from debug.causal_experiment_runner import CausalExperimentResult
+
+# from .causal_tracing import InterventionResult
+# from .causal_experiment_runner import CausalExperimentResult
 
 
 class CausalAnalyzer:
     """Analyzes and aggregates causal tracing experiment results."""
-    
-    def __init__(self):
-        pass
     
     def aggregate_by_target(self, results: List[InterventionResult]) -> Dict[str, Dict[str, Any]]:
         """Aggregate intervention results by target token type."""
@@ -185,21 +189,30 @@ def plot_success_rate_heatmap(results: List[InterventionResult],
     pivot_df = df.pivot_table(values='success_rate', index='target_pos', 
                              columns='layer', aggfunc='mean')
     
-    # Create heatmap with minimal style
-    fig, ax = plt.subplots(figsize=(12, 6))
+    # Create figure
+    fig, ax = plt.subplots(figsize=(14, 8))
     
-    # Use a perceptually uniform colormap
-    sns.heatmap(pivot_df, annot=True, fmt='.2f', cmap='viridis',
-                cbar_kws={'label': 'Success Rate'}, ax=ax,
-                linewidths=0.5, linecolor='white')
+    # Use seaborn heatmap for nicer aesthetics (diverging palette centred at zero)
+    sns.heatmap(
+        pivot_df,
+        cmap="RdBu_r",
+        center=0.0,
+        linewidths=0.5,
+        linecolor="white",
+        cbar_kws={"label": "Success Rate"},
+        ax=ax,
+        square=False,
+    )
     
-    ax.set_title('Intervention Success Rate by Layer and Target Position', 
-                fontsize=14, pad=20)
-    ax.set_xlabel('Model Layer', fontsize=12)
+    # Apply Tufte minimalist style
+    apply_tufte_style(ax)
+    
+    # Invert y-axis so lower layers appear at bottom (optional aesthetic)
+    ax.invert_yaxis()
+    
+    # Axis labels and title
+    ax.set_xlabel('Layer', fontsize=12)
     ax.set_ylabel('Target Position', fontsize=12)
-    
-    # Rotate y-axis labels for readability
-    ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
     
     plt.tight_layout()
     
@@ -734,3 +747,5 @@ def quick_visualization_demo():
 
 if __name__ == "__main__":
     quick_visualization_demo()
+
+#%%

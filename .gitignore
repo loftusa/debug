@@ -7,5 +7,6 @@ dist/
 wheels/
 *.egg-info
 **/results/bool*
+**/*.json
 # Virtual environments
 .venv

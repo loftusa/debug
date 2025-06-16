@@ -56,7 +56,6 @@ causal_config = quick_causal_experiment(
     num_programs=20,  # Increase for full experiment
     seq_lens=[3, 4, 5, 6],  # Focus on systematic cases
     intervention_types=["residual_stream"],  # Can add "attention_head"
-    max_layers=12,  # Limit for computational efficiency
     filter_systematic=True,  # Focus on depth > 2 cases
     random_seed=42
 )
@@ -70,20 +69,20 @@ print(f"🔬 Max layers: {causal_config.max_layers}")
 print(f"🧠 Filter systematic: {causal_config.filter_systematic}")
 
 #%% Demo: Program Generation and Analysis
-print("\n=== Demo: Program Generation ===")
+print("\n=== Program Generation ===")
 
 # Generate example programs to understand the data
 runner = CausalExperimentRunner(output_dir="../results/causal_experiments")
 
-demo_programs = runner._generate_programs(
+programs = runner._generate_programs(
     seq_lens=[3, 4], 
-    num_programs=3, 
+    num_programs=20, 
     random_seed=42
 )
 
-print(f"Generated {len(demo_programs)} demo programs:")
+print(f"Generated {len(programs)} programs:")
 
-for i, prog in enumerate(demo_programs[:3]):  # Show first 3
+for i, prog in enumerate(programs[:3]):  # Show first 3
     print(f"\n--- Program {i+1} (seq_len={prog['seq_len']}) ---")
     print("Original:")
     print(prog['original_program'])
@@ -104,12 +103,27 @@ for i, prog in enumerate(demo_programs[:3]):  # Show first 3
     is_systematic = runner._is_systematic_case(prog)
     print(f"Systematic case: {is_systematic}")
 
-#%% Intervention Simulation (No Model Loading)
-print("\n=== Intervention Simulation ===")
-print("Simulating causal interventions without model loading...")
+#%% causal tracer
+causal_tracer = CausalTracer(causal_config.model_name)
+program = programs[0]
+metadata = program['metadata']
+intervention_targets = list(runner._extract_intervention_targets(metadata).items())
+
+target_name, target_pos = intervention_targets[0]
+results = causal_tracer.run_systematic_intervention(
+    original_program=program["original_program"],
+    counterfactual_program=program["counterfactual_program"],
+    target_token_pos=target_pos,
+    max_layers=causal_config.max_layers
+)
+
+
+
+#%% Intervention 
+print("\n=== Intervention ===")
 
 # Create realistic mock interventions based on research patterns
-def simulate_realistic_interventions(programs, max_layers=6):
+def get_interventions(programs, max_layers: int):
     """Simulate realistic intervention results based on research patterns."""
     results = []
     
@@ -134,25 +148,7 @@ def simulate_realistic_interventions(programs, max_layers=6):
                     pass
             
             for layer in range(max_layers):
-                # Simulate realistic patterns:
-                # - Earlier layers less effective
-                # - Shallower references easier to track
-                # - Some randomness
-                
-                base_success = 0.3 + (layer / max_layers) * 0.4  # Layer effect
-                depth_penalty = (ref_depth - 1) * 0.1  # Depth penalty
-                base_success = max(0.1, base_success - depth_penalty)
-                
-                # Add realistic noise
-                success_rate = np.random.beta(
-                    base_success * 10, 
-                    (1 - base_success) * 10
-                )
-                
-                logit_diff = np.random.normal(
-                    success_rate * 0.3,  # Higher success = higher logit diff
-                    0.05
-                )
+               raise NotImplementedError("Not implemented")
                 
                 from debug.causal_tracing import InterventionResult
                 result = InterventionResult(
@@ -168,10 +164,10 @@ def simulate_realistic_interventions(programs, max_layers=6):
     
     return results
 
-# Generate simulation data
-simulation_results = simulate_realistic_interventions(demo_programs, max_layers=8)
-print(f"✅ Simulated {len(simulation_results)} interventions")
+interventions = get_interventions(programs, max_layers=8)
+print(f"✅ Simulated {len(interventions)} interventions")
 
+#%%
 # Analyze simulation
 analyzer = CausalAnalyzer()
 aggregated = analyzer.aggregate_by_target(simulation_results)
