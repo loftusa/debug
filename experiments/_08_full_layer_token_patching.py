@@ -69,10 +69,10 @@ def run_full_token_layer_patching(
 if __name__ == "__main__":
     # --- Configuration -----------------------------------------------------
     MODEL_IDS = [
-    # "Qwen/Qwen3-0.6B",
-    # "Qwen/Qwen3-1.7B", 
-    # "Qwen/Qwen3-4B",
-    # "Qwen/Qwen3-8B",
+    "Qwen/Qwen3-0.6B",
+    "Qwen/Qwen3-1.7B", 
+    "Qwen/Qwen3-4B",
+    "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",  
     ]
     SEQ_LEN = 17

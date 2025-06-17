@@ -11,14 +11,12 @@ To this end, we first test various models on their ability to accomplish coding 
 We will also include tools built with the `nnsight` python package that allow for interpretability techniques like patching and causal mediation analysis.
 
 ## Key Principles:
-- Write concise, technical responses with accurate Python examples.
-- We are using test-driven development. Build tests first. Before writing code, run the tests and confirm that they fail. After writing code, run the tests again, and make confirm that they pass. Do not modify tests once you are in the stage of writing code. The exception to this is visualization code, for that just make example visualizations that I can look at and see for myself (save them in an image file so that I can look)
+ Write concise, technical responses with accurate Python examples.
 - Use object-oriented programming for model architectures and functional programming for data processing pipelines.
-- Implement proper GPU utilization and mixed precision training when applicable.
-- Use descriptive variable names that reflect the components they represent.
+- Use concise, descriptive variable names that reflect the components they represent.
 - Follow PEP 8 style guidelines for Python code.
 - Follow the `black` formatting style for Python code.
-- Use modern python tools like dataclasses and pydantic when appropriate.
+- Use useful functions from the standard library when appropriate. You know itertools, functools, pathlib, collections, bisect, shutil, and other tools well; but tend towards simple, easy-to-understand code and don't overengineer.
 - When visualizing data, always use the style of Edward Tufte, using his words as wisdom.
 - Important: try to fix things at the cause, not the symptom.
 - Be very detailed with summarization and do not miss out things that are important.
@@ -26,6 +24,7 @@ We will also include tools built with the `nnsight` python package that allow fo
 - Don't try to demo python interactive / jupyter notebook files, I'll do that myself
 - Ask me clarifying questions on design decisions when appropriate
 - When writing any code that uses arrays or tensors, use `jaxtyping` for tensor type/shape typing annotation.
+- Be clear with type annotation in general
 - Include a lot of assert statements to make sure the code is doing what you think it's doing.
 
 
