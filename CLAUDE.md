@@ -32,13 +32,24 @@ We will also include tools built with the `nnsight` python package that allow fo
 Dependencies:
 - torch
 - numpy
-- transformers
-- tqdm (for progress bars)
-- wandb (for experiment tracking)
+- transformers 
+- accelerate
+- bitsandbytes
+- datasets
+- huggingface-hub
+- matplotlib
+- seaborn
+- nnsight (for interpretability)
 - jaxtyping (for tensor type and shape annotations)
-- uv
-- scikit-learn
+- torchtyping
+- einops
+- lovely-tensors
 - pytest
+- ruff (for linting)
+- gradio
+- jupyter/jupyterlab
+- uv (package manager)
+- vllm
 
 ### Error Handling and Debugging:
 - Use try-except blocks for error-prone operations, especially in data loading and model inference.
@@ -64,8 +75,19 @@ The framework has a clear separation between core functionality and experiments:
   - `runner.py`: ExperimentRunner class for running experiments and visualization
   - `generators.py`: Program generators for different task types
   - `prompts.py`: Prompt templates for various experiment types
+  - `causal_tracing.py`: Causal intervention and patching functionality
+  - `causal_experiment_runner.py`: Specialized runner for causal experiments
+  - `causal_visualization.py`: Visualization tools for causal analysis
+  - `counterfactual.py`: Counterfactual generation utilities
+  - `token_analyzer.py`: Token-level analysis tools
 - `experiments/`: Individual experiment scripts and results
+  - Multiple experiment types: boolean, integer, range tracking, variable binding
+  - Causal tracing and patching experiments
+  - Shell scripts for batch experiment execution
 - `results/`: Experiment outputs with JSON data and visualizations
+  - `debug_experiments/`: Core experiment results
+  - `full_token_layer_patching/`: Causal intervention results
+  - Various dated experiment runs with detailed data
 
 ## Development Commands
 
@@ -83,10 +105,18 @@ cd experiments && ./run_experiments.sh all
 # Run specific experiment type
 ./run_experiments.sh range -m "Qwen/Qwen3-0.6B" -n 50
 uv run _04_boolean_simple.py --num-seqs 100
+
+# Run causal tracing experiments
+uv run _07_binding_patching.py
+uv run _08_full_layer_token_patching.py
 ```
 
-### Dependencies
-The project uses `uv` for dependency management. Key dependencies include PyTorch, Transformers, NumPy, Pandas, and Matplotlib.
+### Linting and Code Quality
+```bash
+# Run ruff for linting and formatting
+ruff check src/
+ruff format src/
+```
 
 ## Core Architecture
 
@@ -118,6 +148,10 @@ All experiments save to `results/debug_experiments/{experiment_name}_{timestamp}
 - `summary.json`: Aggregated statistics
 - `accuracy_plot.png`: Auto-generated visualizations
 
+Causal tracing experiments save to `results/full_token_layer_patching/{timestamp}/`:
+- `intervention_results.json`: Detailed causal intervention results
+- `patch_results.json`: Aggregated patching statistics
+
 ## Key Patterns
 
 ### Quick Experiment Pattern
@@ -144,6 +178,20 @@ runner = ExperimentRunner()
 runner.preload_models(["model1", "model2"])  # Load once
 # Run multiple experiments using cached models
 runner.unload_all_models()  # Clean up GPU memory
+```
+
+### Causal Tracing Pattern
+```python
+from debug.causal_tracing import run_causal_tracing_experiment
+from debug.causal_experiment_runner import CausalExperimentRunner
+
+# Run causal intervention experiment
+runner = CausalExperimentRunner()
+results = runner.run_intervention_experiment(
+    model_id="model_name",
+    programs=program_list,
+    intervention_type="residual_stream"  # or "attention_heads"
+)
 ```
 
 ### Generator Functions
