@@ -1,0 +1,4370 @@
+[
+  {
+    "layer_idx": 0,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 0,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 1,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 2,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 3,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 4,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 5,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 6,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 7,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 8,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 9,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 10,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 11,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 12,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 13,
+    "logit_difference": -0.24734020233154297,
+    "normalized_logit_difference": -0.009734672512186966,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 13,
+    "logit_difference": -0.20465850830078125,
+    "normalized_logit_difference": -0.008054831104529788,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 13,
+    "logit_difference": -0.19324016571044922,
+    "normalized_logit_difference": -0.007605434586288711,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 13,
+    "logit_difference": -0.19823837280273438,
+    "normalized_logit_difference": -0.007802151127849012,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 13,
+    "logit_difference": -0.17829513549804688,
+    "normalized_logit_difference": -0.007017236738017106,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 13,
+    "logit_difference": -0.14087867736816406,
+    "normalized_logit_difference": -0.005544621437201068,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 13,
+    "logit_difference": -0.16068172454833984,
+    "normalized_logit_difference": -0.006324018305260533,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 13,
+    "logit_difference": -0.16541004180908203,
+    "normalized_logit_difference": -0.006510112679054842,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 13,
+    "logit_difference": -0.1227874755859375,
+    "normalized_logit_difference": -0.004832598389424134,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 13,
+    "logit_difference": -0.08822822570800781,
+    "normalized_logit_difference": -0.0034724354371130886,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 13,
+    "logit_difference": -0.0040378570556640625,
+    "normalized_logit_difference": -0.00015891964071099312,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 13,
+    "logit_difference": -0.008944511413574219,
+    "normalized_logit_difference": -0.0003520329027464347,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 13,
+    "logit_difference": -0.009842872619628906,
+    "normalized_logit_difference": -0.000387390083084119,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 13,
+    "logit_difference": -0.02318572998046875,
+    "normalized_logit_difference": -0.0009125305396706812,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 13,
+    "logit_difference": 0.00010967254638671875,
+    "normalized_logit_difference": 4.316428597488004e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 13,
+    "logit_difference": -0.0074310302734375,
+    "normalized_logit_difference": -0.0002924661881011002,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 13,
+    "logit_difference": -0.03696727752685547,
+    "normalized_logit_difference": -0.0014549367106471956,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 13,
+    "logit_difference": -0.03353118896484375,
+    "normalized_logit_difference": -0.0013197011259798105,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 13,
+    "logit_difference": -0.04018592834472656,
+    "normalized_logit_difference": -0.001581614506443039,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 13,
+    "logit_difference": -0.03849220275878906,
+    "normalized_logit_difference": -0.0015149538352331375,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 13,
+    "logit_difference": -0.019309043884277344,
+    "normalized_logit_difference": -0.0007599541722899096,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 13,
+    "logit_difference": -0.012401580810546875,
+    "normalized_logit_difference": -0.0004880942389716,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 13,
+    "logit_difference": 0.0034961700439453125,
+    "normalized_logit_difference": 0.0001376002368555741,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 13,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 14,
+    "logit_difference": -0.0015153884887695312,
+    "normalized_logit_difference": -5.9641782968769023e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 14,
+    "logit_difference": -0.012012481689453125,
+    "normalized_logit_difference": -0.0004727803009909469,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 14,
+    "logit_difference": 5.245208740234375e-05,
+    "normalized_logit_difference": 2.0643788944507846e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 14,
+    "logit_difference": -0.01561737060546875,
+    "normalized_logit_difference": -0.0006146594322822917,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 14,
+    "logit_difference": -0.015040397644042969,
+    "normalized_logit_difference": -0.0005919512644433331,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 14,
+    "logit_difference": -0.01910114288330078,
+    "normalized_logit_difference": -0.0007517717250355411,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 14,
+    "logit_difference": -0.008394241333007812,
+    "normalized_logit_difference": -0.00033037569143556006,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 14,
+    "logit_difference": 0.002155303955078125,
+    "normalized_logit_difference": 8.48272054810686e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 14,
+    "logit_difference": -0.03889942169189453,
+    "normalized_logit_difference": -0.001530980922286419,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 14,
+    "logit_difference": -0.05579948425292969,
+    "normalized_logit_difference": -0.0021961238020784617,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 14,
+    "logit_difference": -0.06231975555419922,
+    "normalized_logit_difference": -0.0024527448657395527,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 14,
+    "logit_difference": -0.035778045654296875,
+    "normalized_logit_difference": -0.0014081316109857387,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 14,
+    "logit_difference": -0.017091751098632812,
+    "normalized_logit_difference": -0.0006726872462972174,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 14,
+    "logit_difference": 0.0084991455078125,
+    "normalized_logit_difference": 0.0003345044492244616,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 14,
+    "logit_difference": 0.006732940673828125,
+    "normalized_logit_difference": 0.00026499118172404614,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 14,
+    "logit_difference": 0.011095046997070312,
+    "normalized_logit_difference": 0.0004366724374189168,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 14,
+    "logit_difference": 0.010036468505859375,
+    "normalized_logit_difference": 0.00039500951791272826,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 14,
+    "logit_difference": 0.0062770843505859375,
+    "normalized_logit_difference": 0.000247049852423183,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 14,
+    "logit_difference": 0.004826545715332031,
+    "normalized_logit_difference": 0.00018996039245118944,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 14,
+    "logit_difference": 0.003914833068847656,
+    "normalized_logit_difference": 0.0001540777338494631,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 14,
+    "logit_difference": 0.0012826919555664062,
+    "normalized_logit_difference": 5.0483447509751e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 14,
+    "logit_difference": 0.0004482269287109375,
+    "normalized_logit_difference": 1.7641056007124885e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 14,
+    "logit_difference": -0.0013294219970703125,
+    "normalized_logit_difference": -5.2322621433898065e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 14,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 15,
+    "logit_difference": 0.00421905517578125,
+    "normalized_logit_difference": 0.00016605113143727763,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 15,
+    "logit_difference": -0.008396148681640625,
+    "normalized_logit_difference": -0.00033045075975899463,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 15,
+    "logit_difference": -0.0351715087890625,
+    "normalized_logit_difference": -0.0013842598841335443,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 15,
+    "logit_difference": -0.04294013977050781,
+    "normalized_logit_difference": -0.001690013165482564,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 15,
+    "logit_difference": -0.049285888671875,
+    "normalized_logit_difference": -0.0019397654775493915,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 15,
+    "logit_difference": -0.051613807678222656,
+    "normalized_logit_difference": -0.0020313863663012893,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 15,
+    "logit_difference": -0.040764808654785156,
+    "normalized_logit_difference": -0.0016043977426054323,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 15,
+    "logit_difference": -0.03447437286376953,
+    "normalized_logit_difference": -0.0013568224119182074,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 15,
+    "logit_difference": -0.008555412292480469,
+    "normalized_logit_difference": -0.0003367189647657816,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 15,
+    "logit_difference": -0.027088165283203125,
+    "normalized_logit_difference": -0.0010661203294178197,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 15,
+    "logit_difference": -0.023595809936523438,
+    "normalized_logit_difference": -0.0009286702292091147,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 15,
+    "logit_difference": -0.02996349334716797,
+    "normalized_logit_difference": -0.00117928582699544,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 15,
+    "logit_difference": -0.0230712890625,
+    "normalized_logit_difference": -0.0009080264402646068,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 15,
+    "logit_difference": -0.012263298034667969,
+    "normalized_logit_difference": -0.0004826517855225934,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 15,
+    "logit_difference": -0.012308120727539062,
+    "normalized_logit_difference": -0.00048441589112330587,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 15,
+    "logit_difference": -0.018108367919921875,
+    "normalized_logit_difference": -0.0007126986626878454,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 15,
+    "logit_difference": -0.01674938201904297,
+    "normalized_logit_difference": -0.0006592124822407114,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 15,
+    "logit_difference": -0.010329246520996094,
+    "normalized_logit_difference": -0.00040653250555993536,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 15,
+    "logit_difference": -0.007266044616699219,
+    "normalized_logit_difference": -0.00028597277812400957,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 15,
+    "logit_difference": -0.009645462036132812,
+    "normalized_logit_difference": -0.0003796205116086406,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 15,
+    "logit_difference": 0.0023822784423828125,
+    "normalized_logit_difference": 9.37603359697829e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 15,
+    "logit_difference": 0.0016469955444335938,
+    "normalized_logit_difference": 6.482149728575463e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 15,
+    "logit_difference": 3.24249267578125e-05,
+    "normalized_logit_difference": 1.2761614983877575e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 15,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 16,
+    "logit_difference": 0.001728057861328125,
+    "normalized_logit_difference": 6.801190103172403e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 16,
+    "logit_difference": 0.00036716461181640625,
+    "normalized_logit_difference": 1.4450652261155491e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 16,
+    "logit_difference": -0.0008392333984375,
+    "normalized_logit_difference": -3.303006231121255e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 16,
+    "logit_difference": -0.0024557113647460938,
+    "normalized_logit_difference": -9.6650466422014e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 16,
+    "logit_difference": -0.004582405090332031,
+    "normalized_logit_difference": -0.00018035164705156398,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 16,
+    "logit_difference": -0.0035238265991210938,
+    "normalized_logit_difference": -0.0001386887275453754,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 16,
+    "logit_difference": -0.0029888153076171875,
+    "normalized_logit_difference": -0.00011763206282197743,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 16,
+    "logit_difference": -0.006552696228027344,
+    "normalized_logit_difference": -0.0002578972251594789,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 16,
+    "logit_difference": -0.020547866821289062,
+    "normalized_logit_difference": -0.0008087110483606655,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 16,
+    "logit_difference": -0.000850677490234375,
+    "normalized_logit_difference": -3.348047225181999e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 16,
+    "logit_difference": -0.009365081787109375,
+    "normalized_logit_difference": -0.0003685854680637582,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 16,
+    "logit_difference": -0.003604888916015625,
+    "normalized_logit_difference": -0.00014187913129134482,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 16,
+    "logit_difference": -0.0021991729736328125,
+    "normalized_logit_difference": -8.65537769200638e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 16,
+    "logit_difference": -0.0031414031982421875,
+    "normalized_logit_difference": -0.00012363752869674335,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 16,
+    "logit_difference": -0.0029935836791992188,
+    "normalized_logit_difference": -0.00011781973363056386,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 16,
+    "logit_difference": -0.003017425537109375,
+    "normalized_logit_difference": -0.00011875808767349603,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 16,
+    "logit_difference": -0.0025234222412109375,
+    "normalized_logit_difference": -9.931539190394137e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 16,
+    "logit_difference": -0.0008640289306640625,
+    "normalized_logit_difference": -3.4005950515862014e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 16,
+    "logit_difference": -0.0013217926025390625,
+    "normalized_logit_difference": -5.2022348140159764e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 16,
+    "logit_difference": -0.000514984130859375,
+    "normalized_logit_difference": -2.0268447327334974e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 16,
+    "logit_difference": 0.00046443939208984375,
+    "normalized_logit_difference": 1.8279136756318762e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 16,
+    "logit_difference": 0.0005598068237304688,
+    "normalized_logit_difference": 2.2032552928047463e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 16,
+    "logit_difference": 0.00066375732421875,
+    "normalized_logit_difference": 2.6123776555231743e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 16,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 17,
+    "logit_difference": 3.814697265625e-05,
+    "normalized_logit_difference": 1.5013664686914796e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 17,
+    "logit_difference": -0.001468658447265625,
+    "normalized_logit_difference": -5.7802609044621966e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 17,
+    "logit_difference": -0.0022945404052734375,
+    "normalized_logit_difference": -9.030719309179249e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 17,
+    "logit_difference": 0.00533294677734375,
+    "normalized_logit_difference": 0.00020989103232306884,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 17,
+    "logit_difference": 0.000377655029296875,
+    "normalized_logit_difference": 1.4863528040045647e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 17,
+    "logit_difference": -0.004772186279296875,
+    "normalized_logit_difference": -0.0001878209452333041,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 17,
+    "logit_difference": -0.004202842712402344,
+    "normalized_logit_difference": -0.00016541305068808377,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 17,
+    "logit_difference": 0.0005311965942382812,
+    "normalized_logit_difference": 2.090652807652885e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 17,
+    "logit_difference": 0.003570556640625,
+    "normalized_logit_difference": 0.00014052790146952247,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 17,
+    "logit_difference": 0.0028362274169921875,
+    "normalized_logit_difference": 0.0001116265969472115,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 17,
+    "logit_difference": -0.027395248413085938,
+    "normalized_logit_difference": -0.001078206329490786,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 17,
+    "logit_difference": -0.017116546630859375,
+    "normalized_logit_difference": -0.0006736631345018669,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 17,
+    "logit_difference": -0.006148338317871094,
+    "normalized_logit_difference": -0.00024198274059134922,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 17,
+    "logit_difference": -0.004474639892578125,
+    "normalized_logit_difference": -0.00017611028677751056,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 17,
+    "logit_difference": 0.0038471221923828125,
+    "normalized_logit_difference": 0.00015141280836753572,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 17,
+    "logit_difference": -0.003879547119140625,
+    "normalized_logit_difference": -0.00015268896986592347,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 17,
+    "logit_difference": -0.000591278076171875,
+    "normalized_logit_difference": -2.3271180264717932e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 17,
+    "logit_difference": -1.52587890625e-05,
+    "normalized_logit_difference": -6.005465874765918e-07,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 17,
+    "logit_difference": 0.0016040802001953125,
+    "normalized_logit_difference": 6.313246000847671e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 17,
+    "logit_difference": 0.0014362335205078125,
+    "normalized_logit_difference": 5.6526447546234204e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 17,
+    "logit_difference": 0.0006866455078125,
+    "normalized_logit_difference": 2.7024596436446633e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 17,
+    "logit_difference": -0.0005435943603515625,
+    "normalized_logit_difference": -2.1394472178853585e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 17,
+    "logit_difference": 0.0001811981201171875,
+    "normalized_logit_difference": 7.1314907262845275e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 17,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 18,
+    "logit_difference": 0.00091552734375,
+    "normalized_logit_difference": 3.603279524859551e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 18,
+    "logit_difference": -0.001712799072265625,
+    "normalized_logit_difference": -6.741135444424743e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 18,
+    "logit_difference": -0.000720977783203125,
+    "normalized_logit_difference": -2.8375826258268963e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 18,
+    "logit_difference": -0.005542755126953125,
+    "normalized_logit_difference": -0.00021814854790087198,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 18,
+    "logit_difference": -0.003795623779296875,
+    "normalized_logit_difference": -0.00014938596363480222,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 18,
+    "logit_difference": -0.0020284652709960938,
+    "normalized_logit_difference": -7.983516197266942e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 18,
+    "logit_difference": -0.0034875869750976562,
+    "normalized_logit_difference": -0.00013726242940011852,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 18,
+    "logit_difference": -0.012149810791015625,
+    "normalized_logit_difference": -0.00047818522027823625,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 18,
+    "logit_difference": -0.023110389709472656,
+    "normalized_logit_difference": -0.0009095653408950156,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 18,
+    "logit_difference": -0.005782127380371094,
+    "normalized_logit_difference": -0.00022756962249191102,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 18,
+    "logit_difference": -0.05126667022705078,
+    "normalized_logit_difference": -0.0020177239314361967,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 18,
+    "logit_difference": -0.015309333801269531,
+    "normalized_logit_difference": -0.000602535898047608,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 18,
+    "logit_difference": -0.01328277587890625,
+    "normalized_logit_difference": -0.0005227758043983732,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 18,
+    "logit_difference": 0.0048198699951171875,
+    "normalized_logit_difference": 0.00018969765331916844,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 18,
+    "logit_difference": 0.00022029876708984375,
+    "normalized_logit_difference": 8.670391356693295e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 18,
+    "logit_difference": -0.0011129379272460938,
+    "normalized_logit_difference": -4.380236672407392e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 18,
+    "logit_difference": -0.0014944076538085938,
+    "normalized_logit_difference": -5.881603141098871e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 18,
+    "logit_difference": -0.0030059814453125,
+    "normalized_logit_difference": -0.00011830767773288859,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 18,
+    "logit_difference": -0.000751495361328125,
+    "normalized_logit_difference": -2.9576919433222146e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 18,
+    "logit_difference": -0.0011968612670898438,
+    "normalized_logit_difference": -4.710537295519517e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 18,
+    "logit_difference": 0.00019073486328125,
+    "normalized_logit_difference": 7.506832343457398e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 18,
+    "logit_difference": 3.4332275390625e-05,
+    "normalized_logit_difference": 1.3512298218223315e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 18,
+    "logit_difference": 4.00543212890625e-05,
+    "normalized_logit_difference": 1.5764347921260536e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 18,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 19,
+    "logit_difference": 0.0007925033569335938,
+    "normalized_logit_difference": 3.119088838706549e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 19,
+    "logit_difference": -0.00033473968505859375,
+    "normalized_logit_difference": -1.3174490762767733e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 19,
+    "logit_difference": -0.0014410018920898438,
+    "normalized_logit_difference": -5.671411835482064e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 19,
+    "logit_difference": -0.0019636154174804688,
+    "normalized_logit_difference": -7.728283897589391e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 19,
+    "logit_difference": -0.007266998291015625,
+    "normalized_logit_difference": -0.00028601031228572685,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 19,
+    "logit_difference": -0.009892463684082031,
+    "normalized_logit_difference": -0.0003893418594934179,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 19,
+    "logit_difference": -0.008502960205078125,
+    "normalized_logit_difference": -0.0003346545858713308,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 19,
+    "logit_difference": -0.008303642272949219,
+    "normalized_logit_difference": -0.0003268099460724178,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 19,
+    "logit_difference": -0.0076808929443359375,
+    "normalized_logit_difference": -0.00030230013847102943,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 19,
+    "logit_difference": -0.009334564208984375,
+    "normalized_logit_difference": -0.00036738437488880506,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 19,
+    "logit_difference": -0.010542869567871094,
+    "normalized_logit_difference": -0.0004149401577846077,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 19,
+    "logit_difference": -0.0016384124755859375,
+    "normalized_logit_difference": -6.448368983029904e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 19,
+    "logit_difference": -0.014872550964355469,
+    "normalized_logit_difference": -0.0005853452519810906,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 19,
+    "logit_difference": -0.008713722229003906,
+    "normalized_logit_difference": -0.0003429496356108512,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 19,
+    "logit_difference": -0.00582122802734375,
+    "normalized_logit_difference": -0.00022910852312231977,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 19,
+    "logit_difference": -0.004962921142578125,
+    "normalized_logit_difference": -0.0001953277775767615,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 19,
+    "logit_difference": -0.006316184997558594,
+    "normalized_logit_difference": -0.0002485887530535917,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 19,
+    "logit_difference": -0.0026149749755859375,
+    "normalized_logit_difference": -0.00010291867142880092,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 19,
+    "logit_difference": -0.0015048980712890625,
+    "normalized_logit_difference": -5.922890718987887e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 19,
+    "logit_difference": -0.0012035369873046875,
+    "normalized_logit_difference": -4.736811208721618e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 19,
+    "logit_difference": 0.00046539306640625,
+    "normalized_logit_difference": 1.831667091803605e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 19,
+    "logit_difference": 0.00029087066650390625,
+    "normalized_logit_difference": 1.1447919323772531e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 19,
+    "logit_difference": -0.0005626678466796875,
+    "normalized_logit_difference": -2.2145155413199324e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 19,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 20,
+    "logit_difference": 0.0002803802490234375,
+    "normalized_logit_difference": 1.1035043544882374e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 20,
+    "logit_difference": -7.05718994140625e-05,
+    "normalized_logit_difference": -2.777527967079237e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 20,
+    "logit_difference": -0.000141143798828125,
+    "normalized_logit_difference": -5.555055934158474e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 20,
+    "logit_difference": -0.002002716064453125,
+    "normalized_logit_difference": -7.882173960630267e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 20,
+    "logit_difference": 0.0005254745483398438,
+    "normalized_logit_difference": 2.0681323106225132e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 20,
+    "logit_difference": 0.000461578369140625,
+    "normalized_logit_difference": 1.81665342711669e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 20,
+    "logit_difference": -0.0009670257568359375,
+    "normalized_logit_difference": -3.805963998132901e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 20,
+    "logit_difference": -0.0010890960693359375,
+    "normalized_logit_difference": -4.286401268114174e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 20,
+    "logit_difference": -0.0007991790771484375,
+    "normalized_logit_difference": -3.14536275190865e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 20,
+    "logit_difference": -0.0029001235961914062,
+    "normalized_logit_difference": -0.00011414138578226973,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 20,
+    "logit_difference": 0.0018367767333984375,
+    "normalized_logit_difference": 7.229079546749474e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 20,
+    "logit_difference": -0.001056671142578125,
+    "normalized_logit_difference": -4.158785118275399e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 20,
+    "logit_difference": -0.0030431747436523438,
+    "normalized_logit_difference": -0.00011977151003986278,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 20,
+    "logit_difference": -0.0007715225219726562,
+    "normalized_logit_difference": -3.0365136829285175e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 20,
+    "logit_difference": -0.0012912750244140625,
+    "normalized_logit_difference": -5.082125496520658e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 20,
+    "logit_difference": -0.00077056884765625,
+    "normalized_logit_difference": -3.032760266756789e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 20,
+    "logit_difference": -8.0108642578125e-05,
+    "normalized_logit_difference": -3.152869584252107e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 20,
+    "logit_difference": 0.00069427490234375,
+    "normalized_logit_difference": 2.7324869730184927e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 20,
+    "logit_difference": 0.001102447509765625,
+    "normalized_logit_difference": 4.338949094518376e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 20,
+    "logit_difference": -0.00042819976806640625,
+    "normalized_logit_difference": -1.6852838611061857e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 20,
+    "logit_difference": 0.0007648468017578125,
+    "normalized_logit_difference": 3.0102397697264166e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 20,
+    "logit_difference": 0.0006265640258789062,
+    "normalized_logit_difference": 2.4659944248257552e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 20,
+    "logit_difference": 0.000339508056640625,
+    "normalized_logit_difference": 1.3362161571354168e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 20,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 21,
+    "logit_difference": 0.0001354217529296875,
+    "normalized_logit_difference": 5.3298509638547525e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 21,
+    "logit_difference": -0.0001049041748046875,
+    "normalized_logit_difference": -4.128757788901569e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 21,
+    "logit_difference": -0.00029754638671875,
+    "normalized_logit_difference": -1.1710658455793541e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 21,
+    "logit_difference": -0.0011463165283203125,
+    "normalized_logit_difference": -4.511606238417896e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 21,
+    "logit_difference": -0.0013360977172851562,
+    "normalized_logit_difference": -5.2585360565919074e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 21,
+    "logit_difference": -0.001796722412109375,
+    "normalized_logit_difference": -7.071436067536868e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 21,
+    "logit_difference": -0.0017843246459960938,
+    "normalized_logit_difference": -7.022641657304395e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 21,
+    "logit_difference": -0.0037527084350585938,
+    "normalized_logit_difference": -0.0001476969263575243,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 21,
+    "logit_difference": -0.0028734207153320312,
+    "normalized_logit_difference": -0.0001130904292541857,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 21,
+    "logit_difference": -0.007935523986816406,
+    "normalized_logit_difference": -0.00031232175964954504,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 21,
+    "logit_difference": -0.002353668212890625,
+    "normalized_logit_difference": -9.263431111826428e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 21,
+    "logit_difference": -0.0049304962158203125,
+    "normalized_logit_difference": -0.00019405161607837374,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 21,
+    "logit_difference": -0.00011157989501953125,
+    "normalized_logit_difference": -4.391496920922577e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 21,
+    "logit_difference": 0.008775711059570312,
+    "normalized_logit_difference": 0.00034538935612247486,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 21,
+    "logit_difference": 0.006123542785644531,
+    "normalized_logit_difference": 0.00024100685238669976,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 21,
+    "logit_difference": 0.0037145614624023438,
+    "normalized_logit_difference": 0.0001461955598888328,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 21,
+    "logit_difference": 0.02452564239501953,
+    "normalized_logit_difference": 0.0009652660368834695,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 21,
+    "logit_difference": 0.025503158569335938,
+    "normalized_logit_difference": 0.0010037385526436887,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 21,
+    "logit_difference": 0.004210472106933594,
+    "normalized_logit_difference": 0.00016571332398182206,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 21,
+    "logit_difference": -0.0014257431030273438,
+    "normalized_logit_difference": -5.6113571767344045e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 21,
+    "logit_difference": -0.0006780624389648438,
+    "normalized_logit_difference": -2.668678898099105e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 21,
+    "logit_difference": -0.001361846923828125,
+    "normalized_logit_difference": -5.359878293228582e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 21,
+    "logit_difference": -0.0009307861328125,
+    "normalized_logit_difference": -3.66333418360721e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 21,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 22,
+    "logit_difference": 0.00026702880859375,
+    "normalized_logit_difference": 1.0509565280840356e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 22,
+    "logit_difference": -0.0021209716796875,
+    "normalized_logit_difference": -8.347597565924626e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 22,
+    "logit_difference": 0.009497642517089844,
+    "normalized_logit_difference": 0.0003738027165424611,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 22,
+    "logit_difference": 0.04465961456298828,
+    "normalized_logit_difference": 0.0017576872590588323,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 22,
+    "logit_difference": 0.027948379516601562,
+    "normalized_logit_difference": 0.0010999761432868124,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 22,
+    "logit_difference": 0.016286849975585938,
+    "normalized_logit_difference": 0.0006410084138078272,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 22,
+    "logit_difference": -0.0012865066528320312,
+    "normalized_logit_difference": -5.0633584156620145e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 22,
+    "logit_difference": -0.0032901763916015625,
+    "normalized_logit_difference": -0.00012949285792464012,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 22,
+    "logit_difference": -0.00021076202392578125,
+    "normalized_logit_difference": -8.295049739520424e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 22,
+    "logit_difference": -0.006512641906738281,
+    "normalized_logit_difference": -0.0002563207903673528,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 22,
+    "logit_difference": -0.02353954315185547,
+    "normalized_logit_difference": -0.0009264557136677947,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 22,
+    "logit_difference": -0.0012159347534179688,
+    "normalized_logit_difference": -4.785605618954091e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 22,
+    "logit_difference": 0.007517814636230469,
+    "normalized_logit_difference": 0.0002958817968173733,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 22,
+    "logit_difference": 0.012263298034667969,
+    "normalized_logit_difference": 0.0004826517855225934,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 22,
+    "logit_difference": 0.016357421875,
+    "normalized_logit_difference": 0.0006437859417749064,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 22,
+    "logit_difference": 0.026731491088867188,
+    "normalized_logit_difference": 0.0010520825529355543,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 22,
+    "logit_difference": 0.018945693969726562,
+    "normalized_logit_difference": 0.0007456536566756234,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 22,
+    "logit_difference": 0.010830879211425781,
+    "normalized_logit_difference": 0.00042627547462322835,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 22,
+    "logit_difference": 0.03761005401611328,
+    "normalized_logit_difference": 0.001480234735644647,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 22,
+    "logit_difference": 0.03788185119628906,
+    "normalized_logit_difference": 0.0014909319717340737,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 22,
+    "logit_difference": 0.01905536651611328,
+    "normalized_logit_difference": 0.0007499700852731114,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 22,
+    "logit_difference": 0.012157440185546875,
+    "normalized_logit_difference": 0.00047848549357197453,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 22,
+    "logit_difference": -0.0026006698608398438,
+    "normalized_logit_difference": -0.00010235565900304162,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 22,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 23,
+    "logit_difference": -0.00017070770263671875,
+    "normalized_logit_difference": -6.718614947394371e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 23,
+    "logit_difference": -0.001438140869140625,
+    "normalized_logit_difference": -5.6601515869668776e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 23,
+    "logit_difference": -0.0001850128173828125,
+    "normalized_logit_difference": -7.2816273731536755e-06,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 23,
+    "logit_difference": 0.0029392242431640625,
+    "normalized_logit_difference": 0.0001156802864126785,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 23,
+    "logit_difference": 0.00135040283203125,
+    "normalized_logit_difference": 5.3148372991678376e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 23,
+    "logit_difference": 0.0004100799560546875,
+    "normalized_logit_difference": 1.6139689538433404e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 23,
+    "logit_difference": 0.000820159912109375,
+    "normalized_logit_difference": 3.227937907686681e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 23,
+    "logit_difference": 0.0032787322998046875,
+    "normalized_logit_difference": 0.00012904244798403266,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 23,
+    "logit_difference": -0.010563850402832031,
+    "normalized_logit_difference": -0.00041576590934238797,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 23,
+    "logit_difference": -0.016019821166992188,
+    "normalized_logit_difference": -0.0006304988485269868,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 23,
+    "logit_difference": 0.009354591369628906,
+    "normalized_logit_difference": 0.00036817259228486807,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 23,
+    "logit_difference": 0.03972434997558594,
+    "normalized_logit_difference": 0.0015634479721718722,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 23,
+    "logit_difference": 0.006744384765625,
+    "normalized_logit_difference": 0.00026544159166465357,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 23,
+    "logit_difference": 0.0068836212158203125,
+    "normalized_logit_difference": 0.0002709215792753775,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 23,
+    "logit_difference": -0.003780364990234375,
+    "normalized_logit_difference": -0.00014878541704732562,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 23,
+    "logit_difference": -0.0008869171142578125,
+    "normalized_logit_difference": -3.4906770397076896e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 23,
+    "logit_difference": -0.0011882781982421875,
+    "normalized_logit_difference": -4.6767565499739586e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 23,
+    "logit_difference": -0.0012426376342773438,
+    "normalized_logit_difference": -4.8907012717624945e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 23,
+    "logit_difference": -0.00041866302490234375,
+    "normalized_logit_difference": -1.6477496993888987e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 23,
+    "logit_difference": -0.000347137451171875,
+    "normalized_logit_difference": -1.3662434865092463e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 23,
+    "logit_difference": 0.0011386871337890625,
+    "normalized_logit_difference": 4.4815789090440664e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 23,
+    "logit_difference": -0.0007171630859375,
+    "normalized_logit_difference": -2.8225689611399816e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 23,
+    "logit_difference": -0.000370025634765625,
+    "normalized_logit_difference": -1.4563254746307351e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 23,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 24,
+    "logit_difference": 0.0004215240478515625,
+    "normalized_logit_difference": 1.6590099479040848e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 24,
+    "logit_difference": 0.0026521682739257812,
+    "normalized_logit_difference": 0.00010438250373577512,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 24,
+    "logit_difference": 0.0020599365234375,
+    "normalized_logit_difference": 8.10737893093399e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 24,
+    "logit_difference": 0.0021953582763671875,
+    "normalized_logit_difference": 8.640364027319464e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 24,
+    "logit_difference": 0.012281417846679688,
+    "normalized_logit_difference": 0.00048336493459522187,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 24,
+    "logit_difference": -0.00739288330078125,
+    "normalized_logit_difference": -0.00029096482163240876,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 24,
+    "logit_difference": 0.01439666748046875,
+    "normalized_logit_difference": 0.0005666157052841644,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 24,
+    "logit_difference": 0.00429534912109375,
+    "normalized_logit_difference": 0.0001690538643746606,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 24,
+    "logit_difference": -0.0016107559204101562,
+    "normalized_logit_difference": -6.339519914049772e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 24,
+    "logit_difference": -0.021076202392578125,
+    "normalized_logit_difference": -0.0008295049739520425,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 24,
+    "logit_difference": -0.0035867691040039062,
+    "normalized_logit_difference": -0.00014116598221871636,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 24,
+    "logit_difference": -0.06574630737304688,
+    "normalized_logit_difference": -0.002587605108789765,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 24,
+    "logit_difference": 0.030925750732421875,
+    "normalized_logit_difference": 0.0012171577961681826,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 24,
+    "logit_difference": -0.0048465728759765625,
+    "normalized_logit_difference": -0.00019074860984725247,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 24,
+    "logit_difference": 0.010226249694824219,
+    "normalized_logit_difference": 0.0004024788160944684,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 24,
+    "logit_difference": 0.0007467269897460938,
+    "normalized_logit_difference": 2.9389248624635713e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 24,
+    "logit_difference": -0.0017786026000976562,
+    "normalized_logit_difference": -7.000121160274024e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 24,
+    "logit_difference": -0.0033826828002929688,
+    "normalized_logit_difference": -0.00013313367161121696,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 24,
+    "logit_difference": -0.00077056884765625,
+    "normalized_logit_difference": -3.032760266756789e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 24,
+    "logit_difference": 0.0019245147705078125,
+    "normalized_logit_difference": 7.574393834548514e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 24,
+    "logit_difference": -0.00385284423828125,
+    "normalized_logit_difference": -0.00015163801333783943,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 24,
+    "logit_difference": -0.0031337738037109375,
+    "normalized_logit_difference": -0.00012333725540300503,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 24,
+    "logit_difference": -0.000701904296875,
+    "normalized_logit_difference": -2.7625143023923224e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 24,
+    "logit_difference": 0.0,
+    "normalized_logit_difference": 0.0,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 0,
+    "token_pos": 25,
+    "logit_difference": -0.00360870361328125,
+    "normalized_logit_difference": -0.00014202926793821397,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 1,
+    "token_pos": 25,
+    "logit_difference": -0.01061248779296875,
+    "normalized_logit_difference": -0.0004176801515899696,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 2,
+    "token_pos": 25,
+    "logit_difference": -0.011281013488769531,
+    "normalized_logit_difference": -0.0004439915989537878,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 3,
+    "token_pos": 25,
+    "logit_difference": -0.005066871643066406,
+    "normalized_logit_difference": -0.00019941900120394577,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 4,
+    "token_pos": 25,
+    "logit_difference": -0.002696990966796875,
+    "normalized_logit_difference": -0.00010614660933648761,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 5,
+    "token_pos": 25,
+    "logit_difference": -0.0011606216430664062,
+    "normalized_logit_difference": -4.567907480993827e-05,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 6,
+    "token_pos": 25,
+    "logit_difference": -0.006024360656738281,
+    "normalized_logit_difference": -0.00023710329956810192,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 7,
+    "token_pos": 25,
+    "logit_difference": -0.00992584228515625,
+    "normalized_logit_difference": -0.000390655555153523,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 8,
+    "token_pos": 25,
+    "logit_difference": -0.0044727325439453125,
+    "normalized_logit_difference": -0.000176035218454076,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 9,
+    "token_pos": 25,
+    "logit_difference": 0.005351066589355469,
+    "normalized_logit_difference": 0.0002106041813956973,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 10,
+    "token_pos": 25,
+    "logit_difference": -0.03471183776855469,
+    "normalized_logit_difference": -0.0013661684181858118,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 11,
+    "token_pos": 25,
+    "logit_difference": -0.11226177215576172,
+    "normalized_logit_difference": -0.004418333846550438,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 12,
+    "token_pos": 25,
+    "logit_difference": -0.22156143188476562,
+    "normalized_logit_difference": -0.008720086586806982,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 13,
+    "token_pos": 25,
+    "logit_difference": -0.23508548736572266,
+    "normalized_logit_difference": -0.009252358534119829,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 14,
+    "token_pos": 25,
+    "logit_difference": -0.25786495208740234,
+    "normalized_logit_difference": -0.010148899520898947,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 15,
+    "token_pos": 25,
+    "logit_difference": -0.2496509552001953,
+    "normalized_logit_difference": -0.009825617786027953,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 16,
+    "token_pos": 25,
+    "logit_difference": -0.2355327606201172,
+    "normalized_logit_difference": -0.009269962055965237,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 17,
+    "token_pos": 25,
+    "logit_difference": -0.23703861236572266,
+    "normalized_logit_difference": -0.009329228497316834,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 18,
+    "token_pos": 25,
+    "logit_difference": -0.24571895599365234,
+    "normalized_logit_difference": -0.00967086443726758,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 19,
+    "token_pos": 25,
+    "logit_difference": -0.23891448974609375,
+    "normalized_logit_difference": -0.009403058193414736,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 20,
+    "token_pos": 25,
+    "logit_difference": -0.24660968780517578,
+    "normalized_logit_difference": -0.009705921344311525,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 21,
+    "token_pos": 25,
+    "logit_difference": -0.2418804168701172,
+    "normalized_logit_difference": -0.0095197894363555,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 22,
+    "token_pos": 25,
+    "logit_difference": -0.2411050796508789,
+    "normalized_logit_difference": -0.009489274162879344,
+    "success_rate": 0.0
+  },
+  {
+    "layer_idx": 23,
+    "token_pos": 25,
+    "logit_difference": -0.2431478500366211,
+    "normalized_logit_difference": -0.009569672337277773,
+    "success_rate": 0.0
+  }
+]
