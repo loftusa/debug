@@ -453,7 +453,7 @@ def plot_causal_flow_heatmap(intervention_results: List[InterventionResult],
             df_data.append({
                 'layer': result.layer_idx,
                 'token_pos': result.target_token_pos,
-                'logit_difference': result.logit_difference
+                'normalized_logit_difference': result.logit_difference
             })
     
     if not df_data:
@@ -464,7 +464,7 @@ def plot_causal_flow_heatmap(intervention_results: List[InterventionResult],
     df = pd.DataFrame(df_data)
     
     # Create pivot table for heatmap
-    pivot_df = df.pivot_table(values='logit_difference', index='layer', 
+    pivot_df = df.pivot_table(values='normalized_logit_difference', index='layer', 
                              columns='token_pos', aggfunc='mean', fill_value=0)
     
     # Ensure we have all token positions, fill missing with 0
@@ -505,7 +505,7 @@ def plot_causal_flow_heatmap(intervention_results: List[InterventionResult],
     
     # Add colorbar
     cbar = plt.colorbar(im, ax=ax, shrink=0.8)
-    cbar.set_label('Logit Difference', fontsize=12)
+    cbar.set_label('Normalized Logit Difference', fontsize=12)
     
     # Add grid for better readability
     ax.set_xticks(np.arange(-0.5, len(pivot_df.columns), 1), minor=True)

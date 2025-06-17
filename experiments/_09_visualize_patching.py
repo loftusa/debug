@@ -45,6 +45,12 @@ RESULTS_FILE = latest_experiment_dir / "intervention_results.json"
 if not RESULTS_FILE.exists():
     RESULTS_FILE = latest_experiment_dir / "experiment_results.json"
 if not RESULTS_FILE.exists():
+    # MODEL = "Qwen_Qwen3-0.6B"
+    # MODEL = "Qwen_Qwen3-1.7B"
+    MODEL = "Qwen_Qwen3-4B"
+    # MODEL = "Qwen_Qwen3-8B"
+    RESULTS_FILE = latest_experiment_dir / f"{MODEL}/intervention_results.json"
+if not RESULTS_FILE.exists():
     raise FileNotFoundError(f"Results file not found in: {latest_experiment_dir}")
 
 print(f"Loading results from: {RESULTS_FILE}")
@@ -145,7 +151,8 @@ fig, ax = plot_causal_flow_heatmap(
     token_labels=token_labels,
 )
 
-ax.set_title("Logit Difference Heatmap: All Tokens and Layers")
+MODEL_TITLE = MODEL or ''
+ax.set_title(f"Logit Difference Heatmap {MODEL_TITLE}")
 plt.show()
 
 # %%

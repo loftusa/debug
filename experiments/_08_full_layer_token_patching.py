@@ -2,7 +2,8 @@ from datetime import datetime
 import json
 from pathlib import Path
 from typing import List
-
+import torch
+import gc
 import numpy as np
 from tqdm import tqdm
 
@@ -68,14 +69,13 @@ def run_full_token_layer_patching(
 if __name__ == "__main__":
     # --- Configuration -----------------------------------------------------
     MODEL_IDS = [
-    # Dense models
-    "Qwen/Qwen3-0.6B",
-    "Qwen/Qwen3-1.7B", 
-    "Qwen/Qwen3-4B",
-    "Qwen/Qwen3-8B",
+    # "Qwen/Qwen3-0.6B",
+    # "Qwen/Qwen3-1.7B", 
+    # "Qwen/Qwen3-4B",
+    # "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",  
     ]
-    SEQ_LEN = 5
+    SEQ_LEN = 17
     RNG_SEED = 42
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     BASE_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching" / timestamp
@@ -105,6 +105,7 @@ if __name__ == "__main__":
 
     # --- Run Experiment for each model -------------------------------------
     for model_id in MODEL_IDS:
+
         print(f"\n\n=== Running experiment for model: {model_id} ===")
         
         # Create a model-specific output directory
@@ -112,6 +113,8 @@ if __name__ == "__main__":
         model_output_dir = BASE_OUTPUT_DIR / model_name_safe
         model_output_dir.mkdir(parents=True, exist_ok=True)
 
+
+        # Load the model
         tracer = CausalTracer(model_id)
 
         print("\nRunning full token × layer patching …")
@@ -143,3 +146,9 @@ if __name__ == "__main__":
             json.dump(serialisable, f, indent=2)
 
         print(f"Saved {len(results)} intervention results for {model_id} ➜ {out_path}\n") 
+        del tracer
+        del results
+        del serialisable
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()

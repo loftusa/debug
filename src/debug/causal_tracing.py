@@ -269,8 +269,6 @@ class CausalTracer:
         """
         Run a systematic intervention across all specified layers for a given
         token position by calling `run_residual_stream_intervention` in a loop.
-
-        This is less efficient than a single-graph trace but more robust.
         """
         num_layers = self._n_layers if max_layers is None else min(self._n_layers, max_layers)
         results: List[InterventionResult] = []
