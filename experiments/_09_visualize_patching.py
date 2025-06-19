@@ -40,15 +40,21 @@ try:
 except IndexError:
     latest_experiment_dir = BASE_RESULTS_DIR
 
+latest_experiment_dir = BASE_RESULTS_DIR / "20250618_165757"  # hardcode
+
+
+assert latest_experiment_dir.exists(), f"Latest experiment directory not found: {latest_experiment_dir}"
+
 # The results file might be named differently now, so we check for both
+# MODEL = "Qwen_Qwen3-0.6B"
+# MODEL = "Qwen_Qwen3-1.7B"
+# MODEL = "Qwen_Qwen3-4B"
+# MODEL = "Qwen_Qwen3-8B"
+MODEL = "Qwen_Qwen3-14B"
 RESULTS_FILE = latest_experiment_dir / "intervention_results.json"
 if not RESULTS_FILE.exists():
     RESULTS_FILE = latest_experiment_dir / "experiment_results.json"
 if not RESULTS_FILE.exists():
-    # MODEL = "Qwen_Qwen3-0.6B"
-    # MODEL = "Qwen_Qwen3-1.7B"
-    MODEL = "Qwen_Qwen3-4B"
-    # MODEL = "Qwen_Qwen3-8B"
     RESULTS_FILE = latest_experiment_dir / f"{MODEL}/intervention_results.json"
 if not RESULTS_FILE.exists():
     raise FileNotFoundError(f"Results file not found in: {latest_experiment_dir}")
@@ -153,6 +159,13 @@ fig, ax = plot_causal_flow_heatmap(
 
 MODEL_TITLE = MODEL or ''
 ax.set_title(f"Logit Difference Heatmap {MODEL_TITLE}")
+
+# Save the plot to the same directory as the results file
+output_dir = Path(RESULTS_FILE).parent
+plot_filename = f"causal_flow_heatmap_{MODEL_TITLE.replace('/', '_')}.png"
+plot_path = output_dir / plot_filename
+plt.savefig(plot_path, dpi=300, bbox_inches='tight')
+print(f"Saved heatmap to: {plot_path}")
 plt.show()
 
 # %%
