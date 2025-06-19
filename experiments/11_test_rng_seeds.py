@@ -5,7 +5,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from tqdm import tqdm, trange
+from tqdm import tqdm
 from transformers import AutoTokenizer
 from nnsight import LanguageModel
 
@@ -56,6 +56,18 @@ def extract_answer(generated_text: str, prompt: str) -> str:
     return answer_part.strip()
 
 
+def check_no_correct_answer_before_newline(generated_text: str, prompt: str, correct_answer: str) -> bool:
+    """Checks that the correct answer doesn't appear before the first newline in generated text."""
+    answer_part = generated_text[len(prompt) :]
+    
+    # Get text before first newline (or all text if no newline)
+    first_line = answer_part.split('\n')[0]
+    
+    # Check if correct answer appears as a standalone number in first line
+    pattern = r'\b' + re.escape(str(correct_answer)) + r'\b'
+    return not bool(re.search(pattern, first_line))
+
+
 def test_program_with_model(
     model: LanguageModel, program: str, true_answer: str, query_var: str, search_mode: str
 ) -> bool:
@@ -89,9 +101,18 @@ def test_program_with_model(
     original_extracted = extract_answer(original_generated, original_prompt)
     original_correct = original_extracted == str(true_answer)
     
+    # For incorrect mode, also check that correct answer doesn't appear before first newline
+    if search_mode == "all_incorrect":
+        original_no_leak = check_no_correct_answer_before_newline(original_generated, original_prompt, true_answer)
+        original_truly_incorrect = not original_correct and original_no_leak
+    else:
+        original_truly_incorrect = not original_correct
+    
     print(
         f"    - Original: True answer: '{true_answer}', Model answer: '{original_extracted}' -> {'Correct' if original_correct else 'Incorrect'}"
     )
+    if search_mode == "all_incorrect" and not original_correct:
+        print(f"      No answer leak before newline: {'✓' if original_no_leak else '✗'}")
     
     # Test counterfactual program
     cf_prompt = prompts.VARIABLE_BINDING.format(code=counterfactual_program)
@@ -99,19 +120,26 @@ def test_program_with_model(
     cf_extracted = extract_answer(cf_generated, cf_prompt)
     cf_correct = cf_extracted == str(counterfactual_answer)
     
+    # For incorrect mode, also check that correct answer doesn't appear before first newline
+    if search_mode == "all_incorrect":
+        cf_no_leak = check_no_correct_answer_before_newline(cf_generated, cf_prompt, counterfactual_answer)
+        cf_truly_incorrect = not cf_correct and cf_no_leak
+    else:
+        cf_truly_incorrect = not cf_correct
+    
     print(
         f"    - Counterfactual: True answer: '{counterfactual_answer}', Model answer: '{cf_extracted}' -> {'Correct' if cf_correct else 'Incorrect'}"
     )
+    if search_mode == "all_incorrect" and not cf_correct:
+        print(f"      No answer leak before newline: {'✓' if cf_no_leak else '✗'}")
 
-    # Both programs must be correct for the seed to be good
-    both_correct = original_correct and cf_correct
-    both_incorrect = not original_correct and not cf_correct
-    
     # Return whether this model meets the condition
     if search_mode == "all_correct":
+        both_correct = original_correct and cf_correct
         return both_correct
     else:  # all_incorrect
-        return both_incorrect
+        both_truly_incorrect = original_truly_incorrect and cf_truly_incorrect
+        return both_truly_incorrect
 
 
 
