@@ -108,9 +108,11 @@ def test_program_with_model(
     else:
         original_truly_incorrect = not original_correct
     
+    original_response = original_generated[len(original_prompt):]
     print(
         f"    - Original: True answer: '{true_answer}', Model answer: '{original_extracted}' -> {'Correct' if original_correct else 'Incorrect'}"
     )
+    print(f"      Full response: '{original_response}'")
     if search_mode == "all_incorrect" and not original_correct:
         print(f"      No answer leak before newline: {'✓' if original_no_leak else '✗'}")
     
@@ -127,9 +129,11 @@ def test_program_with_model(
     else:
         cf_truly_incorrect = not cf_correct
     
+    cf_response = cf_generated[len(cf_prompt):]
     print(
         f"    - Counterfactual: True answer: '{counterfactual_answer}', Model answer: '{cf_extracted}' -> {'Correct' if cf_correct else 'Incorrect'}"
     )
+    print(f"      Full response: '{cf_response}'")
     if search_mode == "all_incorrect" and not cf_correct:
         print(f"      No answer leak before newline: {'✓' if cf_no_leak else '✗'}")
 
