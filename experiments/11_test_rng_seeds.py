@@ -17,6 +17,7 @@ if __name__ == "__main__":
 
 from debug import prompts
 from debug.generators import make_variable_binding_program_with_metadata
+from debug.counterfactual import CounterfactualGenerator
 
 # --- Configuration ---
 MODEL_IDS = [
@@ -55,71 +56,71 @@ def extract_answer(generated_text: str, prompt: str) -> str:
     return answer_part.strip()
 
 
-def check_program_with_condition(
-    program: str, true_answer: str, search_mode: str, model_dict: dict
+def test_program_with_model(
+    model: LanguageModel, program: str, true_answer: str, query_var: str, search_mode: str
 ) -> bool:
     """
-    Checks if a program satisfies the search criteria across all models.
+    Tests a single program with a single model.
+    Tests both original and counterfactual programs.
 
     Args:
+        model: The loaded model to test with.
         program: The program string to test.
-        true_answer: The expected answer.
+        true_answer: The expected answer for original program.
+        query_var: The query variable (e.g., "d" from "#d:").
         search_mode: 'all_correct' or 'all_incorrect'.
-        model_dict: Dictionary containing loaded models.
 
     Returns:
-        True if the condition is met, False otherwise.
+        True if the condition is met for this model, False otherwise.
     """
-    prompt = prompts.VARIABLE_BINDING.format(code=program)
+    # Generate counterfactual program
+    try:
+        cf_generator = CounterfactualGenerator()
+        cf_result = cf_generator.create_counterfactual_with_metadata(program, query_var)
+        counterfactual_program = cf_result.counterfactual_program
+        counterfactual_answer = cf_result.counterfactual_root_value
+    except Exception as e:
+        print(f"    -> Failed to generate counterfactual: {e}")
+        return False
 
-    for model_id in MODEL_IDS:
-        print(f"  Testing model: {model_id}...")
-        model = model_dict[model_id]
-
-        generated_text = run_inference_nnsight(model, prompt)
-        extracted = extract_answer(generated_text, prompt)
-
-        correct = extracted == str(true_answer)
-        print(
-            f"    - True answer: '{true_answer}', Model answer: '{extracted}' -> {'Correct' if correct else 'Incorrect'}"
-        )
-        print(f"generated_text: {generated_text}")
-
-        # Early exit conditions based on search mode
-        if search_mode == "all_correct" and not correct:
-            print(
-                "    -> Condition not met (expected correct). Failing this seed early."
-            )
-            return False
-        if search_mode == "all_incorrect" and correct:
-            print(
-                "    -> Condition not met (expected incorrect). Failing this seed early."
-            )
-            return False
-
-    # If we completed the loop, the early exit was never triggered, so the condition was met.
-    return True
-
-
-def load_all_models():
-    """Load all models once using NNSight and return a dictionary."""
-    print("Loading all models...")
-    model_dict = {}
+    # Test original program
+    original_prompt = prompts.VARIABLE_BINDING.format(code=program)
+    original_generated = run_inference_nnsight(model, original_prompt)
+    original_extracted = extract_answer(original_generated, original_prompt)
+    original_correct = original_extracted == str(true_answer)
     
-    for model_id in MODEL_IDS:
-        print(f"Loading {model_id}...")
-        # NNSight LanguageModel wraps the HuggingFace model and provides tracing capabilities
-        model = LanguageModel(model_id, device_map="auto")
-        model_dict[model_id] = model
+    print(
+        f"    - Original: True answer: '{true_answer}', Model answer: '{original_extracted}' -> {'Correct' if original_correct else 'Incorrect'}"
+    )
     
-    print("All models loaded successfully!")
-    return model_dict
+    # Test counterfactual program
+    cf_prompt = prompts.VARIABLE_BINDING.format(code=counterfactual_program)
+    cf_generated = run_inference_nnsight(model, cf_prompt)
+    cf_extracted = extract_answer(cf_generated, cf_prompt)
+    cf_correct = cf_extracted == str(counterfactual_answer)
+    
+    print(
+        f"    - Counterfactual: True answer: '{counterfactual_answer}', Model answer: '{cf_extracted}' -> {'Correct' if cf_correct else 'Incorrect'}"
+    )
+
+    # Both programs must be correct for the seed to be good
+    both_correct = original_correct and cf_correct
+    both_incorrect = not original_correct and not cf_correct
+    
+    # Return whether this model meets the condition
+    if search_mode == "all_correct":
+        return both_correct
+    else:  # all_incorrect
+        return both_incorrect
+
+
 
 
 def find_program():
     """
     Searches for an RNG seed that produces a program which all specified models
     either solve correctly or fail to solve, based on configuration.
+    Loads each model once and tests all seeds with it.
     """
     search_mode = "all_incorrect" if FIND_UNIVERSALLY_FAILED_PROGRAM else "all_correct"
 
@@ -133,26 +134,68 @@ def find_program():
         )
     print(f"Models being tested: {', '.join(MODEL_IDS)}")
 
-    # Load all models once
-    model_dict = load_all_models()
-
-    try:
-        # Use a base tokenizer for program generation (it's model-agnostic text)
-        base_tokenizer = AutoTokenizer.from_pretrained(MODEL_IDS[0])
-
-        for seed in trange(
-            MAX_SEED_SEARCH, desc=f"Searching for {search_mode.replace('_', ' ')} seed"
-        ):
-            # This print statement is useful for seeing progress in logs
-            # even if tqdm is redirected.
-            print(f"--- Trying RNG seed: {seed} ---")
-            rng = np.random.RandomState(seed)
-
-            program, answer, _, _ = make_variable_binding_program_with_metadata(
-                seq_len=SEQ_LEN, rng=rng, tokenizer=base_tokenizer
-            )
-
-            if check_program_with_condition(program, str(answer), search_mode, model_dict):
+    # Use a base tokenizer for program generation (it's model-agnostic text)
+    base_tokenizer = AutoTokenizer.from_pretrained(MODEL_IDS[0])
+    
+    # Pre-generate all programs to test
+    print(f"Pre-generating {MAX_SEED_SEARCH} programs...")
+    programs_to_test = []
+    for seed in range(MAX_SEED_SEARCH):
+        rng = np.random.RandomState(seed)
+        program, answer, _, metadata = make_variable_binding_program_with_metadata(
+            seq_len=SEQ_LEN, rng=rng, tokenizer=base_tokenizer
+        )
+        programs_to_test.append((seed, program, answer, metadata["query_var"]))
+    
+    # Track results for each seed across all models
+    seed_results = {}  # seed -> {model_id: bool}
+    failed_seeds = set()  # Seeds that have already failed with at least one model
+    
+    # Test each model with all programs
+    for model_id in MODEL_IDS:
+        print(f"\n=== Loading model {model_id} ===")
+        model = LanguageModel(model_id, device_map="auto")
+        
+        try:
+            for seed, program, answer, query_var in trange(
+                programs_to_test, desc=f"Testing {model_id}", leave=False
+            ):
+                # Skip seeds that have already failed with a previous model
+                if seed in failed_seeds:
+                    continue
+                
+                if seed not in seed_results:
+                    seed_results[seed] = {}
+                
+                print(f"--- Testing seed {seed} with {model_id} ---")
+                result = test_program_with_model(model, program, str(answer), query_var, search_mode)
+                seed_results[seed][model_id] = result
+                
+                print(f"    -> Result: {'✓' if result else '✗'}")
+                
+                # If this seed failed with this model, mark it as failed and skip for remaining models
+                if not result:
+                    failed_seeds.add(seed)
+                    print(f"    -> Seed {seed} failed, will skip for remaining models")
+        
+        finally:
+            # Clean up current model before loading next one
+            print(f"Cleaning up {model_id}...")
+            del model
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+    
+    # Find seeds where all models meet the condition
+    print("\n=== Analyzing results ===")
+    for seed in range(MAX_SEED_SEARCH):
+        if seed in seed_results:
+            model_results = seed_results[seed]
+            if len(model_results) == len(MODEL_IDS) and all(model_results.values()):
+                # Found a seed that works for all models!
+                seed_data = programs_to_test[seed]
+                _, program, answer, _ = seed_data
+                
                 print("\n" + "=" * 50)
                 if search_mode == "all_correct":
                     print("🎉 Found a robust program (all models correct)!")
@@ -164,19 +207,9 @@ def find_program():
                 print(program)
                 print("=" * 50 + "\n")
                 return seed, program, answer
-
-        print(f"\nCould not find a suitable program after trying {MAX_SEED_SEARCH} seeds.")
-        return None, None, None
     
-    finally:
-        # Clean up all models at the end
-        print("Cleaning up models...")
-        for model_id in model_dict:
-            del model_dict[model_id]
-        del model_dict
-        gc.collect()
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()
+    print(f"\nCould not find a suitable program after trying {MAX_SEED_SEARCH} seeds.")
+    return None, None, None
 
 
 if __name__ == "__main__":

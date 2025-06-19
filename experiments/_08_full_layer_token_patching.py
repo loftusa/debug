@@ -6,6 +6,7 @@ import torch
 import gc
 import numpy as np
 from tqdm import tqdm
+import re
 
 # Add src to PYTHONPATH when running as a script
 if __name__ == "__main__":
@@ -15,6 +16,7 @@ if __name__ == "__main__":
     project_root = Path(__file__).resolve().parents[1] / "src"
     sys.path.append(str(project_root))
 
+from debug import prompts
 from debug.generators import make_variable_binding_program_with_metadata
 from debug.causal_tracing import CausalTracer, InterventionResult
 
@@ -64,6 +66,29 @@ def run_full_token_layer_patching(
         all_results.extend(results_for_pos)
 
     return all_results
+
+
+def run_inference_nnsight(model, prompt: str) -> str:
+    """
+    Runs a single inference call using NNSight tracing.
+    This does greedy decoding by taking argmax of the logits.
+    """
+    with model.trace(prompt):
+        logits = model.lm_head.output.save()
+    
+    last_token_logits = logits[0, -1, :]
+    predicted_token_id = last_token_logits.argmax().item()
+    predicted_token = model.tokenizer.decode([predicted_token_id])
+    return prompt + predicted_token
+
+
+def extract_answer(generated_text: str, prompt: str) -> str:
+    """Extracts the answer from the generated text."""
+    answer_part = generated_text[len(prompt):]
+    number_match = re.search(r'\b(\d+)\b(?=\n|$)', answer_part)
+    if number_match:
+        return number_match.group(1)
+    return answer_part.strip()
 
 
 if __name__ == "__main__":
@@ -119,24 +144,10 @@ if __name__ == "__main__":
         
         # Test if the model gets the original program correct
         print("\nTesting base accuracy...")
-        from debug import prompts
-        import re
         
         prompt = prompts.VARIABLE_BINDING.format(code=program)
-        with tracer.model.trace(prompt):
-            token_ids = tracer.model.lm_head.output.argmax(dim=-1).save()
-        
-        generated_text = tracer.tokenizer.decode(token_ids[0][-1])
-        answer_part = generated_text[len(prompt):]
-        
-        # Extract answer
-        match = re.search(r"```\n?(.*?)\n?```", answer_part, re.DOTALL)
-        if match:
-            model_answer = match.group(1).strip()
-        else:
-            # Fallback to finding first number
-            number_match = re.search(r'\b(\d+)\b', answer_part)
-            model_answer = number_match.group(1) if number_match else answer_part.strip()
+        generated_text = run_inference_nnsight(tracer.model, prompt)
+        model_answer = extract_answer(generated_text, prompt)
         
         if model_answer != str(answer):
             print(f"\n⚠️  WARNING: {model_id} gives INCORRECT answer on base program!")
