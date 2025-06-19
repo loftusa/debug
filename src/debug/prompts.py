@@ -76,14 +76,7 @@ Return only the requested value, without any additional text. The answer should 
 
 The final result is: """
 
-# Variable binding resolution
-VARIABLE_BINDING = """You are given a Python program with variable assignments followed by a query. Your task is to trace through the variable assignments and determine what value the queried variable refers to. The query is marked with a comment at the end of the program. For example, if the query is "x", the comment should be "#x:" at the end of the program.
 
-Return only the integer value that the query refers to, without any additional text. The answer should appear immediately after the word 'is: '.
+VARIABLE_BINDING = "{code}"
 
-```python
-{code}
-```
 
-The value of the query is: """
- 

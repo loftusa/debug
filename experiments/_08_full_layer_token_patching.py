@@ -71,12 +71,12 @@ if __name__ == "__main__":
     MODEL_IDS = [
     # "Qwen/Qwen3-0.6B",
     # "Qwen/Qwen3-1.7B", 
-    # "Qwen/Qwen3-4B",
-    # "Qwen/Qwen3-8B",
+    "Qwen/Qwen3-4B",
+    "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",  
     ]
-    SEQ_LEN = 17
-    RNG_SEED = 42
+    SEQ_LEN = 17 
+    RNG_SEED = 5
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     BASE_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching" / timestamp
     BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -116,6 +116,34 @@ if __name__ == "__main__":
 
         # Load the model
         tracer = CausalTracer(model_id)
+        
+        # Test if the model gets the original program correct
+        print("\nTesting base accuracy...")
+        from debug import prompts
+        import re
+        
+        prompt = prompts.VARIABLE_BINDING.format(code=program)
+        with tracer.model.trace(prompt):
+            token_ids = tracer.model.lm_head.output.argmax(dim=-1).save()
+        
+        generated_text = tracer.tokenizer.decode(token_ids[0][-1])
+        answer_part = generated_text[len(prompt):]
+        
+        # Extract answer
+        match = re.search(r"```\n?(.*?)\n?```", answer_part, re.DOTALL)
+        if match:
+            model_answer = match.group(1).strip()
+        else:
+            # Fallback to finding first number
+            number_match = re.search(r'\b(\d+)\b', answer_part)
+            model_answer = number_match.group(1) if number_match else answer_part.strip()
+        
+        if model_answer != str(answer):
+            print(f"\n⚠️  WARNING: {model_id} gives INCORRECT answer on base program!")
+            print(f"   Expected: {answer}, Got: {model_answer}")
+            print(f"   This may affect intervention results.\n")
+        else:
+            print(f"✓ Model correctly answers: {answer}")
 
         print("\nRunning full token × layer patching …")
         results = run_full_token_layer_patching(tracer, program, counter_program)

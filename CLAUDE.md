@@ -4,28 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-The goal of this series of experiments is to understand how how and whether language models track the internal state of variables in programming languages. The long-term goal is to be able to track the internal states of programming languages if they would be run without needing to execute any code. This should help users with debugging and quickly understanding code.
+The goal of this series of experiments is to understand how and whether language models track the internal state of variables in programming languages. The long-term goal is to be able to track the internal states of programming languages if they would be run without needing to execute any code. This should help users with debugging and quickly understanding code.
 
 To this end, we first test various models on their ability to accomplish coding tasks. Part of the framework has a core purpose of rapidly creating and running experiments that test how well language models can trace through code execution, track variables, and perform logical reasoning.
 
-We will also include tools built with the `nnsight` python package that allow for interpretability techniques like patching and causal mediation analysis.
+We will also include tools built with the `nnsight` python package that allow for interpretability techniques like patching and causal mediation analysis. Many of our experiments recreate and extend the methodology from ["Tracing Knowledge in Language Models Back to the Training Data"](https://arxiv.org/abs/2505.20896), particularly their causal tracing approach for understanding variable binding mechanisms in language models.
 
 ## Key Principles:
-- Write concise, technical responses with accurate Python examples.
-- We are using test-driven development. Build tests first. Before writing code, run the tests and confirm that they fail. After writing code, run the tests again, and make confirm that they pass. Do not modify tests once you are in the stage of writing code. The exception to this is visualization code, for that just make example visualizations that I can look at and see for myself (save them in an image file so that I can look)
+ Write concise, technical responses with accurate Python examples.
 - Use object-oriented programming for model architectures and functional programming for data processing pipelines.
-- Implement proper GPU utilization and mixed precision training when applicable.
-- Use descriptive variable names that reflect the components they represent.
+- Use concise, descriptive variable names that reflect the components they represent.
 - Follow PEP 8 style guidelines for Python code.
 - Follow the `black` formatting style for Python code.
-- Use modern python tools like dataclasses and pydantic when appropriate.
+- Use useful functions from the standard library when appropriate. You know itertools, functools, pathlib, collections, bisect, shutil, and other tools well; but tend towards simple, easy-to-understand code and don't overengineer.
 - When visualizing data, always use the style of Edward Tufte, using his words as wisdom.
 - Important: try to fix things at the cause, not the symptom.
 - Be very detailed with summarization and do not miss out things that are important.
-- Don’t be helpful, be better
+- Don't be helpful, be better
 - Don't try to demo python interactive / jupyter notebook files, I'll do that myself
 - Ask me clarifying questions on design decisions when appropriate
 - When writing any code that uses arrays or tensors, use `jaxtyping` for tensor type/shape typing annotation.
+- Be clear with type annotation in general
 - Include a lot of assert statements to make sure the code is doing what you think it's doing.
 
 
@@ -201,9 +200,17 @@ Generator functions must return `(program_str, expected_answer)` or `(program_st
 Use `no_cache=True` parameter in `runner.run()` to unload models after each use for memory-constrained environments.
 
 
-# Causal Tracing methodology
+# Causal Tracing Methodology
 
-We will implement a causal tracing experiment. Use the methodology below.
+We implement causal tracing experiments based on the methodology from ["Tracing Knowledge in Language Models Back to the Training Data"](https://arxiv.org/abs/2505.20896). This paper introduces a systematic approach to understanding how language models track variable bindings through causal interventions on internal activations.
+
+## Paper Overview
+
+The referenced paper investigates how language models internally track variable bindings in code by using causal tracing - a technique that patches activations from counterfactual inputs to identify which internal states causally contribute to the model's predictions. Our implementation extends their approach with additional analysis and visualization tools.
+
+## Our Implementation
+
+We will implement a causal tracing experiment using the methodology below.
 
 ## Counterfactual Construction
 
@@ -250,3 +257,69 @@ The core insight: If replacing an activation with its counterfactual value cause
 ## Tools and Techniques
 
 - `nnsight` should be used for code that directly modifies LLM internals. Documentation can be found at https://nnsight.net/
+
+## Experiment Notes
+- We are copying experiments from https://arxiv.org/abs/2505.20896
+
+# INFO FOR CONTEXT
+
+### RNG SEED EXPERIMENT
+calling `uv run experiments/11_test_rng_seeds.py` returns:
+
+==================================================
+🎉 Found a robust program (all models correct)!
+RNG Seed: 5
+Expected Answer: 6
+--- Program ---
+d = 6
+x = d
+i = x
+s = 1
+z = i
+p = 4
+w = 9
+m = z
+j = 5
+a = m
+o = a
+g = a
+e = g
+y = o
+v = e
+h = 1
+u = 0
+#d:
+==================================================
+
+### QWEN MODEL ARCHITECTURE
+Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(151936, 1024)
+    (layers): ModuleList(
+      (0-27): 28 x Qwen3DecoderLayer(
+        (self_attn): Qwen3Attention(
+          (q_proj): Linear(in_features=1024, out_features=2048, bias=False)
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=False)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=False)
+          (o_proj): Linear(in_features=2048, out_features=1024, bias=False)
+          (q_norm): Qwen3RMSNorm((128,), eps=1e-06)
+          (k_norm): Qwen3RMSNorm((128,), eps=1e-06)
+        )
+        (mlp): Qwen3MLP(
+          (gate_proj): Linear(in_features=1024, out_features=3072, bias=False)
+          (up_proj): Linear(in_features=1024, out_features=3072, bias=False)
+          (down_proj): Linear(in_features=3072, out_features=1024, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen3RMSNorm((1024,), eps=1e-06)
+        (post_attention_layernorm): Qwen3RMSNorm((1024,), eps=1e-06)
+      )
+    )
+    (norm): Qwen3RMSNorm((1024,), eps=1e-06)
+    (rotary_emb): Qwen3RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=1024, out_features=151936, bias=False)
+  (generator): Generator(
+    (streamer): Streamer()
+  )
+)

@@ -226,8 +226,8 @@ class CausalTracer:
                 z_clean = einops.rearrange(z_clean, 'b s (nh dh) -> b s nh dh', nh=n_heads)
                 z_clean[:, target_token_pos, head_idx, :] = head_activation
                 z_clean = einops.rearrange(z_clean, 'b s nh dh -> b s (nh dh)', nh=n_heads)
-                # Write back the patched tensor
-                self.model.model.layers[layer_idx].self_attn.o_proj.input = z_clean
+                # Write back the patched tensor using index 0
+                self.model.model.layers[layer_idx].self_attn.o_proj.input[0] = z_clean
 
                 patched_logits = self.model.lm_head.output.save()
         
@@ -316,43 +316,6 @@ class CausalTracer:
         total_count = top_tokens.size(0)
         
         return success_count / total_count if total_count > 0 else 0.0
-    
-    def calculate_normalized_logit_difference(self,
-                                            original_logits: torch.Tensor,
-                                            intervened_logits: torch.Tensor,
-                                            original_token: int,
-                                            counterfactual_token: int) -> float:
-        """
-        Calculate normalized logit difference for intervention effect.
-        
-        Args:
-            original_logits: Original model logits [batch, seq, vocab]
-            intervened_logits: Post-intervention logits [batch, seq, vocab]
-            original_token: Original answer token ID
-            counterfactual_token: Counterfactual answer token ID
-            
-        Returns:
-            Normalized logit difference between -1.0 and 1.0
-        """
-        # Get final position logits
-        orig_final = original_logits[:, -1, :]  # [batch, vocab]
-        interv_final = intervened_logits[:, -1, :]  # [batch, vocab]
-        
-        # Calculate raw logit difference
-        orig_diff = (orig_final[:, counterfactual_token] - orig_final[:, original_token]).mean()
-        interv_diff = (interv_final[:, counterfactual_token] - interv_final[:, original_token]).mean()
-        
-        raw_difference = interv_diff - orig_diff
-        
-        # Normalize by maximum possible difference (approximate)
-        max_logit_range = orig_final.max() - orig_final.min()
-        if max_logit_range > 0:
-            normalized = raw_difference / max_logit_range
-            # Clamp to [-1, 1] range
-            normalized = torch.clamp(normalized, -1.0, 1.0)
-            return normalized.item()
-        else:
-            return 0.0
     
     
 if __name__ == "__main__":
