@@ -5,7 +5,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from tqdm import trange
+from tqdm import tqdm, trange
 from transformers import AutoTokenizer
 from nnsight import LanguageModel
 
@@ -157,7 +157,7 @@ def find_program():
         model = LanguageModel(model_id, device_map="auto")
         
         try:
-            for seed, program, answer, query_var in trange(
+            for seed, program, answer, query_var in tqdm(
                 programs_to_test, desc=f"Testing {model_id}", leave=False
             ):
                 # Skip seeds that have already failed with a previous model
