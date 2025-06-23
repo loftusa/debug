@@ -317,6 +317,33 @@ o = t
 w = u
 #y:
 
+==================================================
+for 3 hops and only 14b:
+🎉 Found a robust program (all models correct)!
+RNG Seed: 494
+Expected Answer: 3
+Number of Hops: 3
+--- Program ---
+m = 3
+o = m
+n = o
+q = n
+h = q
+y = 9
+t = o
+v = h
+d = v
+j = v
+g = j
+e = g
+i = g
+c = d
+l = e
+w = c
+r = 0
+#t:
+==================================================
+
 ### QWEN MODEL ARCHITECTURE
 Qwen3ForCausalLM(
   (model): Qwen3Model(
