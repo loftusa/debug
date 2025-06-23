@@ -26,7 +26,7 @@ from debug.causal_tracing import InterventionResult
 #/share/u/lofty/code_llm/debug/results/full_token_layer_patching/20250615_185732/intervention_results.json
 # --- Configuration ---------------------------------------------------------
 # Find the latest experiment directory automatically
-BASE_RESULTS_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching_negative_seed"
+BASE_RESULTS_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching_1_hop_seq_5"
 if not BASE_RESULTS_DIR.exists():
     raise FileNotFoundError(f"Base results directory not found: {BASE_RESULTS_DIR}")
 
@@ -49,8 +49,8 @@ assert latest_experiment_dir.exists(), f"Latest experiment directory not found: 
 # MODEL = "Qwen_Qwen3-0.6B"
 # MODEL = "Qwen_Qwen3-1.7B"
 # MODEL = "Qwen_Qwen3-4B"
-# MODEL = "Qwen_Qwen3-8B"
-MODEL = "Qwen_Qwen3-14B"
+MODEL = "Qwen_Qwen3-8B"
+# MODEL = "Qwen_Qwen3-14B"
 RESULTS_FILE = latest_experiment_dir / "intervention_results.json"
 if not RESULTS_FILE.exists():
     RESULTS_FILE = latest_experiment_dir / "experiment_results.json"
@@ -187,6 +187,6 @@ def run_inference_nnsight(model: LanguageModel, prompt: str) -> str:
 model = LanguageModel("Qwen/Qwen3-14B", device_map="auto")
 out = run_inference_nnsight(model, prompts.VARIABLE_BINDING.format(code=intervention_results[0].original_program))
 
-# %%
 out2 = run_inference_nnsight(model, out)
 print(out2)
+# %%

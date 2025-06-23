@@ -24,16 +24,16 @@ MODEL_IDS = [
     # "Qwen/Qwen3-0.6B", 
     # "Qwen/Qwen3-1.7B",
     # "Qwen/Qwen3-4B",
-    # "Qwen/Qwen3-8B",
+    "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",
 ]
-SEQ_LEN = 17
-EXACT_HOPS = 2  # Exact number of hops in the variable binding chain
-MAX_SEED_SEARCH = 10  # Maximum number of seeds to try
+SEQ_LEN = 5
+EXACT_HOPS = 1  # Exact number of hops in the variable binding chain
+MAX_SEED_SEARCH = 1000  # Maximum number of seeds to try
 FIND_UNIVERSALLY_FAILED_PROGRAM = False  # Set to True to find a program all models fail on.
 
 
-def run_inference_nnsight(model: LanguageModel, prompt: str) -> str:
+def run_inference_nnsight(model: LanguageModel, prompt: str, token_only=False) -> str:
     """
     Runs a single inference call using NNSight tracing.
     This does greedy decoding by taking argmax of the logits.
@@ -44,7 +44,9 @@ def run_inference_nnsight(model: LanguageModel, prompt: str) -> str:
     last_token_logits = logits[0, -1, :]
     predicted_token_id = last_token_logits.argmax().item()
     predicted_token = model.tokenizer.decode([predicted_token_id])
-    return prompt + predicted_token
+    if not token_only:
+        predicted_token = prompt + predicted_token
+    return predicted_token
 
 
 def extract_answer(generated_text: str, prompt: str) -> str:
@@ -98,9 +100,8 @@ def test_program_with_model(
 
     # Test original program
     original_prompt = prompts.VARIABLE_BINDING.format(code=program)
-    original_generated = run_inference_nnsight(model, original_prompt)
-    original_extracted = extract_answer(original_generated, original_prompt)
-    original_correct = original_extracted == str(true_answer)
+    original_generated = run_inference_nnsight(model, original_prompt, token_only=True)
+    original_correct = original_generated == str(true_answer)
     
     # For incorrect mode, also check that correct answer doesn't appear before first newline
     if search_mode == "all_incorrect":
@@ -109,19 +110,16 @@ def test_program_with_model(
     else:
         original_truly_incorrect = not original_correct
     
-    original_response = original_generated[len(original_prompt):]
     print(
-        f"    - Original: True answer: '{true_answer}', Model answer: '{original_extracted}' -> {'Correct' if original_correct else 'Incorrect'}"
+        f"    - Original: True answer: '{true_answer}', Model answer: '{original_generated}' -> {'Correct' if original_correct else 'Incorrect'}"
     )
-    print(f"      Full response: '{original_response}'")
     if search_mode == "all_incorrect" and not original_correct:
         print(f"      No answer leak before newline: {'✓' if original_no_leak else '✗'}")
     
     # Test counterfactual program
     cf_prompt = prompts.VARIABLE_BINDING.format(code=counterfactual_program)
-    cf_generated = run_inference_nnsight(model, cf_prompt)
-    cf_extracted = extract_answer(cf_generated, cf_prompt)
-    cf_correct = cf_extracted == str(counterfactual_answer)
+    cf_generated = run_inference_nnsight(model, cf_prompt, token_only=True)
+    cf_correct = cf_generated == str(counterfactual_answer)
     
     # For incorrect mode, also check that correct answer doesn't appear before first newline
     if search_mode == "all_incorrect":
@@ -130,11 +128,9 @@ def test_program_with_model(
     else:
         cf_truly_incorrect = not cf_correct
     
-    cf_response = cf_generated[len(cf_prompt):]
     print(
-        f"    - Counterfactual: True answer: '{counterfactual_answer}', Model answer: '{cf_extracted}' -> {'Correct' if cf_correct else 'Incorrect'}"
+        f"    - Counterfactual: True answer: '{counterfactual_answer}', Model answer: '{cf_generated}' -> {'Correct' if cf_correct else 'Incorrect'}"
     )
-    print(f"      Full response: '{cf_response}'")
     if search_mode == "all_incorrect" and not cf_correct:
         print(f"      No answer leak before newline: {'✓' if cf_no_leak else '✗'}")
 

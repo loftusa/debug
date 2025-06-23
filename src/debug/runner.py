@@ -52,7 +52,7 @@ class ExperimentRunner:
         
         # Default inference settings
         inference_settings = {
-            "max_new_tokens": 10,
+            "max_new_tokens": 1,
             "temperature": 0.0,
             "do_sample": False,
             "batch_size": batch_size or config.num_seqs,  # Use batch_size or all at once
@@ -73,6 +73,7 @@ class ExperimentRunner:
                 
                 # Generate all test cases for this seq_len
                 test_cases = []
+                first_run = True
                 for i in range(config.num_seqs):
                     generator_result = config.program_generator(seq_len, rng=np.random.RandomState(i))
                     
@@ -93,6 +94,10 @@ class ExperimentRunner:
                         raise ValueError(f"Generator must return 2 or 3 values, got {len(generator_result)}: {generator_result}")
 
                     prompt = config.prompt_template.format(code=program)
+                    if first_run:
+                        print(f"Prompt model {model_id} seq_len {seq_len}: ====\n{prompt}\n====\n")
+                        first_run = False
+
                     test_cases.append({
                         "seq_id": i,
                         "program": program,

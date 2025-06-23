@@ -10,6 +10,8 @@ To this end, we first test various models on their ability to accomplish coding 
 
 We will also include tools built with the `nnsight` python package that allow for interpretability techniques like patching and causal mediation analysis. Many of our experiments recreate and extend the methodology from ["Tracing Knowledge in Language Models Back to the Training Data"](https://arxiv.org/abs/2505.20896), particularly their causal tracing approach for understanding variable binding mechanisms in language models.
 
+Your focus is on fast, high-information experiments and iteration. You try to embody "You and your Research" by Richard Hamming. You don't spend time yak-shaving, but you are careful with your experimental design and with making sure your code has no bugs in it. Your goal with writing experiments is maximum information-per-line-of-code: you write simple, efficient code that can be iterated on easily, and the point of the code is answering questions. Your code is designed to make it easy to go back and see what you did, or make minor experimental adjustments.
+
 ## Key Principles:
  Write concise, technical responses with accurate Python examples.
 - Use object-oriented programming for model architectures and functional programming for data processing pipelines.
@@ -26,6 +28,7 @@ We will also include tools built with the `nnsight` python package that allow fo
 - When writing any code that uses arrays or tensors, use `jaxtyping` for tensor type/shape typing annotation.
 - Be clear with type annotation in general
 - Include a lot of assert statements to make sure the code is doing what you think it's doing.
+- Write quick test files and run them to make sure the code is doing what you think it's doing. Delete them afterwards. Do not reward-hack.
 
 
 Dependencies:
@@ -342,6 +345,21 @@ l = e
 w = c
 r = 0
 #t:
+==================================================
+
+==================================================
+for 1 hop and sequence length 5:
+🎉 Found a robust program (all models correct)!
+RNG Seed: 4038
+Expected Answer: 3
+Number of Hops: 1
+--- Program ---
+o = 3
+m = 4
+u = o
+e = 8
+n = 4
+#o:
 ==================================================
 
 ### QWEN MODEL ARCHITECTURE

@@ -80,14 +80,27 @@ for model, acc in summary['by_model'].items():
     model_name = model.split('/')[-1]
     print(f"  {model_name}: {acc:.1%}")
 
-print("\nAccuracy by sequence length:")
-for seq_len, acc in summary['by_seq_len'].items():
+print("\nAccuracy by sequence length (14B model only):")
+df_14b = df[df["model_id"] == "Qwen/Qwen3-14B"]
+seq_accuracy = df_14b.groupby("seq_len")["correct"].mean()
+for seq_len, acc in seq_accuracy.items():
     print(f"  Length {seq_len}: {acc:.1%}")
 
-print("\nAccuracy by query hops:")
-hop_accuracy = df.groupby("query_hops")["correct"].mean()
+print("\nAccuracy by query hops (14B model only):")
+hop_accuracy = df_14b.groupby("query_hops")["correct"].mean()
 for hop, acc in hop_accuracy.items():
     print(f"  {hop} hops: {acc:.1%}")
+
+#%%
+# # Filter to only 14B model results
+# print("\n🔧 Filtering to 14B model only...")
+# original_count = len(runner.results)
+# runner.results = [r for r in runner.results if r["model_id"] == "Qwen/Qwen3-14B"]
+# print(f"Filtered from {original_count} to {len(runner.results)} results (14B model only)")
+
+# # Update DataFrame as well
+# df = pd.DataFrame(runner.results)
+# print(f"DataFrame now contains {len(df)} samples from 14B model")
 
 #%%
 # Create Tufte-style heatmap visualization
@@ -107,7 +120,7 @@ if fig:
 # Create small multiples visualization
 print("\n📊 Creating small multiples visualization...")
 
-fig = runner.plot_mall_multiples("variable_binding_hops", figsize=(18, 12))
+fig = runner.plot_small_multiples("variable_binding_hops", figsize=(18, 12))
 if fig:
     plt.savefig(plots_dir / "query_hops_small_multiples.png", dpi=300, bbox_inches='tight')
     print(f"💾 Saved small multiples to: {plots_dir / 'query_hops_small_multiples.png'}")
