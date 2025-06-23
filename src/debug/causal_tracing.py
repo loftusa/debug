@@ -37,7 +37,7 @@ class InterventionResult:
 class CausalTracer:
     """Performs causal tracing experiments using nnsight interventions."""
     
-    def __init__(self, model_name: str, device: str = "auto"):
+    def __init__(self, model_name: str, device: str = "auto", **lm_kwargs):
         """
         Initialize CausalTracer with a language model.
         
@@ -55,7 +55,7 @@ class CausalTracer:
                            f"This method requires a Qwen model for proper layer access.")
         
         # Load model with nnsight
-        self.model = LanguageModel(model_name, device_map=device)
+        self.model = LanguageModel(model_name, device_map=device, **lm_kwargs)
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self._n_layers = self.model.config.num_hidden_layers
         
@@ -81,8 +81,8 @@ class CausalTracer:
         """Analyze the results of an intervention experiment."""
         
         # Get top tokens
-        original_top = original_logits[:, -1, :].argmax(dim=-1).item()
-        intervened_top = intervened_logits[:, -1, :].argmax(dim=-1).item()
+        original_top = original_logits[:, -1, :].argmax(dim=-1).item()  # original top token id
+        intervened_top = intervened_logits[:, -1, :].argmax(dim=-1).item()  # counterfactual top token id
         
         # Get final position logits for calculation
         orig_final = original_logits[:, -1, :]  # [batch, vocab]

@@ -23,12 +23,13 @@ from debug.counterfactual import CounterfactualGenerator
 MODEL_IDS = [
     # "Qwen/Qwen3-0.6B", 
     # "Qwen/Qwen3-1.7B",
-    "Qwen/Qwen3-4B",
-    "Qwen/Qwen3-8B",
+    # "Qwen/Qwen3-4B",
+    # "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",
 ]
 SEQ_LEN = 17
-MAX_SEED_SEARCH = 1000  # Maximum number of seeds to try
+EXACT_HOPS = 2  # Exact number of hops in the variable binding chain
+MAX_SEED_SEARCH = 10  # Maximum number of seeds to try
 FIND_UNIVERSALLY_FAILED_PROGRAM = False  # Set to True to find a program all models fail on.
 
 
@@ -158,11 +159,11 @@ def find_program():
 
     if search_mode == "all_correct":
         print(
-            f"Searching for a ROBUST program of sequence length {SEQ_LEN} (all models must be correct)..."
+            f"Searching for a ROBUST program of sequence length {SEQ_LEN} with exactly {EXACT_HOPS} hops (all models must be correct)..."
         )
     else:
         print(
-            f"Searching for a FAILED program of sequence length {SEQ_LEN} (all models must be incorrect)..."
+            f"Searching for a FAILED program of sequence length {SEQ_LEN} with exactly {EXACT_HOPS} hops (all models must be incorrect)..."
         )
     print(f"Models being tested: {', '.join(MODEL_IDS)}")
 
@@ -170,14 +171,30 @@ def find_program():
     base_tokenizer = AutoTokenizer.from_pretrained(MODEL_IDS[0])
     
     # Pre-generate all programs to test
-    print(f"Pre-generating {MAX_SEED_SEARCH} programs...")
+    print(f"Pre-generating programs with exactly {EXACT_HOPS} hops...")
     programs_to_test = []
-    for seed in range(MAX_SEED_SEARCH):
+    seed = 0
+    attempts = 0
+    max_attempts = MAX_SEED_SEARCH * 10  # Try more seeds to find programs with desired hops
+    
+    while len(programs_to_test) < MAX_SEED_SEARCH and attempts < max_attempts:
         rng = np.random.RandomState(seed)
-        program, answer, _, metadata = make_variable_binding_program_with_metadata(
+        program, answer, query_hops, metadata = make_variable_binding_program_with_metadata(
             seq_len=SEQ_LEN, rng=rng, tokenizer=base_tokenizer
         )
-        programs_to_test.append((seed, program, answer, metadata["query_var"]))
+        
+        # Only include programs with the exact number of hops
+        if query_hops == EXACT_HOPS:
+            programs_to_test.append((seed, program, answer, metadata["query_var"], query_hops))
+            print(f"  Found program with {query_hops} hops (seed {seed})")
+        
+        seed += 1
+        attempts += 1
+    
+    if len(programs_to_test) < MAX_SEED_SEARCH:
+        print(f"Warning: Only found {len(programs_to_test)} programs with exactly {EXACT_HOPS} hops after {attempts} attempts")
+    else:
+        print(f"Generated {len(programs_to_test)} programs with exactly {EXACT_HOPS} hops")
     
     # Track results for each seed across all models
     seed_results = {}  # seed -> {model_id: bool}
@@ -189,7 +206,7 @@ def find_program():
         model = LanguageModel(model_id, device_map="auto")
         
         try:
-            for seed, program, answer, query_var in tqdm(
+            for seed, program, answer, query_var, query_hops in tqdm(
                 programs_to_test, desc=f"Testing {model_id}", leave=False
             ):
                 # Skip seeds that have already failed with a previous model
@@ -220,13 +237,11 @@ def find_program():
     
     # Find seeds where all models meet the condition
     print("\n=== Analyzing results ===")
-    for seed in range(MAX_SEED_SEARCH):
+    for i, (seed, program, answer, query_var, query_hops) in enumerate(programs_to_test):
         if seed in seed_results:
             model_results = seed_results[seed]
             if len(model_results) == len(MODEL_IDS) and all(model_results.values()):
                 # Found a seed that works for all models!
-                seed_data = programs_to_test[seed]
-                _, program, answer, _ = seed_data
                 
                 print("\n" + "=" * 50)
                 if search_mode == "all_correct":
@@ -235,6 +250,7 @@ def find_program():
                     print("🎉 Found a universally failed program (all models incorrect)!")
                 print(f"RNG Seed: {seed}")
                 print(f"Expected Answer: {answer}")
+                print(f"Number of Hops: {query_hops}")
                 print("--- Program ---")
                 print(program)
                 print("=" * 50 + "\n")

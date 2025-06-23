@@ -453,7 +453,7 @@ def plot_causal_flow_heatmap(intervention_results: List[InterventionResult],
             df_data.append({
                 'layer': result.layer_idx,
                 'token_pos': result.target_token_pos,
-                'normalized_logit_difference': result.logit_difference
+                'normalized_logit_difference': result.normalized_logit_difference
             })
     
     if not df_data:

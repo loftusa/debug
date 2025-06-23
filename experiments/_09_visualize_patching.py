@@ -40,7 +40,7 @@ try:
 except IndexError:
     latest_experiment_dir = BASE_RESULTS_DIR
 
-latest_experiment_dir = BASE_RESULTS_DIR / "20250618_165757"  # hardcode
+# latest_experiment_dir = BASE_RESULTS_DIR / "20250618_165757"  # hardcode
 
 
 assert latest_experiment_dir.exists(), f"Latest experiment directory not found: {latest_experiment_dir}"
@@ -125,7 +125,6 @@ def clean_token_labels(token_labels):
 results_df = load_results_as_dataframe(RESULTS_FILE)
 print("Results loaded successfully. DataFrame preview:")
 print(results_df.head())
-#%%
 # --- Example Visualization -----------------------------------------------
 # The code below is a basic example of how to generate a heatmap.
 # You can copy, paste, and modify this in an interactive session (like Jupyter).

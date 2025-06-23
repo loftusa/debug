@@ -101,9 +101,9 @@ if __name__ == "__main__":
     "Qwen/Qwen3-14B",  
     ]
     SEQ_LEN = 17 
-    RNG_SEED = 5
+    RNG_SEED = 0
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    BASE_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching" / timestamp
+    BASE_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching_negative_seed" / timestamp
     BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # --- Program Generation (once for all models) --------------------------
