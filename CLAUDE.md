@@ -264,7 +264,7 @@ The core insight: If replacing an activation with its counterfactual value cause
 # INFO FOR CONTEXT
 
 ### RNG SEED EXPERIMENT
-calling `uv run experiments/11_test_rng_seeds.py` returns:
+calling `uv run experiments/11_test_rng_seeds.py` for one hop (for qwen4b, 8b, and 14b) returns:
 
 ==================================================
 🎉 Found a robust program (all models correct)!
@@ -290,6 +290,32 @@ h = 1
 u = 0
 #d:
 ==================================================
+
+for 2 hops and only 14b:
+==================================================
+🎉 Found a robust program (all models correct)!
+RNG Seed: 25
+Expected Answer: 6
+Number of Hops: 2
+--- Program ---
+e = 6
+y = e
+f = y
+h = f
+d = h
+u = d
+r = d
+a = u
+c = a
+k = a
+t = r
+m = 6
+b = k
+n = k
+l = u
+o = t
+w = u
+#y:
 
 ### QWEN MODEL ARCHITECTURE
 Qwen3ForCausalLM(

@@ -26,7 +26,7 @@ from debug.causal_tracing import InterventionResult
 #/share/u/lofty/code_llm/debug/results/full_token_layer_patching/20250615_185732/intervention_results.json
 # --- Configuration ---------------------------------------------------------
 # Find the latest experiment directory automatically
-BASE_RESULTS_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching"
+BASE_RESULTS_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching_negative_seed"
 if not BASE_RESULTS_DIR.exists():
     raise FileNotFoundError(f"Base results directory not found: {BASE_RESULTS_DIR}")
 
@@ -168,3 +168,25 @@ print(f"Saved heatmap to: {plot_path}")
 plt.show()
 
 # %%
+from nnsight import LanguageModel
+from debug import prompts
+
+def run_inference_nnsight(model: LanguageModel, prompt: str) -> str:
+    """
+    Runs a single inference call using NNSight tracing.
+    This does greedy decoding by taking argmax of the logits.
+    """
+    with model.trace(prompt):
+        logits = model.lm_head.output.save()
+
+    last_token_logits = logits[0, -1, :]
+    predicted_token_id = last_token_logits.argmax().item()
+    predicted_token = model.tokenizer.decode([predicted_token_id])
+    return prompt + predicted_token
+
+model = LanguageModel("Qwen/Qwen3-14B", device_map="auto")
+out = run_inference_nnsight(model, prompts.VARIABLE_BINDING.format(code=intervention_results[0].original_program))
+
+# %%
+out2 = run_inference_nnsight(model, out)
+print(out2)
