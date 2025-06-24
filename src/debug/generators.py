@@ -73,7 +73,7 @@ def make_variable_binding_program(seq_len: int, rng: np.random.RandomState) -> T
         visited.remove(var)
         return result
     
-    program = "\n".join(assignments + [f"#{query_var}:"])
+    program = "\n".join(assignments + [f"#{query_var}: "])
     return program, resolve(query_var), query_hops
 
 
@@ -106,7 +106,7 @@ def make_variable_binding_program_with_metadata(
     # Extract query variable from program
     lines = program.split('\n')
     query_line = [line for line in lines if line.startswith('#')][0]
-    query_var = query_line[1:-1]  # Remove # and :
+    query_var = query_line.strip()[1:-1]  # Remove # and :
     
     # Create token analyzer and get variable chain
     analyzer = TokenAnalyzer(tokenizer)

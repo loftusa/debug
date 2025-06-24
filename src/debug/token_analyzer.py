@@ -24,7 +24,7 @@ class InterventionTargets:
     ref_depth_3_rhs: Optional[int] = None  # Third level RHS
     ref_depth_4_rhs: Optional[int] = None  # Fourth level RHS
     query_var: Optional[int] = None        # Query variable position
-    query_colon: Optional[int] = None      # Query colon position
+    prediction_token_pos: Optional[int] = None # Position of the final token before generation
 
 
 class TokenAnalyzer:
@@ -121,7 +121,7 @@ class TokenAnalyzer:
             if position is not None:
                 token_positions[target_key] = position
         
-        # Find query variable and colon positions
+        # Find query variable and the final prompt token
         query_positions = self._find_query_positions(tokens, query_var)
         token_positions.update(query_positions)
         
@@ -130,17 +130,14 @@ class TokenAnalyzer:
     def _parse_assignments(self, program: str) -> Dict[str, str]:
         """Parse variable assignments from program text."""
         assignments = {}
-        lines = program.split('\n')
+        # Regex to find 'var = val' lines, ignoring comments
+        assignment_regex = re.compile(r"^\s*([a-zA-Z_]\w*)\s*=\s*(.*?)(\s*#.*)?$")
         
-        for line in lines:
-            line = line.strip()
-            if '=' in line and not line.startswith('#'):
-                # Parse assignment: var = value
-                parts = line.split('=', 1)
-                if len(parts) == 2:
-                    var = parts[0].strip()
-                    value = parts[1].strip()
-                    assignments[var] = value
+        for line in program.split('\n'):
+            match = assignment_regex.match(line)
+            if match:
+                var, value, _ = match.groups()
+                assignments[var] = value.strip()
         
         return assignments
     
@@ -171,19 +168,24 @@ class TokenAnalyzer:
         return None
     
     def _find_query_positions(self, tokens: List[str], query_var: str) -> Dict[str, int]:
-        """Find positions of query variable and colon in the query line."""
+        """Find positions of query variable and the final prompt token."""
         positions = {}
         
-        # Look for the query pattern: #var:
+        # The prediction token is the last token of the sequence before generation starts.
+        # Given the program format, this will be the last token in the list.
+        # We add a check to ensure the prompt is not empty.
+        if tokens:
+            positions["prediction_token_pos"] = len(tokens) - 1
+
+        # For completeness, we still find the query variable itself.
+        # This is useful for other types of interventions.
         query_pattern = f"#{query_var}"
         
-        for i, token in enumerate(tokens):
-            # Check for #var pattern
-            if token.strip() == query_pattern:
+        # Search backwards from the end, as the query is at the end of the prompt.
+        for i in range(len(tokens) - 1, -1, -1):
+            clean_token = tokens[i].replace('Ġ', '').strip()
+            if clean_token == query_pattern:
                 positions["query_var"] = i
-                # Look for colon in next token
-                if i + 1 < len(tokens) and ':' in tokens[i + 1]:
-                    positions["query_colon"] = i + 1
                 break
         
         return positions

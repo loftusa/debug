@@ -115,8 +115,12 @@ class ExperimentRunner:
                     # Run batch inference
                     outputs = llm(prompts, **inference_settings)
                     
-                    # Process results
+                    # Process results and collect examples for printing
                     correct = 0
+                    successful_examples = []
+                    failed_examples = []
+                    all_examples = []
+                    
                     for i, (case, output) in enumerate(zip(test_cases, outputs)):
                         try:
                             # Handle both flat list and nested list outputs from transformers pipeline
@@ -129,6 +133,12 @@ class ExperimentRunner:
                             is_correct = predicted_answer == case["true_answer"]
                             if is_correct:
                                 correct += 1
+                                successful_examples.append((case, generated, predicted_answer))
+                            else:
+                                failed_examples.append((case, generated, predicted_answer))
+                            
+                            # Store for random sampling
+                            all_examples.append((case, generated, predicted_answer, is_correct))
                             
                             # Store result
                             result = {
@@ -147,6 +157,9 @@ class ExperimentRunner:
                             
                         except Exception as e:
                             print(f"    ERROR processing seq {case['seq_id']}: {e}")
+                            failed_examples.append((case, f"ERROR: {e}", None))
+                            all_examples.append((case, f"ERROR: {e}", None, False))
+                            
                             # Store error result
                             result = {
                                 "experiment": config.name,
@@ -164,6 +177,39 @@ class ExperimentRunner:
                     
                     accuracy = correct / len(test_cases)
                     print(f"  seq_len {seq_len}: {accuracy:.1%} ({correct}/{len(test_cases)})")
+                    
+                    # Print sample completions
+                    print(f"\n  === Sample Completions for seq_len {seq_len} ===")
+                    
+                    # Print at least one successful example
+                    if successful_examples:
+                        print(f"\n  --- SUCCESSFUL EXAMPLE ---")
+                        case, generated, predicted = successful_examples[0]
+                        print(f"  Prompt:\n{case['prompt']}")
+                        print(f"  Generated: '{generated.strip()}'")
+                        print(f"  Expected: {case['true_answer']}, Got: {predicted}")
+                    
+                    # Print at least one failed example
+                    if failed_examples:
+                        print(f"\n  --- FAILED EXAMPLE ---")
+                        case, generated, predicted = failed_examples[0]
+                        print(f"  Prompt:\n{case['prompt']}")
+                        print(f"  Generated: '{generated.strip()}'")
+                        print(f"  Expected: {case['true_answer']}, Got: {predicted}")
+                    
+                    # Print 5 random examples
+                    print(f"\n  --- RANDOM EXAMPLES ---")
+                    np.random.seed(42)  # For reproducible sampling
+                    sample_indices = np.random.choice(len(all_examples), size=min(5, len(all_examples)), replace=False)
+                    for idx, sample_idx in enumerate(sample_indices):
+                        case, generated, predicted, is_correct = all_examples[sample_idx]
+                        status = "✓" if is_correct else "✗"
+                        print(f"\n  --- Random {idx+1} {status} ---")
+                        print(f"  Prompt:\n{case['prompt']}")
+                        print(f"  Generated: '{generated.strip()}'")
+                        print(f"  Expected: {case['true_answer']}, Got: {predicted}")
+                    
+                    print()  # Extra line for readability
                     
                 except Exception as e:
                     print(f"    ERROR in batch inference for seq_len {seq_len}: {e}")

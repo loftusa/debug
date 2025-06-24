@@ -277,7 +277,7 @@ class CausalExperimentRunner:
                 relevant_targets[key] = intervention_targets[key]
         
         # Add query tokens
-        for key in ["query_var", "query_colon"]:
+        for key in ["query_var", "prediction_token_pos"]:
             if key in intervention_targets:
                 relevant_targets[key] = intervention_targets[key]
         
