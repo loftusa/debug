@@ -133,7 +133,8 @@ results/
 
 ## Causal Tracing Methodology
 
-Our causal tracing implementation follows the methodology from ["Tracing Knowledge in Language Models Back to the Training Data"](https://arxiv.org/abs/2505.20896):
+Our causal tracing implementation follows the methodology from ["How Do Transformers Learn Variable Binding in Symbolic Programs?
+"](https://arxiv.org/abs/2505.20896):
 
 ### Core Concept
 
