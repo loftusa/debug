@@ -7,6 +7,7 @@ import gc
 import numpy as np
 from tqdm import tqdm
 import re
+import click
 
 # Add src to PYTHONPATH when running as a script
 if __name__ == "__main__":
@@ -91,19 +92,19 @@ def extract_answer(generated_text: str, prompt: str) -> str:
     return answer_part.strip()
 
 
-if __name__ == "__main__":
+@click.command()
+@click.option("--seed", default=4038, help="Random seed for program generation")
+@click.option("--seq-len", default=5, help="Sequence length for programs")
+@click.option("--hops", default=1, help="Number of hops in variable binding chain")
+@click.option("--models", default="Qwen/Qwen3-4B,Qwen/Qwen3-8B,Qwen/Qwen3-14B", help="Comma-separated list of model IDs")
+def main(seed, seq_len, hops, models):
+    """Run full token layer patching experiment."""
     # --- Configuration -----------------------------------------------------
-    MODEL_IDS = [
-    # "Qwen/Qwen3-0.6B",
-    # "Qwen/Qwen3-1.7B", 
-    # "Qwen/Qwen3-4B",
-    "Qwen/Qwen3-8B",
-    "Qwen/Qwen3-14B",  
-    ]
-    SEQ_LEN = 5 
-    RNG_SEED = 4038
+    MODEL_IDS = [model.strip() for model in models.split(",")]
+    SEQ_LEN = seq_len
+    RNG_SEED = seed
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    BASE_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "results" / "full_token_layer_patching_1_hop_seq_5" / timestamp
+    BASE_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "results" / f"full_token_layer_patching_{hops}_hop_seq_{seq_len}" / timestamp
     BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # --- Program Generation (once for all models) --------------------------
@@ -191,3 +192,7 @@ if __name__ == "__main__":
         gc.collect()
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
+
+
+if __name__ == "__main__":
+    main()

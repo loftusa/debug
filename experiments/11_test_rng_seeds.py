@@ -8,6 +8,7 @@ import torch
 from tqdm import tqdm
 from transformers import AutoTokenizer
 from nnsight import LanguageModel
+import click
 
 # Add src to PYTHONPATH when running as a script
 if __name__ == "__main__":
@@ -26,10 +27,11 @@ MODEL_IDS = [
     # "Qwen/Qwen3-4B",
     "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",
+    "Qwen/Qwen3-32B",
 ]
 SEQ_LEN = 5
-EXACT_HOPS = 1  # Exact number of hops in the variable binding chain
-MAX_SEED_SEARCH = 1000  # Maximum number of seeds to try
+EXACT_HOPS = 2  # Exact number of hops in the variable binding chain
+MAX_SEED_SEARCH = 30  # Maximum number of seeds to try
 FIND_UNIVERSALLY_FAILED_PROGRAM = False  # Set to True to find a program all models fail on.
 
 
@@ -145,21 +147,21 @@ def test_program_with_model(
 
 
 
-def find_program():
+def find_program(exact_hops, seq_len, max_seed_search, find_failed):
     """
     Searches for an RNG seed that produces a program which all specified models
     either solve correctly or fail to solve, based on configuration.
     Loads each model once and tests all seeds with it.
     """
-    search_mode = "all_incorrect" if FIND_UNIVERSALLY_FAILED_PROGRAM else "all_correct"
+    search_mode = "all_incorrect" if find_failed else "all_correct"
 
     if search_mode == "all_correct":
         print(
-            f"Searching for a ROBUST program of sequence length {SEQ_LEN} with exactly {EXACT_HOPS} hops (all models must be correct)..."
+            f"Searching for a ROBUST program of sequence length {seq_len} with exactly {exact_hops} hops (all models must be correct)..."
         )
     else:
         print(
-            f"Searching for a FAILED program of sequence length {SEQ_LEN} with exactly {EXACT_HOPS} hops (all models must be incorrect)..."
+            f"Searching for a FAILED program of sequence length {seq_len} with exactly {exact_hops} hops (all models must be incorrect)..."
         )
     print(f"Models being tested: {', '.join(MODEL_IDS)}")
 
@@ -167,30 +169,30 @@ def find_program():
     base_tokenizer = AutoTokenizer.from_pretrained(MODEL_IDS[0])
     
     # Pre-generate all programs to test
-    print(f"Pre-generating programs with exactly {EXACT_HOPS} hops...")
+    print(f"Pre-generating programs with exactly {exact_hops} hops...")
     programs_to_test = []
     seed = 0
     attempts = 0
-    max_attempts = MAX_SEED_SEARCH * 10  # Try more seeds to find programs with desired hops
+    max_attempts = max_seed_search * 10  # Try more seeds to find programs with desired hops
     
-    while len(programs_to_test) < MAX_SEED_SEARCH and attempts < max_attempts:
+    while len(programs_to_test) < max_seed_search and attempts < max_attempts:
         rng = np.random.RandomState(seed)
         program, answer, query_hops, metadata = make_variable_binding_program_with_metadata(
-            seq_len=SEQ_LEN, rng=rng, tokenizer=base_tokenizer
+            seq_len=seq_len, rng=rng, tokenizer=base_tokenizer
         )
         
         # Only include programs with the exact number of hops
-        if query_hops == EXACT_HOPS:
+        if query_hops == exact_hops:
             programs_to_test.append((seed, program, answer, metadata["query_var"], query_hops))
             print(f"  Found program with {query_hops} hops (seed {seed})")
         
         seed += 1
         attempts += 1
     
-    if len(programs_to_test) < MAX_SEED_SEARCH:
-        print(f"Warning: Only found {len(programs_to_test)} programs with exactly {EXACT_HOPS} hops after {attempts} attempts")
+    if len(programs_to_test) < max_seed_search:
+        print(f"Warning: Only found {len(programs_to_test)} programs with exactly {exact_hops} hops after {attempts} attempts")
     else:
-        print(f"Generated {len(programs_to_test)} programs with exactly {EXACT_HOPS} hops")
+        print(f"Generated {len(programs_to_test)} programs with exactly {exact_hops} hops")
     
     # Track results for each seed across all models
     seed_results = {}  # seed -> {model_id: bool}
@@ -252,9 +254,19 @@ def find_program():
                 print("=" * 50 + "\n")
                 return seed, program, answer
     
-    print(f"\nCould not find a suitable program after trying {MAX_SEED_SEARCH} seeds.")
+    print(f"\nCould not find a suitable program after trying {max_seed_search} seeds.")
     return None, None, None
 
 
+@click.command()
+@click.option("--exact-hops", default=2, help="Exact number of hops in variable binding chain")
+@click.option("--seq-len", default=17, help="Sequence length for programs")
+@click.option("--max-seed-search", default=100, help="Maximum number of seeds to try")
+@click.option("--find-failed", is_flag=True, help="Find universally failed programs instead of robust ones")
+def main(exact_hops, seq_len, max_seed_search, find_failed):
+    """Find robust seeds for causal tracing experiments."""
+    find_program(exact_hops, seq_len, max_seed_search, find_failed)
+
+
 if __name__ == "__main__":
-    find_program() 
+    main() 

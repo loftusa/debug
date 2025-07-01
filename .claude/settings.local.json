@@ -10,7 +10,10 @@
       "Bash(git cherry-pick:*)",
       "Bash(git reset:*)",
       "Bash(mv:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(chmod:*)",
+      "Bash(./test_tracing_script.sh:*)",
+      "Bash(./run_viz_batch.sh:*)"
     ],
     "deny": []
   }
