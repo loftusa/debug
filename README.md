@@ -10,9 +10,6 @@ This framework enables systematic investigation of language model capabilities t
 - **Interpretability Tools**: Built on `nnsight` for detailed model analysis
 - **Batch Execution**: Efficient experiment running across multiple models and configurations
 
-The framework recreates and extends methodology from ["How Do Transformers Learn Variable Binding in Symbolic Programs?
-"](https://arxiv.org/abs/2505.20896), focusing on variable binding mechanisms through causal interventions.
-
 ## Quick Start
 
 ### Basic Experiments
@@ -132,9 +129,6 @@ results/
 ```
 
 ## Causal Tracing Methodology
-
-Our causal tracing implementation follows the methodology from ["How Do Transformers Learn Variable Binding in Symbolic Programs?
-"](https://arxiv.org/abs/2505.20896):
 
 ### Core Concept
 
