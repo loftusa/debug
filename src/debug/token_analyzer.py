@@ -113,7 +113,7 @@ class TokenAnalyzer:
         assignments = self._parse_assignments(program)
         
         for i, (var, refers_to) in enumerate(chain.chain):
-            depth = i + 1
+            depth = len(chain.chain) - i  # Reverse depth: 1=root, 2=first hop, etc.
             target_key = f"ref_depth_{depth}_rhs"
             
             # Find position of the RHS token in the assignment
@@ -151,19 +151,53 @@ class TokenAnalyzer:
     
     def _find_token_position(self, tokens: List[str], target_token: str, 
                            lhs_var: str, assignments: Dict[str, str]) -> Optional[int]:
-        """Find the position of a target token in the RHS of an assignment."""
-        # Handle tokenizer-specific formatting (e.g., Ġ prefix for spaces)
+        """
+        Find the position of target_token on the RHS of the assignment lhs_var = target_token.
         
-        for i, token in enumerate(tokens):
-            # Clean token for matching (remove Ġ prefix, whitespace)
-            clean_token = token.replace('Ġ', '').strip()
+        Args:
+            tokens: Tokenized program
+            target_token: The token to find (RHS value)
+            lhs_var: The LHS variable in the assignment
+            assignments: Dict mapping variables to their assigned values
             
-            # Look for the token that matches our target
-            if clean_token == target_token:
-                # Verify it's in the right context (after an = sign)
-                # Look backwards for an = sign in recent tokens
-                if i > 0 and any('=' in tokens[j] for j in range(max(0, i-5), i)):
-                    return i
+        Returns:
+            Token position of target_token in the specific assignment, or None if not found
+        """
+        if lhs_var not in assignments:
+            return None
+        
+        expected_rhs = assignments[lhs_var]
+        if expected_rhs != target_token:
+            return None
+        
+        # Find the assignment line "lhs_var = target_token" in the tokens
+        # and return the position of target_token
+        i = 0
+        while i < len(tokens):
+            # Look for lhs_var
+            clean_token = tokens[i].replace('Ġ', '').strip()
+            if clean_token == lhs_var:
+                # Found lhs_var, now look for = and then target_token
+                j = i + 1
+                # Skip to find =
+                while j < len(tokens) and '=' not in tokens[j].replace('Ġ', '').strip():
+                    j += 1
+                
+                if j >= len(tokens):
+                    i += 1
+                    continue
+                    
+                # Found =, now look for target_token on the same line
+                k = j + 1
+                while k < len(tokens):
+                    target_clean = tokens[k].replace('Ġ', '').strip()
+                    if target_clean == target_token:
+                        return k
+                    # Stop looking if we hit a newline (end of assignment line)
+                    if '\n' in tokens[k] or 'Ċ' in tokens[k]:
+                        break
+                    k += 1
+            i += 1
         
         return None
     

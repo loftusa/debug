@@ -29,6 +29,8 @@ Your focus is on fast, high-information experiments and iteration. You try to em
 - Be clear with type annotation in general
 - Include a lot of assert statements to make sure the code is doing what you think it's doing.
 - Write quick test files and run them to make sure the code is doing what you think it's doing. Delete them afterwards. Do not reward-hack.
+- to run scripts, always use the `uv run <script>.py` syntax.
+- when writing a test suite, use `pytest` and `hypothesis` to test the code. Be comprehensive.
 
 
 Dependencies:
@@ -47,6 +49,7 @@ Dependencies:
 - einops
 - lovely-tensors
 - pytest
+- hypothesis
 - ruff (for linting)
 - gradio
 - jupyter/jupyterlab
@@ -267,100 +270,35 @@ The core insight: If replacing an activation with its counterfactual value cause
 # INFO FOR CONTEXT
 
 ### RNG SEED EXPERIMENT
-calling `uv run experiments/11_test_rng_seeds.py` for one hop (for qwen4b, 8b, and 14b) returns:
+calling `uv run experiments/11_test_rng_seeds.py` for three hops and seq len 17, 4b, 8b, and 14b returns:
 
 ==================================================
 🎉 Found a robust program (all models correct)!
-RNG Seed: 5
-Expected Answer: 6
---- Program ---
-d = 6
-x = d
-i = x
-s = 1
-z = i
-p = 4
-w = 9
-m = z
-j = 5
-a = m
-o = a
-g = a
-e = g
-y = o
-v = e
-h = 1
-u = 0
-#d:
-==================================================
-
-for 2 hops and only 14b:
-==================================================
-🎉 Found a robust program (all models correct)!
-RNG Seed: 25
-Expected Answer: 6
-Number of Hops: 2
---- Program ---
-e = 6
-y = e
-f = y
-h = f
-d = h
-u = d
-r = d
-a = u
-c = a
-k = a
-t = r
-m = 6
-b = k
-n = k
-l = u
-o = t
-w = u
-#y:
-
-==================================================
-for 3 hops and only 14b:
-🎉 Found a robust program (all models correct)!
-RNG Seed: 494
-Expected Answer: 3
+RNG Seed: 12
+Expected Answer: 1
 Number of Hops: 3
 --- Program ---
-m = 3
-o = m
-n = o
-q = n
-h = q
-y = 9
-t = o
-v = h
-d = v
-j = v
-g = j
-e = g
-i = g
-c = d
-l = e
-w = c
-r = 0
-#t:
+l = 1
+c = l
+y = 5
+p = 6
+m = 8
+q = p
+f = m
+a = c
+j = 9
+v = 0
+x = f
+o = q
+r = a
+w = 5
+g = r
+b = r
+i = r
+#a:
 ==================================================
 
-==================================================
-for 1 hop and sequence length 5:
-🎉 Found a robust program (all models correct)!
-RNG Seed: 4038
-Expected Answer: 3
-Number of Hops: 1
---- Program ---
-o = 3
-m = 4
-u = o
-e = 8
-n = 4
-#o:
-==================================================
+The counterfactual program sets `l=2`.
 
 ### QWEN MODEL ARCHITECTURE
 Qwen3ForCausalLM(

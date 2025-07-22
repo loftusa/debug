@@ -10,7 +10,14 @@
       "Bash(git cherry-pick:*)",
       "Bash(git reset:*)",
       "Bash(mv:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(sed:*)",
+      "Bash(PYTHONPATH=/share/u/lofty/code_llm/debug/src uv run test_current_method.py)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(python:*)",
+      "Bash(ls:*)",
+      "Bash(pytest:*)"
     ],
     "deny": []
   }

@@ -23,13 +23,13 @@ from debug.counterfactual import CounterfactualGenerator
 MODEL_IDS = [
     # "Qwen/Qwen3-0.6B", 
     # "Qwen/Qwen3-1.7B",
-    # "Qwen/Qwen3-4B",
+    "Qwen/Qwen3-4B",
     "Qwen/Qwen3-8B",
     "Qwen/Qwen3-14B",
 ]
-SEQ_LEN = 5
-EXACT_HOPS = 1  # Exact number of hops in the variable binding chain
-MAX_SEED_SEARCH = 1000  # Maximum number of seeds to try
+SEQ_LEN = 17
+EXACT_HOPS = 3  # Exact number of hops in the variable binding chain
+MAX_SEED_SEARCH = 20  # Maximum number of seeds to try
 FIND_UNIVERSALLY_FAILED_PROGRAM = False  # Set to True to find a program all models fail on.
 
 
