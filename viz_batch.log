@@ -1,0 +1,93 @@
+Running visualizations for all 0626 experiments...
+==================================================
+
+Processing configuration: 3_17
+Results directory: ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619
+--------------------------------------------
+  Generating visualization for Qwen_Qwen3-4B...
+    ✅ Generated: ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  Generating visualization for Qwen_Qwen3-8B...
+    ✅ Generated: ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  Generating visualization for Qwen_Qwen3-14B...
+    ✅ Generated: ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ✅ Completed configuration: 3_17
+
+Processing configuration: 2_5
+Results directory: ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646
+--------------------------------------------
+  Generating visualization for Qwen_Qwen3-4B...
+    ✅ Generated: ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  Generating visualization for Qwen_Qwen3-8B...
+    ✅ Generated: ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  Generating visualization for Qwen_Qwen3-14B...
+    ✅ Generated: ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ✅ Completed configuration: 2_5
+
+Processing configuration: 3_5
+Results directory: ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756
+--------------------------------------------
+  Generating visualization for Qwen_Qwen3-4B...
+    ✅ Generated: ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  Generating visualization for Qwen_Qwen3-8B...
+    ✅ Generated: ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  Generating visualization for Qwen_Qwen3-14B...
+    ✅ Generated: ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ✅ Completed configuration: 3_5
+
+Processing configuration: 2_17
+Results directory: ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140
+--------------------------------------------
+  Generating visualization for Qwen_Qwen3-4B...
+    ✅ Generated: ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  Generating visualization for Qwen_Qwen3-8B...
+    ✅ Generated: ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  Generating visualization for Qwen_Qwen3-14B...
+    ✅ Generated: ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ✅ Completed configuration: 2_17
+
+Processing configuration: 1_17
+Results directory: ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848
+--------------------------------------------
+  Generating visualization for Qwen_Qwen3-4B...
+    ✅ Generated: ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  Generating visualization for Qwen_Qwen3-8B...
+    ✅ Generated: ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  Generating visualization for Qwen_Qwen3-14B...
+    ✅ Generated: ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ✅ Completed configuration: 1_17
+
+Processing configuration: 1_5
+Results directory: ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524
+--------------------------------------------
+  Generating visualization for Qwen_Qwen3-4B...
+    ✅ Generated: ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  Generating visualization for Qwen_Qwen3-8B...
+    ✅ Generated: ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  Generating visualization for Qwen_Qwen3-14B...
+    ✅ Generated: ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ✅ Completed configuration: 1_5
+
+==================================================
+Batch visualization complete!
+==================================================
+Generated figures:
+  ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  ../results/full_token_layer_patching_3_hop_seq_17/20250626_200619/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  ../results/full_token_layer_patching_2_hop_seq_5/20250626_153646/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  ../results/full_token_layer_patching_3_hop_seq_5/20250626_160756/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  ../results/full_token_layer_patching_2_hop_seq_17/20250626_182140/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  ../results/full_token_layer_patching_1_hop_seq_17/20250626_163848/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+  ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524/Qwen_Qwen3-4B/causal_flow_heatmap_Qwen_Qwen3-4B.png
+  ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524/Qwen_Qwen3-8B/causal_flow_heatmap_Qwen_Qwen3-8B.png
+  ../results/full_token_layer_patching_1_hop_seq_5/20250626_150524/Qwen_Qwen3-14B/causal_flow_heatmap_Qwen_Qwen3-14B.png
+
+Total figures generated: 18

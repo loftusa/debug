@@ -1,32 +1,23 @@
 # %%
-from debug.generators import make_sequence
-import sys
+import numpy as np
+from debug.generators import make_variable_binding_program_with_metadata
+from transformers import AutoTokenizer
+RNG_SEED = 12
+SEQ_LEN = 17
 
-code, intermediates = make_sequence(5)
-intermediate = intermediates
-PROMPT_TEMPLATE = (
-    "You are given a short Python program. "
-    "Your task is to compute the final value of the variable x. "
-    "Return only the integer, without commas, an equal sign, or any additional text. The integer should appear immediately after the word 'is: '.\n" 
-    "```python\n{code}\n```\n"
-    "The final value of x is: "
+base_tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-14B")
+rng = np.random.RandomState(RNG_SEED)
+program, answer, hops, metadata = make_variable_binding_program_with_metadata(
+    seq_len=SEQ_LEN, rng=rng, tokenizer=base_tokenizer
 )
 
-# print(code, "\n\n", intermediate, "\n\n", PROMPT_TEMPLATE.format(code=code))
-print(PROMPT_TEMPLATE.format(code=code))
+query_var = metadata["query_var"]
 
+# Construct counterfactual by flipping root value
+from debug.counterfactual import CounterfactualGenerator
 
+counterfactual_generator = CounterfactualGenerator()
+counter_program = counterfactual_generator.create_counterfactual(program, query_var)
 
-
-# %%
-import numpy as np
-print(np.array(intermediate))
-
-x = 0
-x = int(np.abs(x - 3))
-x //= 1
-x += 1
-x = int(np.abs(x - 3))
-x //= 2
-
-print(x)
+print("Original program:\n", program)
+print("\nCounterfactual program:\n", counter_program)

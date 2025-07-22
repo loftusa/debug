@@ -87,8 +87,10 @@ def parse_target_names(df):
         'ref_depth_1_rhs': 'Ref Depth 1 (RHS)',
         'ref_depth_2_rhs': 'Ref Depth 2 (RHS)', 
         'ref_depth_3_rhs': 'Ref Depth 3 (RHS)',
+        'ref_depth_4_rhs': 'Ref Depth 4 (RHS)',
         'prediction_token_pos': 'Prediction Token',
-        'query_var': 'Query Variable'
+        'query_var': 'Query Variable',
+        'final_space': 'Final Space Token'
     }
     
     df['target_clean'] = df['target_type'].map(target_mapping).fillna(df['target_type'])

@@ -1,0 +1,305 @@
+=========================================
+ROBUST SEED SEARCH RESULTS
+Started at: Thu 26 Jun 2025 12:16:36 PM EDT
+=========================================
+
+Configuration: 1 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 11
+Expected Answer: 4
+Number of Hops: 1
+--- Program ---
+z = 1
+x = z
+s = 0
+a = 4
+d = 5
+#a: 
+✅ Completed at: Thu 26 Jun 2025 12:18:27 PM EDT
+
+
+Configuration: 2 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 3
+Expected Answer: 3
+Number of Hops: 2
+--- Program ---
+k = 3
+z = 5
+u = k
+l = 6
+a = z
+#u: 
+✅ Completed at: Thu 26 Jun 2025 12:20:30 PM EDT
+
+
+Configuration: 3 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 2
+Expected Answer: 8
+Number of Hops: 3
+--- Program ---
+i = 8
+x = i
+h = x
+y = 4
+w = x
+#h: 
+✅ Completed at: Thu 26 Jun 2025 12:22:17 PM EDT
+
+
+Configuration: 1 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 5
+Expected Answer: 6
+Number of Hops: 1
+--- Program ---
+d = 6
+x = d
+i = x
+s = 1
+z = i
+p = 4
+✅ Completed at: Thu 26 Jun 2025 12:24:05 PM EDT
+
+
+Configuration: 2 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 14
+Expected Answer: 6
+Number of Hops: 2
+--- Program ---
+l = 6
+h = l
+m = h
+z = 7
+e = m
+y = m
+✅ Completed at: Thu 26 Jun 2025 12:26:23 PM EDT
+
+
+Configuration: 3 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 12
+Expected Answer: 1
+Number of Hops: 3
+--- Program ---
+l = 1
+c = l
+y = 5
+p = 6
+m = 8
+q = p
+✅ Completed at: Thu 26 Jun 2025 12:28:26 PM EDT
+
+
+=========================================
+SEARCH COMPLETED
+Finished at: Thu 26 Jun 2025 12:28:26 PM EDT
+=========================================
+Configuration: 1 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 11
+Expected Answer: 4
+Number of Hops: 1
+--- Program ---
+z = 1
+x = z
+s = 0
+a = 4
+d = 5
+#a: 
+✅ Completed at: Fri 27 Jun 2025 11:32:37 AM EDT
+
+
+Configuration: 2 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 3
+Expected Answer: 3
+Number of Hops: 2
+--- Program ---
+k = 3
+z = 5
+u = k
+l = 6
+a = z
+#u: 
+✅ Completed at: Fri 27 Jun 2025 11:34:30 AM EDT
+
+
+Configuration: 3 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 2
+Expected Answer: 8
+Number of Hops: 3
+--- Program ---
+i = 8
+x = i
+h = x
+y = 4
+w = x
+#h: 
+✅ Completed at: Fri 27 Jun 2025 11:36:22 AM EDT
+
+
+Configuration: 1 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 5
+Expected Answer: 6
+Number of Hops: 1
+--- Program ---
+d = 6
+x = d
+i = x
+s = 1
+z = i
+p = 4
+✅ Completed at: Fri 27 Jun 2025 11:38:15 AM EDT
+
+
+Configuration: 2 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 14
+Expected Answer: 6
+Number of Hops: 2
+--- Program ---
+l = 6
+h = l
+m = h
+z = 7
+e = m
+y = m
+✅ Completed at: Fri 27 Jun 2025 11:40:34 AM EDT
+
+
+Configuration: 3 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 11
+Expected Answer: 1
+Number of Hops: 3
+--- Program ---
+z = 1
+x = z
+s = 0
+a = 4
+d = 5
+j = 8
+✅ Completed at: Fri 27 Jun 2025 11:43:16 AM EDT
+
+
+=========================================
+SEARCH COMPLETED
+Finished at: Fri 27 Jun 2025 11:43:16 AM EDT
+=========================================
+Configuration: 1 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 11
+Expected Answer: 4
+Number of Hops: 1
+--- Program ---
+z = 1
+x = z
+s = 0
+a = 4
+d = 5
+#a: 
+✅ Completed at: Fri 27 Jun 2025 01:13:46 PM EDT
+
+
+Configuration: 2 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 3
+Expected Answer: 3
+Number of Hops: 2
+--- Program ---
+k = 3
+z = 5
+u = k
+l = 6
+a = z
+#u: 
+✅ Completed at: Fri 27 Jun 2025 01:16:45 PM EDT
+
+
+Configuration: 3 hop(s), sequence length 5
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 2
+Expected Answer: 8
+Number of Hops: 3
+--- Program ---
+i = 8
+x = i
+h = x
+y = 4
+w = x
+#h: 
+✅ Completed at: Fri 27 Jun 2025 01:19:55 PM EDT
+
+
+Configuration: 1 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 5
+Expected Answer: 6
+Number of Hops: 1
+--- Program ---
+d = 6
+x = d
+i = x
+s = 1
+z = i
+p = 4
+✅ Completed at: Fri 27 Jun 2025 01:23:10 PM EDT
+
+
+Configuration: 2 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 14
+Expected Answer: 6
+Number of Hops: 2
+--- Program ---
+l = 6
+h = l
+m = h
+z = 7
+e = m
+y = m
+✅ Completed at: Fri 27 Jun 2025 01:26:57 PM EDT
+
+
+Configuration: 3 hop(s), sequence length 17
+----------------------------------------
+🎉 Found a robust program (all models correct)!
+RNG Seed: 12
+Expected Answer: 1
+Number of Hops: 3
+--- Program ---
+l = 1
+c = l
+y = 5
+p = 6
+m = 8
+q = p
+✅ Completed at: Fri 27 Jun 2025 01:30:33 PM EDT
+
+
+=========================================
+SEARCH COMPLETED
+Finished at: Fri 27 Jun 2025 01:30:33 PM EDT
+=========================================

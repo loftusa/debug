@@ -24,6 +24,7 @@ class InterventionTargets:
     ref_depth_3_rhs: Optional[int] = None  # Third level RHS
     ref_depth_4_rhs: Optional[int] = None  # Fourth level RHS
     query_var: Optional[int] = None        # Query variable position
+    final_space: Optional[int] = None      # Final space token position
     prediction_token_pos: Optional[int] = None # Position of the final token before generation
 
 
@@ -131,7 +132,8 @@ class TokenAnalyzer:
         """Parse variable assignments from program text."""
         assignments = {}
         # Regex to find 'var = val' lines, ignoring comments
-        assignment_regex = re.compile(r"^\s*([a-zA-Z_]\w*)\s*=\s*(.*?)(\s*#.*)?$")
+        # Use negative lookahead to avoid matching == (comparison)
+        assignment_regex = re.compile(r"^\s*([a-zA-Z_]\w*)\s*=(?!=)\s*(.*?)(\s*#.*)?$")
         
         for line in program.split('\n'):
             match = assignment_regex.match(line)
@@ -189,14 +191,27 @@ class TokenAnalyzer:
                     
                 # Found =, now look for target_token on the same line
                 k = j + 1
+                # Skip any leading whitespace tokens
+                while k < len(tokens) and tokens[k].replace('Ġ', '').strip() == '':
+                    k += 1
+                
+                # Collect non-whitespace tokens until newline to reconstruct the RHS value
+                rhs_tokens = []
+                rhs_start_pos = k
                 while k < len(tokens):
-                    target_clean = tokens[k].replace('Ġ', '').strip()
-                    if target_clean == target_token:
-                        return k
                     # Stop looking if we hit a newline (end of assignment line)
                     if '\n' in tokens[k] or 'Ċ' in tokens[k]:
                         break
+                    clean_token = tokens[k].replace('Ġ', '').strip()
+                    if clean_token:  # Only add non-empty tokens
+                        rhs_tokens.append(clean_token)
                     k += 1
+                
+                # Reconstruct the RHS value from tokens
+                reconstructed_rhs = ''.join(rhs_tokens)
+                if reconstructed_rhs == target_token:
+                    # Return the position of the first non-whitespace token in the RHS
+                    return rhs_start_pos
             i += 1
         
         return None
@@ -211,14 +226,28 @@ class TokenAnalyzer:
         if tokens:
             positions["prediction_token_pos"] = len(tokens) - 1
 
-        # For completeness, we still find the query variable itself.
-        # This is useful for other types of interventions.
-        query_pattern = f"#{query_var}"
-        
-        # Search backwards from the end, as the query is at the end of the prompt.
+        # Find the final space token
+        if tokens and len(tokens) > 0:
+            last_token = tokens[-1]
+            if 'Ġ' in last_token or last_token.strip() == '':
+                positions["final_space"] = len(tokens) - 1
+
+        # Find the actual query variable (e.g., 'x' in '#x:')
+        # Look for the variable token that comes after '#' and before ':'
         for i in range(len(tokens) - 1, -1, -1):
             clean_token = tokens[i].replace('Ġ', '').strip()
-            if clean_token == query_pattern:
+            
+            # Case 1: Separate tokens '#' and 'x'
+            if i > 0 and clean_token == query_var:
+                prev_token = tokens[i-1].replace('Ġ', '').strip()
+                if prev_token == '#':
+                    positions["query_var"] = i
+                    break
+            
+            # Case 2: Combined token '#x'
+            elif clean_token == '#' + query_var:
+                # The query variable is part of this token, but we want to point to it
+                # For consistency, we point to this token position
                 positions["query_var"] = i
                 break
         

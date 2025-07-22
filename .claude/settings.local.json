@@ -1,23 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find:*)",
-      "Bash(uv run:*)",
-      "Bash(git checkout:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(git cherry-pick:*)",
-      "Bash(git reset:*)",
-      "Bash(mv:*)",
-      "Bash(rg:*)",
-      "Bash(sed:*)",
-      "Bash(PYTHONPATH=/share/u/lofty/code_llm/debug/src uv run test_current_method.py)",
-      "Bash(rm:*)",
-      "Bash(mkdir:*)",
-      "Bash(python:*)",
-      "Bash(ls:*)",
-      "Bash(pytest:*)"
+      "Bash(uv run:*)"
     ],
     "deny": []
   }
