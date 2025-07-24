@@ -28,7 +28,7 @@ from debug.causal_tracing import InterventionResult
 
 #%%
 # Configuration - Update this path to your experiment results
-RESULTS_DIR = Path("/share/u/lofty/code_llm/debug/results/attention_head_patching/20250717_142425/Qwen_Qwen3-14B")
+RESULTS_DIR = Path("/share/u/lofty/code_llm/debug/results/attention_head_patching/20250723_143919/Qwen_Qwen3-14B")
 RESULTS_FILE = RESULTS_DIR / "intervention_results.json"
 METADATA_FILE = RESULTS_DIR / "experiment_metadata.json"
 
@@ -100,6 +100,9 @@ def parse_target_names(df):
 df = parse_target_names(df)
 print("\\nTarget types found:", df['target_clean'].unique())
 
+# get rid of the space token since its the same as the prediction token
+df = df[df['target_clean'] != 'Final Space Token']
+
 #%%
 # Function 1: Layer-wise heatmap (original approach but improved)
 def plot_layer_heatmap(df, layer_idx, metric='normalized_logit_difference', figsize=(14, 8)):
@@ -118,6 +121,8 @@ def plot_layer_heatmap(df, layer_idx, metric='normalized_logit_difference', figs
         columns='target_clean',
         aggfunc='mean'
     )
+
+    pivot_data = pivot_data[['Ref Depth 1 (RHS)', 'Ref Depth 2 (RHS)', 'Ref Depth 3 (RHS)', 'Query Variable', 'Prediction Token']]
     
     # Create figure
     fig, ax = plt.subplots(figsize=figsize)
@@ -133,7 +138,7 @@ def plot_layer_heatmap(df, layer_idx, metric='normalized_logit_difference', figs
         vmin=-vmax,
         vmax=vmax,
         ax=ax,
-        annot=True,
+        annot=False,
         fmt='.3f',
         cbar_kws={'label': metric.replace('_', ' ').title()},
         linewidths=0.5
@@ -147,9 +152,14 @@ def plot_layer_heatmap(df, layer_idx, metric='normalized_logit_difference', figs
     return fig
 
 # Test with layer 0
-for i in range(df['layer_idx'].max()):
-    fig = plot_layer_heatmap(df, i)
-    plt.show()
+fig = plot_layer_heatmap(df, 27)
+plt.show()
+
+fig = plot_layer_heatmap(df, 28)
+plt.show()
+# for i in range(df['layer_idx'].max()):
+#     fig = plot_layer_heatmap(df, i)
+#     plt.show()
 
 #%%
 # Function 2: Summary heatmap across all layers
@@ -165,6 +175,7 @@ def plot_summary_heatmap(df, metric='normalized_logit_difference', figsize=(16, 
         columns='target_clean',
         aggfunc='mean'
     )
+    pivot_summary = pivot_summary[['Ref Depth 1 (RHS)', 'Ref Depth 2 (RHS)', 'Ref Depth 3 (RHS)', 'Query Variable', 'Prediction Token']]
     
     fig, ax = plt.subplots(figsize=figsize)
     
@@ -192,7 +203,7 @@ def plot_summary_heatmap(df, metric='normalized_logit_difference', figsize=(16, 
 
 fig = plot_summary_heatmap(df)
 plt.show()
-
+#%%
 #%%
 # Function 3: Target-specific analysis across layers
 def plot_target_across_layers(df, target_name, metric='normalized_logit_difference', figsize=(16, 10)):
@@ -235,7 +246,7 @@ def plot_target_across_layers(df, target_name, metric='normalized_logit_differen
     return fig
 
 # Test with each target
-for target in df['target_clean'].unique():
+for target in ['Ref Depth 1 (RHS)', 'Ref Depth 2 (RHS)', 'Ref Depth 3 (RHS)', 'Query Variable', 'Prediction Token']:
     print(f"\\nPlotting: {target}")
     fig = plot_target_across_layers(df, target)
     if fig:

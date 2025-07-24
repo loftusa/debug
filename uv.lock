@@ -705,7 +705,7 @@ wheels = [
 [[package]]
 name = "debug"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "accelerate" },
     { name = "bitsandbytes" },
@@ -775,7 +775,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "debug", virtual = "." }]
+dev = [{ name = "debug", editable = "." }]
 
 [[package]]
 name = "debugpy"

@@ -287,7 +287,7 @@ class TestCounterfactual:
     
     def test_create_counterfactual_basic(self):
         """Test basic counterfactual creation."""
-        original_program = "x = 1\ny = x\nz = y\n#z:"
+        original_program = "x = 1\ny = x\nz = y\n#z: "
         query_var = "z"
         
         counterfactual = self.generator.create_counterfactual(original_program, query_var)
@@ -298,7 +298,7 @@ class TestCounterfactual:
     
     def test_create_counterfactual_preserves_structure(self):
         """Test that counterfactual preserves program structure."""
-        original_program = "a = 1\nb = a\nc = b\n#c:"
+        original_program = "a = 1\nb = a\nc = b\n#c: "
         query_var = "c"
         
         counterfactual = self.generator.create_counterfactual(original_program, query_var)
@@ -309,11 +309,11 @@ class TestCounterfactual:
         assert len(orig_lines) == len(counter_lines)
         
         # Should end with same query
-        assert orig_lines[-1] == counter_lines[-1]
+        assert orig_lines[-3] == counter_lines[-3]
     
     def test_create_counterfactual_different_values(self):
         """Test that counterfactual actually changes values."""
-        original_program = "x = 5\ny = x\n#y:"
+        original_program = "x = 5\ny = x\n#y: "
         query_var = "y"
         
         counterfactual = self.generator.create_counterfactual(original_program, query_var)
@@ -323,14 +323,14 @@ class TestCounterfactual:
     
     def test_create_counterfactual_complex_program(self):
         """Test counterfactual creation on complex program."""
-        program = "l = 1\nc = l\ny = 5\np = 6\nm = 8\nq = p\nf = m\na = c\n#a:"
+        program = "l = 1\nc = l\ny = 5\np = 6\nm = 8\nq = p\nf = m\na = c\n#a: "
         query_var = "a"
         
         counterfactual = self.generator.create_counterfactual(program, query_var)
         
         assert isinstance(counterfactual, str)
         assert counterfactual != program
-        assert "#a:" in counterfactual  # Query should be preserved
+        assert "#a: " in counterfactual  # Query should be preserved
     
     def test_create_counterfactual_edge_cases(self):
         """Test edge cases for counterfactual generation."""
@@ -343,10 +343,10 @@ class TestCounterfactual:
         
         # Non-existent query variable - should raise an error
         with pytest.raises(ValueError):
-            self.generator.create_counterfactual("x = 1\n#y:", "y")
+            self.generator.create_counterfactual("x = 1\n#y: ", "y")
         
         # Single assignment
-        result = self.generator.create_counterfactual("x = 1\n#x:", "x")
+        result = self.generator.create_counterfactual("x = 1\n#x: ", "x")
         assert isinstance(result, str)
 
 

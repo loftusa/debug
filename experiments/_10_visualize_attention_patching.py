@@ -64,9 +64,62 @@ def load_results_as_dataframe(path: Path) -> pd.DataFrame:
     
     # Handle both old list format and new dictionary format
     if isinstance(data, dict) and "intervention_results" in data:
-        return pd.DataFrame(data["intervention_results"])
+        df = pd.DataFrame(data["intervention_results"])
     else:
-        return pd.DataFrame(data)
+        df = pd.DataFrame(data)
+    
+    # Extract token information for each intervention
+    if 'token_labels' in df.columns and 'target_token_pos' in df.columns:
+        df['actual_token'] = df.apply(
+            lambda row: extract_actual_token(row['token_labels'], row['target_token_pos']),
+            axis=1
+        )
+        df['target_description'] = df.apply(
+            lambda row: create_target_description(row['target_name'], row.get('actual_token', '')),
+            axis=1
+        )
+    
+    return df
+
+
+def extract_actual_token(token_labels, target_pos):
+    """Extract the actual token at the target position."""
+    if not token_labels or target_pos is None:
+        return ""
+    
+    if isinstance(token_labels, list) and 0 <= target_pos < len(token_labels):
+        token = token_labels[target_pos]
+        # Clean up common tokenizer artifacts
+        if isinstance(token, str):
+            token = token.replace('Ġ', ' ').replace('Ċ', '\\n').strip()
+        return token
+    return ""
+
+
+def create_target_description(target_name, actual_token):
+    """Create a human-readable description of the intervention target."""
+    if not target_name:
+        return ""
+    
+    # Extract the base target type (before _layer_X_head_Y)
+    parts = target_name.split('_layer_')
+    if len(parts) > 0:
+        base_type = parts[0]
+    else:
+        base_type = target_name
+    
+    # Create descriptions based on target type
+    descriptions = {
+        'ref_depth_1_rhs': f'Root Value ({actual_token})',
+        'ref_depth_2_rhs': f'1st Ref ({actual_token})',
+        'ref_depth_3_rhs': f'2nd Ref ({actual_token})',
+        'ref_depth_4_rhs': f'3rd Ref ({actual_token})',
+        'query_var': f'Query Var ({actual_token})',
+        'prediction_token_pos': f'Prediction ({actual_token})',
+        'final_space': f'Final Space'
+    }
+    
+    return descriptions.get(base_type, f'{base_type} ({actual_token})')
 
 
 def plot_attention_head_heatmap(df: pd.DataFrame, metric: str = "normalized_logit_difference") -> plt.Figure:
@@ -112,6 +165,63 @@ def plot_attention_head_heatmap(df: pd.DataFrame, metric: str = "normalized_logi
     return fig
 
 
+def plot_attention_head_heatmap_by_target(df: pd.DataFrame, metric: str = "normalized_logit_difference") -> plt.Figure:
+    """
+    Create separate heatmaps for each intervention target showing effects across layers and heads.
+    
+    Args:
+        df: DataFrame with attention head intervention results
+        metric: Which metric to plot
+    
+    Returns:
+        matplotlib Figure object
+    """
+    # Get unique targets with descriptions
+    if 'target_description' in df.columns:
+        target_groups = df.groupby('target_description')
+    else:
+        # Fallback to extracting from target_name
+        df['target_type'] = df['target_name'].str.extract(r'^([^_]+(?:_[^_]+)*?)_layer_')[0]
+        target_groups = df.groupby('target_type')
+    
+    n_targets = len(target_groups)
+    
+    # Create subplots
+    fig, axes = plt.subplots(1, n_targets, figsize=(6*n_targets, 8))
+    if n_targets == 1:
+        axes = [axes]
+    
+    # Get global color scale
+    vmax = max(abs(df[metric].min()), abs(df[metric].max()))
+    
+    for idx, (target_desc, target_df) in enumerate(target_groups):
+        # Aggregate for this target
+        aggregated = target_df.groupby(['layer_idx', 'head_idx'])[metric].mean().reset_index()
+        heatmap_data = aggregated.pivot(index='layer_idx', columns='head_idx', values=metric)
+        
+        # Create heatmap
+        sns.heatmap(
+            heatmap_data,
+            annot=True,
+            fmt='.3f',
+            cmap='RdBu_r',
+            center=0,
+            vmin=-vmax,
+            vmax=vmax,
+            ax=axes[idx],
+            cbar=(idx == n_targets - 1),  # Only show colorbar on last subplot
+            cbar_kws={'label': metric.replace('_', ' ').title()} if idx == n_targets - 1 else None
+        )
+        
+        axes[idx].set_title(f'{target_desc}')
+        axes[idx].set_xlabel('Head' if idx == n_targets // 2 else '')
+        axes[idx].set_ylabel('Layer' if idx == 0 else '')
+    
+    plt.suptitle(f'Attention Head Effects by Intervention Target\n{metric.replace("_", " ").title()}', fontsize=14)
+    plt.tight_layout()
+    return fig
+
+
 def plot_top_attention_heads(df: pd.DataFrame, metric: str = "normalized_logit_difference", top_k: int = 10) -> plt.Figure:
     """
     Plot the top-k most effective attention heads.
@@ -151,6 +261,54 @@ def plot_top_attention_heads(df: pd.DataFrame, metric: str = "normalized_logit_d
         height = bar.get_height()
         ax.text(bar.get_x() + bar.get_width()/2., height + (0.01 if height >= 0 else -0.03),
                 f'{value:.3f}', ha='center', va='bottom' if height >= 0 else 'top')
+    
+    plt.tight_layout()
+    return fig
+
+
+def plot_top_attention_heads_detailed(df: pd.DataFrame, metric: str = "normalized_logit_difference", top_k: int = 10) -> plt.Figure:
+    """
+    Plot the top-k most effective attention heads with target breakdown.
+    
+    Args:
+        df: DataFrame with attention head intervention results
+        metric: Which metric to rank by
+        top_k: Number of top heads to show
+    
+    Returns:
+        matplotlib Figure object
+    """
+    # Sort by absolute effect and get top interventions (not just heads)
+    df['abs_effect'] = df[metric].abs()
+    top_interventions = df.nlargest(top_k, 'abs_effect').copy()
+    
+    # Create labels with layer, head, and target info
+    if 'target_description' in top_interventions.columns:
+        top_interventions['label'] = top_interventions.apply(
+            lambda x: f"L{x['layer_idx']}H{x['head_idx']}\n{x['target_description']}", axis=1
+        )
+    else:
+        top_interventions['label'] = top_interventions.apply(
+            lambda x: f"L{x['layer_idx']}H{x['head_idx']}\n{x['target_name'].split('_layer_')[0]}", axis=1
+        )
+    
+    # Create the plot
+    fig, ax = plt.subplots(figsize=(14, 8))
+    
+    bars = ax.bar(range(len(top_interventions)), top_interventions[metric], 
+                  color=['red' if x < 0 else 'blue' for x in top_interventions[metric]])
+    
+    ax.set_xticks(range(len(top_interventions)))
+    ax.set_xticklabels(top_interventions['label'], rotation=45, ha='right')
+    ax.set_ylabel(metric.replace('_', ' ').title())
+    ax.set_title(f'Top {top_k} Attention Head Interventions by {metric.replace("_", " ").title()}\n(Including Target Token Information)')
+    ax.axhline(y=0, color='black', linestyle='-', alpha=0.3)
+    
+    # Add value labels on bars
+    for i, (bar, value) in enumerate(zip(bars, top_interventions[metric])):
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width()/2., height + (0.01 if height >= 0 else -0.03),
+                f'{value:.3f}', ha='center', va='bottom' if height >= 0 else 'top', fontsize=8)
     
     plt.tight_layout()
     return fig
@@ -253,30 +411,42 @@ fig1 = plot_attention_head_heatmap(results_df, metric="normalized_logit_differen
 plt.show()
 
 #%%
-# 2. Top performing attention heads
+# 2. Heatmap by intervention target (showing actual tokens)
+print("\nGenerating heatmap by intervention target...")
+fig2 = plot_attention_head_heatmap_by_target(results_df, metric="normalized_logit_difference")
+plt.show()
+
+#%%
+# 3. Top performing attention heads
 print("\nGenerating top attention heads plot...")
-fig2 = plot_top_attention_heads(results_df, metric="normalized_logit_difference", top_k=15)
+fig3 = plot_top_attention_heads(results_df, metric="normalized_logit_difference", top_k=15)
 plt.show()
 
 #%%
-# 3. Success rate heatmap
+# 4. Top performing attention heads with detailed target info
+print("\nGenerating detailed top attention heads plot...")
+fig4 = plot_top_attention_heads_detailed(results_df, metric="normalized_logit_difference", top_k=15)
+plt.show()
+
+#%%
+# 5. Success rate heatmap
 print("\nGenerating success rate heatmap...")
-fig3 = plot_attention_head_heatmap(results_df, metric="success_rate")
+fig5 = plot_attention_head_heatmap(results_df, metric="success_rate")
 plt.show()
 
 #%%
-# 4. Position-specific analysis for the best head
+# 6. Position-specific analysis for the best head
 # Find the head with the highest absolute effect
 head_effects = results_df.groupby(['layer_idx', 'head_idx'])['normalized_logit_difference'].mean().abs()
 best_head = head_effects.idxmax()
 best_layer, best_head_idx = best_head
 
 print(f"\nGenerating position analysis for best head: Layer {best_layer}, Head {best_head_idx}")
-fig4 = plot_position_effects(results_df, best_layer, best_head_idx)
+fig6 = plot_position_effects(results_df, best_layer, best_head_idx)
 plt.show()
 
 #%%
-# 5. Summary statistics
+# 7. Summary statistics
 print("\n=== Summary Statistics ===")
 print(f"Total interventions: {len(results_df)}")
 print(f"Mean normalized logit difference: {results_df['normalized_logit_difference'].mean():.4f}")
@@ -291,5 +461,23 @@ print(f"Interventions with |logit_diff| > 0.1: {len(significant_effects)}/{len(r
 # Find heads with high success rate (> 0.7)
 high_success = results_df[results_df['success_rate'] > 0.7]
 print(f"Interventions with success rate > 0.7: {len(high_success)}/{len(results_df)} ({100*len(high_success)/len(results_df):.1f}%)")
+
+#%%
+# 8. Display target token information
+if 'target_description' in results_df.columns:
+    print("\n=== Intervention Target Tokens ===")
+    unique_targets = results_df[['target_description', 'actual_token']].drop_duplicates()
+    for _, row in unique_targets.iterrows():
+        if pd.notna(row['actual_token']):
+            print(f"{row['target_description']}")
+            
+# Print most effective intervention by target type
+if 'target_description' in results_df.columns:
+    print("\n=== Most Effective Interventions by Target Type ===")
+    for target_desc in results_df['target_description'].unique():
+        target_data = results_df[results_df['target_description'] == target_desc]
+        best_idx = target_data['normalized_logit_difference'].abs().idxmax()
+        best_row = results_df.loc[best_idx]
+        print(f"{target_desc}: L{best_row['layer_idx']}H{best_row['head_idx']} (effect: {best_row['normalized_logit_difference']:.4f})")
 
 # %%

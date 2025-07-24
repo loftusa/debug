@@ -35,6 +35,10 @@ dependencies = [
     "vllm>=0.8.4",
 ]
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["debug", "debug.*"]

@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(uv run:*)"
+      "Bash(uv run:*)",
+      "WebFetch(domain:nnsight.net)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": []
   }

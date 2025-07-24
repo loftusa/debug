@@ -35,7 +35,7 @@ w = 5
 g = r
 b = r
 i = r
-#a:"""
+#a: """
     
     # Load tokenizer
     tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
@@ -53,31 +53,37 @@ i = r
     assert "ref_depth_1_rhs" in targets, "ref_depth_1_rhs should be found"
     assert "ref_depth_2_rhs" in targets, "ref_depth_2_rhs should be found"
     assert "ref_depth_3_rhs" in targets, "ref_depth_3_rhs should be found"
+    assert "final_space" in targets, "final_space should be found"
     
     pos1 = targets["ref_depth_1_rhs"]
     pos2 = targets["ref_depth_2_rhs"] 
     pos3 = targets["ref_depth_3_rhs"]
-    
+    pos4 = targets["final_space"]
+
     # Check tokens at positions
     token1 = tokens[pos1].replace('Ġ', '').strip()
     token2 = tokens[pos2].replace('Ġ', '').strip()
     token3 = tokens[pos3].replace('Ġ', '').strip()
-    
+    token4 = tokens[pos4].replace('Ġ', ' ')
+
     # Verify correct mapping: ref_depth_1_rhs = root value, etc.
     assert token1 == "1", f"ref_depth_1_rhs should map to root value '1', got '{token1}'"
     assert token2 == "l", f"ref_depth_2_rhs should map to first hop 'l', got '{token2}'"
     assert token3 == "c", f"ref_depth_3_rhs should map to second hop 'c', got '{token3}'"
-    
+    assert token4 == " ", f"final_space should map to space, got '{token4}'"
+
     # Also verify positions are as expected
     assert pos1 == 3, f"ref_depth_1_rhs should be at position 3, got {pos1}"
     assert pos2 == 7, f"ref_depth_2_rhs should be at position 7, got {pos2}"
     assert pos3 == 34, f"ref_depth_3_rhs should be at position 34, got {pos3}"
+    assert pos4 == 77, f"final_space should be at position 77, got {pos4}"
+
 
 
 def test_variable_chain_identification():
     """Test that variable chain identification works correctly."""
     
-    program = "x = 1\ny = x\nz = y\n#z:"
+    program = "x = 1\ny = x\nz = y\n#z: "
     
     tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
     analyzer = TokenAnalyzer(tokenizer)
@@ -114,7 +120,7 @@ w = 5
 g = r
 b = r
 i = r
-#a:"""
+#a: """
     
     print("Testing Fixed TokenAnalyzer")
     print("=" * 50)

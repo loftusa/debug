@@ -52,6 +52,7 @@ def test_patching_positions_integration():
     
     # Verify program ends correctly  
     assert program.strip().endswith(":"), f"Program should end with query format, got: '{program[-10:]}'"
+    assert program.endswith(" "), f"Program should end with space, got: '{program[-10:]}'"
     
     # Test counterfactual generation
     counterfactual_generator = CounterfactualGenerator()

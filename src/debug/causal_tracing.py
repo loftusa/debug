@@ -258,6 +258,65 @@ class CausalTracer:
         
         return result
     
+    def run_mlp_intervention(self,
+                           original_program: str,
+                           counterfactual_program: str,
+                           target_token_pos: int,
+                           layer_idx: int,
+                           program_id: Optional[int] = None,
+                           target_name: Optional[str] = None) -> InterventionResult:
+        """
+        Run causal intervention on MLP layer outputs.
+        
+        Args:
+            original_program: The original program text
+            counterfactual_program: The counterfactual program text
+            target_token_pos: Token position to intervene on
+            layer_idx: Layer index for intervention
+            
+        Returns:
+            InterventionResult with intervention effects
+        """
+        
+        # 1. Get clean logits on the original program
+        with self.model.trace(original_program):
+            clean_logits = self.model.lm_head.output.save()
+        
+        # 2. Get the corrupting MLP activation from the counterfactual program
+        with self.model.trace(counterfactual_program):
+            corrupt_mlp_activations = self.model.model.layers[layer_idx].mlp.output[:, [target_token_pos], :].save()
+        
+        # 3. Run the original program again, but patch in the corrupt MLP activation
+        with self.model.trace(original_program):
+            self.model.model.layers[layer_idx].mlp.output[:, [target_token_pos], :] = corrupt_mlp_activations
+            patched_logits = self.model.lm_head.output.save()
+        
+        # Generate token labels for visualization
+        token_labels = None
+        if original_program:
+            try:
+                token_labels = self.tokenizer.tokenize(original_program)
+            except Exception:
+                # Fallback to simple splitting if tokenization fails
+                token_labels = original_program.split()
+        
+        # Calculate intervention effects
+        result = self._analyze_intervention_results(
+            original_logits=clean_logits,
+            intervened_logits=patched_logits,
+            intervention_type="mlp",
+            layer_idx=layer_idx,
+            target_token_pos=target_token_pos,
+            store_logits=False,
+            program_id=program_id,
+            original_program=original_program,
+            counterfactual_program=counterfactual_program,
+            token_labels=token_labels,
+            target_name=target_name
+        )
+        
+        return result
+    
     def run_systematic_intervention(self,
                                   original_program: str,
                                   counterfactual_program: str,
