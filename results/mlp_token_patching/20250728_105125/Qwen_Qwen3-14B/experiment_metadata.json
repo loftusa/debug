@@ -1,0 +1,20 @@
+{
+  "model_id": "Qwen/Qwen3-14B",
+  "rng_seed": 12,
+  "seq_len": 17,
+  "program": "l = 1\nc = l\ny = 5\np = 6\nm = 8\nq = p\nf = m\na = c\nj = 9\nv = 0\nx = f\no = q\nr = a\nw = 5\ng = r\nb = r\ni = r\n#a: ",
+  "counterfactual_program": "l = 4\nc = l\ny = 5\np = 6\nm = 8\nq = p\nf = m\na = c\nj = 9\nv = 0\nx = f\no = q\nr = a\nw = 5\ng = r\nb = r\ni = r\n#a: ",
+  "query_var": "a",
+  "expected_answer": 1,
+  "hops": 3,
+  "intervention_targets": {
+    "ref_depth_3_rhs": 34,
+    "ref_depth_2_rhs": 7,
+    "ref_depth_1_rhs": 3,
+    "prediction_token_pos": 77,
+    "final_space": 77,
+    "query_var": 75
+  },
+  "num_interventions": 240,
+  "timestamp": "20250728_105125"
+}
