@@ -147,7 +147,7 @@ def plot_attention_head_heatmap(df: pd.DataFrame, metric: str = "normalized_logi
     
     sns.heatmap(
         heatmap_data,
-        annot=True,
+        annot=False,
         fmt='.3f',
         cmap='RdBu_r',
         center=0,
@@ -202,7 +202,7 @@ def plot_attention_head_heatmap_by_target(df: pd.DataFrame, metric: str = "norma
         # Create heatmap
         sns.heatmap(
             heatmap_data,
-            annot=True,
+            annot=False,
             fmt='.3f',
             cmap='RdBu_r',
             center=0,
@@ -401,6 +401,14 @@ print(f"\nDataset shape: {results_df.shape}")
 print(f"Layers tested: {sorted(results_df['layer_idx'].unique())}")
 print(f"Heads tested: {sorted(results_df['head_idx'].unique())}")
 print(f"Token positions: {sorted(results_df['target_token_pos'].unique())}")
+
+# Remove "final space" rows from the DataFrame
+print(f"Original DataFrame shape: {results_df.shape}")
+
+# Filter out "Final Space" rows if they exist
+results_df = results_df[results_df['target_description'] != 'Final Space']
+
+
 
 #%%
 # --- Visualization Examples -----------------------------------------------
