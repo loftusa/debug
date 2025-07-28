@@ -29,15 +29,9 @@ MODEL_IDS = [
     "Qwen/Qwen3-14B",
     "Qwen/Qwen3-32B",
 ]
-<<<<<<< HEAD
-SEQ_LEN = 17
-EXACT_HOPS = 3  # Exact number of hops in the variable binding chain
-MAX_SEED_SEARCH = 20  # Maximum number of seeds to try
-=======
 SEQ_LEN = 5
 EXACT_HOPS = 2  # Exact number of hops in the variable binding chain
 MAX_SEED_SEARCH = 30  # Maximum number of seeds to try
->>>>>>> 477ebeb86da9006c41ccd64ed8aa0d4281a278ed
 FIND_UNIVERSALLY_FAILED_PROGRAM = False  # Set to True to find a program all models fail on.
 
 
