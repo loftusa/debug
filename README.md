@@ -128,6 +128,21 @@ results/
         └── patch_results.json       # Aggregated patching statistics
 ```
 
+## Completed Experiments
+
+- Variable Binding Benchmarks: Ran `variable_binding` across Qwen models. Overall accuracy 0.769 with clear decay by sequence length (e.g., len 5: 0.925 → len 17: 0.55). By model: Qwen/Qwen3-14B ≈ 0.834; Qwen/Qwen3-8B ≈ 0.704. See `results/debug_experiments/variable_binding_*/summary.json`.
+- Hops Sensitivity: `variable_binding_hops_test` comparing chain depths. Accuracy: Qwen/Qwen3-0.6B ≈ 0.083; Qwen/Qwen3-1.7B ≈ 0.692. See `results/debug_experiments/variable_binding_hops_test_*/summary.json`.
+- Full Token/Layer Patching: Layer-wise interventions over 1–3 hops and seq_len 5/17. Outputs under `results/full_token_layer_patching*/*` with aggregate `patch_results.json` summarizing position/layer effects.
+- Attention Head Patching & Knockout: Head-level patching/knockout runs for Qwen/Qwen3-14B (and 0.6B) at seq_len 17, hops 3, rng 12. See `results/attention_head_patching/*/experiment_metadata.json` and knockout summaries at `results/attention_knockout/*/experiment_summary.txt` (preliminary evidence favors chain-following over direct-pointer for binding).
+- MLP Token Patching: Qwen/Qwen3-14B, seq_len 17, hops 3 (rng 12) with structured metadata and counterfactual pairs. See `results/mlp_token_patching/*/Qwen_Qwen3-14B/experiment_metadata.json`.
+
+### Cross‑Model Accuracy Snapshot
+- Best so far: `Qwen/Qwen2.5-14B` ≈ 0.589
+- Strong: `Qwen/Qwen2.5-Coder-14B-Instruct` ≈ 0.524; `DeepSeek-R1-Distill-Qwen-14B` ≈ 0.524
+- Mid‑tier: `NTQAI/Nxcode-CQ-7B-orpo` ≈ 0.548; `Falcon3-7B-Instruct` ≈ 0.532; `deepseek-coder-1.3b-instruct` ≈ 0.532
+- Baseline: `openai-community/gpt2` ≈ 0.242
+See `results/results_summary.csv` for the full table.
+
 ## Causal Tracing Methodology
 
 ### Core Concept

@@ -69,23 +69,44 @@ uv pip install -e .
 
 ### Running Experiments
 ```bash
-# Run all experiments
+# Run simplified experiments (recommended)
 cd experiments && ./run_experiments.sh all
 
-# Run specific experiment type
+# Run specific experiment type with options
 ./run_experiments.sh range -m "Qwen/Qwen3-0.6B" -n 50
+./run_experiments.sh boolean -m "Qwen/Qwen3-0.6B" -n 100
 uv run _04_boolean_simple.py --num-seqs 100
 
 # Run causal tracing experiments
 uv run _07_binding_patching.py
 uv run _08_full_layer_token_patching.py
+
+# Run full causal tracing pipeline with robust seeds
+./run_experiments_tracing.sh
+
+# Find robust RNG seeds for consistent results
+./find_all_seeds.sh
+uv run 11_test_rng_seeds.py --hops 3 --seq-len 17 --num-trials 100
 ```
 
-### Linting and Code Quality
+### Testing
+```bash
+# Run tests
+pytest tests/
+pytest tests/test_token_analyzer_comprehensive.py -v
+
+# Run specific test for token analysis
+pytest tests/test_patching_positions.py -v
+```
+
+### Linting and Code Quality  
 ```bash
 # Run ruff for linting and formatting
 ruff check src/
 ruff format src/
+
+# Check and auto-fix issues
+ruff check src/ --fix
 ```
 
 ## Core Architecture
@@ -170,6 +191,13 @@ Generator functions must return `(program_str, expected_answer)` or `(program_st
 ### Memory Management
 Use `no_cache=True` parameter in `runner.run()` to unload models after each use for memory-constrained environments.
 
+### Common Usage Notes
+- **Model IDs**: Use "/" format like "Qwen/Qwen3-0.6B", "Qwen/Qwen3-4B", etc. 
+- **GPU Memory**: Qwen3-0.6B fits on most GPUs, larger models may need bitsandbytes quantization
+- **Interactive Development**: Always preload models in Jupyter/IPython to avoid reloading
+- **Reproducibility**: Use validated RNG seeds from the INFO section for consistent results
+- **Directory Structure**: All experiments auto-save to timestamped `results/` directories
+
 
 # Causal Tracing Methodology
 
@@ -228,9 +256,14 @@ The core insight: If replacing an activation with its counterfactual value cause
 ## Tools and Techniques
 
 - `nnsight` should be used for code that directly modifies LLM internals. Documentation can be found at https://nnsight.net/
+- Important: `LanguageModel.device` is on `meta` until you run the first `trace`
+- Use `with model.trace()` context manager for all nnsight operations
+- Token positions are indexed from 0, use TokenAnalyzer for accurate position finding
 
 ## Experiment Notes
 - We are copying experiments from https://arxiv.org/abs/2505.20896
+- Focus on 3-hop, 17-length cases for most informative results (RNG seed 12)
+- Filter programs where answer appears after line 2 to avoid heuristic solutions
 
 # INFO FOR CONTEXT
 
@@ -345,6 +378,15 @@ i = r
 ✅ Completed at: Thu 26 Jun 2025 12:28:26 PM EDT
 
 =========================================
+### KEY ARCHITECTURE DETAILS
+
+#### Qwen3-0.6B Model Structure  
+- 28 decoder layers (0-27)
+- 1024 hidden dimensions
+- 16 attention heads per layer
+- RMSNorm for layer normalization
+- Rotary positional embeddings
+
 ### QWEN MODEL ARCHITECTURE
 Qwen3ForCausalLM(
   (model): Qwen3Model(

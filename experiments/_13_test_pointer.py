@@ -38,7 +38,7 @@ print("=" * 50)
 # =============================================================================
 
 # Model and experimental parameters
-MODEL_ID = "Qwen/Qwen3-14B"
+MODEL_ID = "Qwen/Qwen3-4B"
 DEVICE = "auto"
 
 # Output directory for results
@@ -54,20 +54,47 @@ print(f"Results will be saved to: {output_dir}")
 # PROGRAM DEFINITIONS
 # =============================================================================
 
-PROGRAM_1 = """a = 1 
-b = 2
-c = a
-#c: """
+PROGRAM_1 = """l = 1
+c = l
+y = 5
+p = 6
+m = 8
+q = p
+f = m
+a = c
+j = 9
+v = m
+x = f
+o = q
+r = a
+w = a
+g = r
+b = r
+i = r
+#a: """
 
-
-PROGRAM_2 = """b = 3 
-a = 4
-c = a
-#c: """
+PROGRAM_2 = """l = 2
+c = l
+y = 3
+p = 4
+m = 7
+q = p
+f = m
+a = c
+j = 0
+v = m
+x = f
+o = q
+r = a
+w = a
+g = r
+b = r
+i = r
+#a: """
 
 # Expected answers
 EXPECTED_ANSWER_1 = "1"  # a -> c -> 1
-EXPECTED_ANSWER_2 = "4"  # a -> c -> 4
+EXPECTED_ANSWER_2 = "2"  # a -> c -> 4
 
 print("Program 1 (query #c: ):")
 print(PROGRAM_1)
@@ -79,10 +106,6 @@ print(PROGRAM_2)
 print(f"Expected answer: {EXPECTED_ANSWER_2}")
 print()
 
-print("🔬 Experiment Design:")
-print("We want to test if the model uses pointers or values to track the variable bindings.")
-print("We will start patching at the 'c' token (since thats when the programs are equivalent")
-print("And measure the tokens 1, 2, and 4")
 
 # =============================================================================
 # MODEL LOADING & TOKENIZATION
@@ -102,6 +125,30 @@ print(f"Number of attention heads: {tracer.model.config.num_attention_heads}")
 # Initialize token analyzer for finding positions
 token_analyzer = TokenAnalyzer(tokenizer=tracer.tokenizer)
 
+# check top token for both original run and counterfactual run
+from nnsight import LanguageModel
+
+def run_inference_nnsight(model: LanguageModel, prompt: str) -> str:
+    """
+    Runs a single inference call using NNSight tracing.
+    This does greedy decoding by taking argmax of the logits.
+    """
+    with model.trace(prompt):
+        logits = model.lm_head.output.save()
+
+    last_token_logits = logits[0, -1, :]
+    predicted_token_id = last_token_logits.argmax().item()
+    predicted_token = model.tokenizer.decode([predicted_token_id])
+    predicted_token = prompt + predicted_token
+    return predicted_token
+
+original_top_token = run_inference_nnsight(tracer.model, PROGRAM_1)
+print(f"\nOriginal completed program: {original_top_token}\n")
+
+counterfactual_top_token = run_inference_nnsight(tracer.model, PROGRAM_2)
+print(f"\nCounterfactual completed program: {counterfactual_top_token}\n")
+
+#%%
 # =============================================================================
 # TOKEN POSITION ANALYSIS
 # =============================================================================
@@ -144,20 +191,8 @@ for i, token in enumerate(tokens_2):
 # and come after the query tokens ("#a:" and "#l:")
 
 # find the position of tokens containing "#a:" and "#l:"
-regex = r"#c:|#w:"
-space_pos_program_1 = re.search(regex, "".join(tokens_1)).end() + 1
-space_pos_program_2 = re.search(regex, "".join(tokens_2)).end() + 1
-
-
-# TODO: Implement the position finding logic here
-# Example approach:
-# 1. Find the position of tokens containing "#a:" and "#l:"
-# 2. The space token should be right after these
-# 3. Verify the positions make sense
-
-print(f"\n📍 Key positions to find:")
-print(f"  Space token after '#a:' in Program 1: {space_pos_program_1}")
-print(f"  Space token after '#l:' in Program 2: {space_pos_program_2}")
+space_pos_program_1 = token_analyzer._find_query_positions(tokens=tokens_1, query_var='#a:')['prediction_token_pos']
+space_pos_program_2 = token_analyzer._find_query_positions(tokens=tokens_2, query_var='#a:')['prediction_token_pos']
 
 
 #%%
@@ -166,9 +201,9 @@ print(f"  Space token after '#l:' in Program 2: {space_pos_program_2}")
 # =============================================================================
 
 print("🧪 Setting up layer-wise patching experiment...")
+# TODO:
+# - patch to a=q
 
-# This is where the main experiment happens
-# TODO: Implement the cross-query patching experiment
 
 def run_pointer_test_at_layer(tracer, layer_idx: int) -> InterventionResult:
     """
